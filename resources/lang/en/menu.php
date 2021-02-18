@@ -7,6 +7,7 @@ return [
     'contacts' => 'Contact Us',
     'categories' => 'Categories',
     'news' => 'News',
+    'profile' => 'Profile',
     'admin' => 'Admin',
     'login' => 'Login',
     'register' => 'Register',

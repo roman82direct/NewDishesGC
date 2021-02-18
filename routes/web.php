@@ -15,7 +15,7 @@ use \App\Http\Controllers\NavController;
 */
 
 Route::get('/', function () {
-    return view('main');
+    return view('menu.main');
 });
 
 Route::group([
@@ -24,7 +24,7 @@ Route::group([
     'namespace' => '\App\Http\Controllers'
 ], function () {
     Route::get('/main', function () {
-        return view('main');
+        return view('menu.main');
     })->name('main');
 
     Route::get('/catalog', [NavController::class, 'index'])
@@ -37,9 +37,16 @@ Route::group([
         ->name('news');
 
 //    Route::get('/test', [\App\Http\Controllers\NavController::class, 'test'])->name('test');
-
 });
 
+Route::group([
+    'prefix' => '/',
+    'as' => 'user::',
+    'namespace' => '\App\Http\Controllers'
+], function (){
+    Route::get('/profile', [\App\Http\Controllers\user\UserController::class, 'index'])
+        ->name('profile');
+});
 
 //Route::get('/dashboard', function () {
 //    return view('dashboard');
