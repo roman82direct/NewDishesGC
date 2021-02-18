@@ -34,10 +34,11 @@ Route::group([
     Route::get('/contacts', 'NavController@contact')
         ->name('contacts');
 
-    Route::get('/news',[NavController::class, 'showNews'])
-        ->name('news');
+    Route::get('category{id}/goods',[NavController::class, 'showGoods'])
+        ->name('goods');
 
-//    Route::get('/test', [\App\Http\Controllers\NavController::class, 'test'])->name('test');
+    Route::get('/good{id}', [NavController::class, 'showGoodItem'])
+        ->name('showGoodItem');
 });
 
 Route::group([
@@ -56,12 +57,24 @@ Route::group([
     'middleware' => ['auth']
 
 ], function () {
-    Route::get('/update/{id}', [AdminController::class, 'update'])
+    Route::get('/update/{id}', [AdminController::class, 'updateCategory'])
         ->name('update');
 
-    Route::get('/delete/{id}', 'AdminController@delete')
+    Route::get('/delete/{id}', 'AdminController@deleteCategory')
         ->name('delete');
-//    Route::get('/test', [\App\Http\Controllers\NavController::class, 'test'])->name('test');
+});
+Route::group([
+    'prefix' => '/admin/good',
+    'as' => 'admin::good::',
+    'namespace' => '\App\Http\Controllers\Admin',
+    'middleware' => ['auth']
+
+], function () {
+    Route::get('/update/{id}', [AdminController::class, 'updateGood'])
+        ->name('update');
+
+    Route::get('/delete/{id}', 'AdminController@deleteGood')
+        ->name('delete');
 });
 
 //Route::get('/dashboard', function () {

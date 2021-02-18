@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Good;
 use Illuminate\Http\Request;
 
 class NavController extends Controller
@@ -19,11 +20,13 @@ class NavController extends Controller
         return view('menu.contacts');
     }
 
-    public function showNews(){
-        return view('menu.news');
+    public function showGoods($id){
+        $goods = Good::where('category_id', $id)->get();
+        return view('goods', ['goods' => $goods]);
     }
 
-    public function test(){
-        dd('This is test');
+    public function showGoodItem($id){
+        $item = Good::find($id);
+        return view('goodItem', ['item' => $item]);
     }
 }

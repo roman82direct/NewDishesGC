@@ -31441,6 +31441,18 @@ main {
   min-height: calc(85vh - 70px);
 }
 
+/*My Own styles*/
+
+.mypd{
+  padding: 0.3em;
+}
+
+.mymrgleft{
+  margin-left: 0.3em;
+}
+
+/*Category Cards Styles*/
+
 .categoryCard{
   padding: 1rem;
   display: grid;
@@ -31451,9 +31463,75 @@ main {
 }
 
 .categoryItem{
+  /*border-radius: 0.5em;*/
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.itemDescription{
+  height: 40%;
+  background-color: lightgray;
+  padding: 1em;
+  font-size: 14px;
+}
+
+.itemHeader{
+  background-color: lightgray;
+  font-weight: 600;
+  padding: 0.5em;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.card-svg {
+}
+
+.card-links {
+  width: 80px;
+  justify-content: space-between;
+  position: absolute;
+  left: 45%;
+  top: 45%;
+  z-index: 1;
+  display: none;
+}
+
+.card-svg {
+  fill: #fff;
+}
+
+.categoryItem:hover .card-svg {
+  fill: #c7b299;
+}
+
+.categoryItem:hover .card-links {
+  display: block;
+}
+
+.card-link:hover .card-svg {
+  fill: #c7b299;
+  transform: scale(1.5);
+}
+
+.goodCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*Media*/
+
+@media screen and (max-width: 640px){
+  .categoryCard{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .itemDescription{
+    height: 50%;
+    font-size: 10px;
+  }
 }
 
 @media (min-width: 640px) {
