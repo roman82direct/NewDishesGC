@@ -31485,9 +31485,6 @@ main {
   text-align: center;
 }
 
-.card-svg {
-}
-
 .card-links {
   width: 80px;
   justify-content: space-between;
@@ -31514,6 +31511,8 @@ main {
   fill: #c7b299;
   transform: scale(1.5);
 }
+
+/*Good Cards Styles*/
 
 .goodCard{
   display: flex;
