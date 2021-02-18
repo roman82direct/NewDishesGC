@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class NavController extends Controller
 {
     public function index(Request $request){
-        return view('menu.catalog');
+        $categories = Category::all();
+//        foreach ($categories as $item){
+//            dump($item->name);
+//        }
+        return view('menu.catalog', ['categories' => $categories]);
     }
 
     public function contact(){
