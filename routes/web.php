@@ -23,7 +23,7 @@ Route::group([
     'as' => 'nav::',
     'namespace' => '\App\Http\Controllers'
 ], function () {
-    Route::get('/main', function () {
+    Route::get('/', function () {
         return view('menu.main');
     })->name('main');
 
