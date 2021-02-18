@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\NavController;
+use \App\Http\Controllers\Admin\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +47,21 @@ Route::group([
 ], function (){
     Route::get('/profile', [\App\Http\Controllers\user\UserController::class, 'index'])
         ->name('profile');
+});
+
+Route::group([
+    'prefix' => '/admin/category',
+    'as' => 'admin::category::',
+    'namespace' => '\App\Http\Controllers\Admin',
+    'middleware' => ['auth']
+
+], function () {
+    Route::get('/update/{id}', [AdminController::class, 'update'])
+        ->name('update');
+
+    Route::get('/delete/{id}', 'AdminController@delete')
+        ->name('delete');
+//    Route::get('/test', [\App\Http\Controllers\NavController::class, 'test'])->name('test');
 });
 
 //Route::get('/dashboard', function () {

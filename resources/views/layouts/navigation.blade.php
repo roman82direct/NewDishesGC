@@ -16,7 +16,6 @@
 {{--                    </x-nav-link>--}}
                     <x-nav-link :href="route('nav::main')" :active="request()->routeIs('nav::main')">{{ __('menu.main') }}</x-nav-link>
                     <x-nav-link :href="route('nav::catalog')" :active="request()->routeIs('nav::catalog')">{{ __('menu.catalog') }}</x-nav-link>
-                    <x-nav-link :href="route('nav::news')" :active="request()->routeIs('nav::news')">{{ __('menu.news') }}</x-nav-link>
                     <x-nav-link :href="route('nav::contacts')" :active="request()->routeIs('nav::contacts')">{{ __('menu.contacts') }}</x-nav-link>
                 </div>
             </div>
@@ -26,9 +25,9 @@
                     @if (Route::has('login'))
                     @auth
                     @else
-                    <x-nav-link :href="route('login')">Log in</x-nav-link>
+                    <x-nav-link :href="route('login')">{{ __('buttons.login') }}</x-nav-link>
                         @if (Route::has('register'))
-                           <x-nav-link :href="route('register')">Register</x-nav-link>
+                           <x-nav-link :href="route('register')">{{ __('buttons.register') }}</x-nav-link>
                         @endif
                     @endauth
                     @endif
@@ -59,7 +58,7 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('menu.logout') }}
+                                {{ __('buttons.logout') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
@@ -85,7 +84,6 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('nav::main')" :active="request()->routeIs('nav::main')">{{ __('menu.main') }}</x-responsive-nav-link>
             <x-responsive-nav-link :href="route('nav::catalog')" :active="request()->routeIs('nav::catalog')">{{ __('menu.catalog') }}</x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('nav::news')" :active="request()->routeIs('nav::news')">{{ __('menu.news') }}</x-responsive-nav-link>
             <x-responsive-nav-link :href="route('nav::contacts')" :active="request()->routeIs('nav::contacts')">{{ __('menu.contacts') }}</x-responsive-nav-link>
         </div>
 
@@ -94,9 +92,9 @@
             @if (Route::has('login'))
                 @auth
                 @else
-                    <x-responsive-nav-link :href="route('login')">Log in</x-responsive-nav-link>
+                    <x-responsive-nav-link :href="route('login')">{{ __('buttons.login') }}</x-responsive-nav-link>
                     @if (Route::has('register'))
-                        <x-responsive-nav-link :href="route('register')">Register</x-responsive-nav-link>
+                        <x-responsive-nav-link :href="route('register')">{{ __('buttons.register') }}</x-responsive-nav-link>
                     @endif
                 @endauth
             @endif
@@ -123,7 +121,7 @@
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Log out') }}
+                        {{ __('buttons.logout') }}
                     </x-responsive-nav-link>
                 </form>
                 </div>

@@ -9,8 +9,6 @@ return [
     'news' => 'News',
     'profile' => 'Profile',
     'admin' => 'Admin',
-    'login' => 'Login',
-    'register' => 'Register',
-    'logout' => 'Logout',
-    'users' => 'Users'
+    'users' => 'Users',
+    'editor' => 'Editor'
 ];
