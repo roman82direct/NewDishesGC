@@ -80,7 +80,20 @@ Route::group([
         ->name('delete');
 });
 
-//Test upload files
+Route::group([
+    'prefix' => '/admin',
+    'as' => 'admin::',
+    'namespace' => '\App\Http\Controllers\Admin',
+    'middleware' => ['auth']
+], function (){
+    Route::get('/parse', [AdminController::class, 'parseExcel'])
+    ->name('parse');
+});
+
+/*
+ * TESTS
+ */
+//upload files
 Route::get('/cat', function (){
     Storage::disk('uploadCatImg')->put('category.txt', 'url: '.\Illuminate\Support\Facades\Storage::url('img/category/category.txt'));
     return redirect()->route('nav::main');

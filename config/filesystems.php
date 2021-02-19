@@ -41,6 +41,13 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
+//      Диск хранения парсинга
+        'parse' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/parse'),
+            'url' => env('APP_URL').'/storage/parse',
+            'visibility' => 'public',
+        ],
 
 //      Диски хранения изображений
         'uploadCatImg' => [
