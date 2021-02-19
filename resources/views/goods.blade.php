@@ -1,7 +1,12 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{__('menu.catalog')}}
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ route('nav::catalog') }}">{{__('menu.catalog') }}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ \App\Models\Category::find($id)->name }}</li>
+                </ol>
+            </nav>
         </h2>
     </x-slot>
 

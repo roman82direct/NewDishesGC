@@ -22,7 +22,7 @@ class NavController extends Controller
 
     public function showGoods($id){
         $goods = Good::where('category_id', $id)->get();
-        return view('goods', ['goods' => $goods]);
+        return view('goods', ['goods' => $goods, 'id' => $id]);
     }
 
     public function showGoodItem($id){

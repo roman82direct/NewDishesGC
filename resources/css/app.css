@@ -62,7 +62,7 @@ main {
 }
 
 .categoryItem:hover .card-svg {
-    fill: #c7b299;
+    fill: #c7b29f;
 }
 .categoryItem:hover .card-links {
     display: block;
