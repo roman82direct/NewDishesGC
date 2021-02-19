@@ -34,7 +34,10 @@ Route::group([
     Route::get('/contacts', 'NavController@contact')
         ->name('contacts');
 
-    Route::get('category{id}/goods',[NavController::class, 'showGoods'])
+//    Route::get('category{id}/goods',[NavController::class, 'showGoods'])
+//        ->name('goods');
+
+    Route::get('/goods{id}',[NavController::class, 'showGoods'])
         ->name('goods');
 
     Route::get('/good{id}', [NavController::class, 'showGoodItem'])
@@ -75,6 +78,16 @@ Route::group([
 
     Route::get('/delete/{id}', 'AdminController@deleteGood')
         ->name('delete');
+});
+
+//Test upload files
+Route::get('/cat', function (){
+    Storage::disk('uploadCatImg')->put('category.txt', 'url: '.\Illuminate\Support\Facades\Storage::url('img/category/category.txt'));
+    return redirect()->route('nav::main');
+});
+Route::get('/goo', function (Request $request){
+    Storage::disk('uploadGoodImg')->put('good.txt', 'url: '.\Illuminate\Support\Facades\Storage::url('img/good/good.txt'));
+    return redirect()->route('nav::main')->with('success', 'File add!');
 });
 
 //Route::get('/dashboard', function () {

@@ -22,10 +22,10 @@
                                 <img src="{{ $item->img }}" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="{{ $item->img }}" class="d-block w-100" alt="...">
+                                <img src="{{ $item->img1 }}" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="{{ $item->img }}" class="d-block w-100" alt="...">
+                                <img src="{{ $item->img2 }}" class="d-block w-100" alt="...">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators_{{ $item->id }}"  data-bs-slide="prev">

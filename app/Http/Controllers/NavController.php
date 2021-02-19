@@ -21,6 +21,7 @@ class NavController extends Controller
     }
 
     public function showGoods($id){
+//        dump(\Storage::files('app/public'));
         $goods = Good::where('category_id', $id)->get();
         return view('goods', ['goods' => $goods, 'id' => $id]);
     }
