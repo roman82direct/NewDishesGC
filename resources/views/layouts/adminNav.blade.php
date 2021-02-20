@@ -6,8 +6,8 @@
     <form method="POST" enctype="multipart/form-data" action="{{ route('admin::upload') }}">
     @csrf
         <div class="flex items-center justify-end">
-{{--            <label for="file">{{ __('buttons.selectFile') }}</label>--}}
-{{--            <input type="file" name="file" id="file" accept="--}}{{-- application/vnd.ms-excel, --}}{{-- application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">--}}
+            <label for="file">{{ __('buttons.selectFile') }}</label>
+            <input type="file" name="file" id="file" accept=" application/vnd.ms-excel,  application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
             <button class="btn btn-sm btn-outline-dark" type="submit">{{ __('buttons.upload') }}</button>
         </div>
     </form>
