@@ -17,6 +17,7 @@
                     <div>{{ $key.': '. $value}}</div>
                     @endforeach
                 </div>
+                <hr>
                 @endforeach
 
             </div>
