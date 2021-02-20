@@ -6,9 +6,10 @@ return [
     'catalog' => 'Catalog',
     'contacts' => 'Contact Us',
     'categories' => 'Categories',
-    'news' => 'News',
+    'goods' => 'Goods',
+    //admin.menu
     'profile' => 'Profile',
-    'admin' => 'Admin',
+    'admin' => 'Admin Panel',
     'users' => 'Users',
     'editor' => 'Editor'
 ];

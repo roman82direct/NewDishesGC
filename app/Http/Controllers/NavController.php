@@ -30,4 +30,8 @@ class NavController extends Controller
         $item = Good::find($id);
         return view('goodItem', ['item' => $item]);
     }
+
+    public function showAdminPanel(){
+        return view('admin.panel');
+    }
 }

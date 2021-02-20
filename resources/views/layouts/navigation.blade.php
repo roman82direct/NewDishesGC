@@ -49,6 +49,10 @@
                     <x-slot name="content">
                         <!-- Authentication -->
                         <x-dropdown-link :href="route('user::profile')">{{ __('menu.profile') }}</x-dropdown-link>
+                        <hr>
+                        @if(\Illuminate\Support\Facades\Auth::user()->hasRole('admin'))
+                        <x-dropdown-link :href="route('admin::panel')">{{ __('menu.admin') }}</x-dropdown-link>
+                        @endif
 
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf

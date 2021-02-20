@@ -94,6 +94,12 @@ Route::group([
     'namespace' => '\App\Http\Controllers\Admin',
     'middleware' => ['auth', 'checkrole:admin']
 ], function (){
+    Route::get('/panel', [NavController::class, 'showAdminPanel'])
+    ->name('panel');
+
+    Route::get('/users', [AdminController::class, 'showUsers'])
+        ->name('users');
+
     Route::get('/upload', [AdminController::class, 'uploadGoodsFromExcel'])
     ->name('upload');
 });

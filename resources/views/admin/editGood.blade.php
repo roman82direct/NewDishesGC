@@ -3,6 +3,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{__('menu.editor')}}
         </h2>
+        @include('layouts.adminNav')
     </x-slot>
 
     <div class="py-12">

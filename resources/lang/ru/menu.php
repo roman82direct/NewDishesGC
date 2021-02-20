@@ -6,7 +6,8 @@ return [
     'catalog' => 'Каталог',
     'contacts' => 'Контакты',
     'categories' => 'Категории товаров',
-    'news' => 'Новости',
+    'goods' => 'Товары',
+    //admin.menu
     'profile' => 'Кабинет',
     'admin' => 'Админка',
     'users' => 'Пользователи',
