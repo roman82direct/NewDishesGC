@@ -43,6 +43,7 @@ class Good extends Model
         'name',
         'description',
         'categoty_id',
+        'arrival',
         'img',
         'img1',
         'img2',
