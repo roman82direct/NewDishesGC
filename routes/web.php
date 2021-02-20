@@ -100,6 +100,9 @@ Route::group([
     Route::get('/users', [AdminController::class, 'showUsers'])
         ->name('users');
 
+    Route::get('/goods', [AdminController::class, 'showGoods'])
+        ->name('goods');
+
     Route::get('/upload', [AdminController::class, 'uploadGoodsFromExcel'])
     ->name('upload');
 });

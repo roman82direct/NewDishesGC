@@ -1,13 +1,14 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{__('menu.admin')}}
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ route('admin::panel') }}">{{__('menu.admin')}}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{__('menu.users')}}</li>
+                </ol>
+            </nav>
         </h2>
-        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-            <a href="{{ route('admin::users') }}">{{ __('menu.users') }}</a>
-            <a href="{{ route('nav::catalog') }}">{{ __('menu.goods') }}</a>
-            <a class="btn btn-outline-dark" href="{{ route('admin::upload') }}">{{ __('buttons.upload') }}</a>
-        </div>
+        @include('layouts.adminNav')
     </x-slot>
 
     <div class="py-12">

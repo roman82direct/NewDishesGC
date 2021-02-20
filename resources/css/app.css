@@ -8,6 +8,12 @@
 main {
     min-height: calc(85vh - 70px);
 }
+
+/*Change Bootstrap Styles*/
+.breadcrumb{
+    margin-bottom: 0!important;
+}
+
 /*My Own styles*/
 .mypd{
     padding: 0.3em;
