@@ -118,6 +118,9 @@
                 <div class="mt-3 space-y-1">
                     <!-- Authentication -->
                     <x-responsive-nav-link href="{{ route('user::profile') }}">{{ __('menu.profile') }}</x-responsive-nav-link>
+                    @if(\Illuminate\Support\Facades\Auth::user()->hasRole('admin'))
+                        <x-responsive-nav-link href="{{ route('admin::panel') }}">{{ __('menu.admin') }}</x-responsive-nav-link>
+                    @endif
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                     <x-responsive-nav-link :href="route('logout')"

@@ -14,7 +14,6 @@ class UserController extends Controller
         return view('user.profile', ['user' => $user]);
     }
 
-
     public function downloadExcel(){
         $users = User::all();
         return (new \Rap2hpoutre\FastExcel\FastExcel($users))->download('users.xlsx');

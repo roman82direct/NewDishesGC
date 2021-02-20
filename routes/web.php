@@ -103,7 +103,7 @@ Route::group([
     Route::get('/goods', [AdminController::class, 'showGoods'])
         ->name('goods');
 
-    Route::get('/upload', [AdminController::class, 'uploadGoodsFromExcel'])
+    Route::match(['POST', 'GET'], '/upload', [AdminController::class, 'uploadGoodsFromExcel'])
     ->name('upload');
 });
 
