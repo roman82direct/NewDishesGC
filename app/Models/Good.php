@@ -40,9 +40,12 @@ class Good extends Model
     use HasFactory;
 
     protected $fillable = [
+        'art',
         'name',
         'description',
-        'categoty_id',
+        'brand',
+        'collection',
+        'category_id',
         'arrival',
         'img',
         'img1',
