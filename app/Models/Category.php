@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Rap2hpoutre\FastExcel\FastExcel;
 
 /**
  * App\Models\Category
@@ -40,4 +41,19 @@ class Category extends Model
         'img1',
         'img2',
     ];
+
+    public function fillFromXLS($file)
+    {
+        return (new FastExcel)->import($file, function ($line) {
+            $exists = Category::query()
+                ->where('name', $line['category'])
+                ->exists();
+            if (!$exists) {
+                return Category::create([
+                    'name' => $line['category'],
+                    'description' => $line['category_description'],
+                ]);
+            } else return null;
+        });
+    }
 }

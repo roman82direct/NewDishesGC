@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Rap2hpoutre\FastExcel\FastExcel;
 
 /**
  * App\Models\Good
@@ -34,6 +35,14 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Good whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Good whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string $art
+ * @property string $brand
+ * @property string $collection
+ * @property string|null $arrival
+ * @method static \Illuminate\Database\Eloquent\Builder|Good whereArrival($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Good whereArt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Good whereBrand($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Good whereCollection($value)
  */
 class Good extends Model
 {
@@ -53,4 +62,21 @@ class Good extends Model
         'likes',
         'dislikes',
     ];
+    public function fillFromXLS($file){
+        return (new FastExcel)->import($file, function ($line){
+            return Good::create([
+                'art' => $line['art'],
+                'name' => $line['name'],
+                'description' => $line['description'],
+                'brand' => $line['brand'],
+                'collection' => $line['collection'],
+                'category_id' => Category::where('name', $line['category'])->value('id'),
+                'arrival' => $line['arrival'],
+                'img' => 'storage/img/good/'.$line['art'].'.jpg',
+                'img1' => 'storage/img/good/'.$line['art'].'_1.jpg',
+                'img2' => 'storage/img/good/'.$line['art'].'_2.jpg',
+            ]);
+        });
+    }
+
 }
