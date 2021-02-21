@@ -42,6 +42,30 @@ class Category extends Model
         'img2',
     ];
 
+    /**
+     * Для показа рандомных фото в карточке категории на странице Каталог
+     * выбираем 3 случайных строки из таблицы Good category_id = id текущей категории
+     * и формируем массив из ссылок на фото
+     *
+     * @param $id
+     * @return \Illuminate\Support\Collection
+     */
+    public function getRandomImg($id){
+        return Good::whereCategoryId($id)
+            ->get()
+            ->random(3)
+            ->pluck('img');
+    }
+
+    /**
+     *
+     *
+     * @param $file
+     * @return \Illuminate\Support\Collection
+     * @throws \Box\Spout\Common\Exception\IOException
+     * @throws \Box\Spout\Common\Exception\UnsupportedTypeException
+     * @throws \Box\Spout\Reader\Exception\ReaderNotOpenedException
+     */
     public function fillFromXLS($file)
     {
         return (new FastExcel)->import($file, function ($line) {

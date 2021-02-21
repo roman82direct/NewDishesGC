@@ -31481,6 +31481,7 @@ main {
 
 .itemDescription{
   height: 40%;
+  width: 100%;
   background-color: lightgray;
   padding: 1em;
   font-size: 14px;

@@ -62,6 +62,15 @@ class Good extends Model
         'likes',
         'dislikes',
     ];
+
+    /**
+     * TODO реализовать приведение 0-х значений в столбце 'arrival' к формату DATETIME
+     * @param $file
+     * @return \Illuminate\Support\Collection
+     * @throws \Box\Spout\Common\Exception\IOException
+     * @throws \Box\Spout\Common\Exception\UnsupportedTypeException
+     * @throws \Box\Spout\Reader\Exception\ReaderNotOpenedException
+     */
     public function fillFromXLS($file){
         return (new FastExcel)->import($file, function ($line){
             return Good::create([

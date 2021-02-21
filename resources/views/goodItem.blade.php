@@ -6,7 +6,7 @@
                     <li class="breadcrumb-item"><a href="{{ route('nav::catalog') }}">{{__('menu.catalog') }}</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('nav::goods', ['id' => $item->category_id]) }}">
                             {{\App\Models\Category::find($item->category_id)->name }}</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">{{ $item->name }}</li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ $item->art }}</li>
                 </ol>
             </nav>
 
@@ -17,7 +17,7 @@
         <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg goodCard">
                 <div class="goodItem">
-                    <h2 class="itemHeader">{{ $item->name }}</h2>
+                    <h2 class="itemHeader">{{ $item->art }}</h2>
                     <div id="carouselExampleIndicators_{{ $item->id }}" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleIndicators_{{ $item->id }}" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -44,7 +44,7 @@
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
-                    <p class="itemDescription">{{ $item->description }}</p>
+                    <p class="itemDescription">{{ $item->name }}</p>
                     @auth()
                         @if(Auth::user()->hasRole('admin'))
                             <div class="md:inline-flex mypd">

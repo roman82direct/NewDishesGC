@@ -10,9 +10,6 @@ class NavController extends Controller
 {
     public function index(Request $request){
         $categories = Category::all();
-//        foreach ($categories as $item){
-//            dump($item->name);
-//        }
         return view('menu.catalog', ['categories' => $categories]);
     }
 
