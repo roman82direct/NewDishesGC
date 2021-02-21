@@ -58,8 +58,6 @@ class Category extends Model
     }
 
     /**
-     *
-     *
      * @param $file
      * @return \Illuminate\Support\Collection
      * @throws \Box\Spout\Common\Exception\IOException
