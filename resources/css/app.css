@@ -14,6 +14,13 @@ main {
     margin-bottom: 0!important;
 }
 
+.carousel-dark{
+    height: 80vh!important;
+}
+.inner-main{
+    height: 100%;
+}
+
 /*My Own styles*/
 .mypd{
     padding: 0.3em;
@@ -109,6 +116,10 @@ main {
     .itemDescription{
         height: 50%;
         font-size: 10px;
+    }
+
+    .carousel-dark{
+        height: 30vh!important;
     }
 }
 @media screen and (min-width: 640px) and (max-width: 1280px){

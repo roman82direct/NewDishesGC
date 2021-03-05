@@ -12,13 +12,13 @@
                 <div class="categoryItem">
                     <h2 class="itemHeader">{{ $item->name }}</h2>
                     <div id="carouselExampleIndicators_{{ $item->id }}" class="carousel slide" data-bs-ride="carousel">
+                        @php($img = (new \App\Models\Category())->getRandomImg($item->id, 3))
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleIndicators_{{ $item->id }}" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                             <button type="button" data-bs-target="#carouselExampleIndicators_{{ $item->id }}" data-bs-slide-to="1" aria-label="Slide 2"></button>
                             <button type="button" data-bs-target="#carouselExampleIndicators_{{ $item->id }}" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         </div>
                         <div class="carousel-inner">
-                            @php($img = (new \App\Models\Category())->getRandomImg($item->id))
                             <div class="carousel-item active">
                                 <img src="{{ $img[0] }}" class="d-block w-100" alt="...">
                             </div>

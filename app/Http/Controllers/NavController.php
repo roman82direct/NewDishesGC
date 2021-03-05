@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class NavController extends Controller
 {
-    public function index(Request $request){
+    public function index(){
         $categories = Category::all();
         return view('menu.catalog', ['categories' => $categories]);
     }

@@ -48,12 +48,13 @@ class Category extends Model
      * и формируем массив из ссылок на фото
      *
      * @param $id
+     * @param $n - количество картинок в карусели
      * @return \Illuminate\Support\Collection
      */
-    public function getRandomImg($id){
+    public function getRandomImg($id, $n){
         return Good::whereCategoryId($id)
             ->get()
-            ->random(3)
+            ->random($n)
             ->pluck('img');
     }
 
@@ -66,6 +67,7 @@ class Category extends Model
      */
     public function fillFromXLS($file)
     {
+        Category::truncate();
         return (new FastExcel)->import($file, function ($line) {
             $exists = Category::query()
                 ->where('name', $line['category'])
