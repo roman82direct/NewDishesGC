@@ -15,19 +15,19 @@
                         @php($img = (new \App\Models\Category())->getRandomImg($item->id, 3))
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleIndicators_{{ $item->id }}" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators_{{ $item->id }}" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators_{{ $item->id }}" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            @for($i = 1; $i < count($img); $i++)
+                            <button type="button" data-bs-target="#carouselExampleIndicators_{{ $item->id }}" data-bs-slide-to="{{$i}}" aria-label="Slide 2"></button>
+                            @endfor
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img src="{{ $img[0] }}" class="d-block w-100" alt="...">
                             </div>
+                            @for($i = 1; $i < count($img); $i++)
                             <div class="carousel-item">
-                                <img src="{{ $img[1] }}" class="d-block w-100" alt="...">
+                                <img src="{{ $img[$i] }}" class="d-block w-100" alt="...">
                             </div>
-                            <div class="carousel-item">
-                                <img src="{{ $img[2] }}" class="d-block w-100" alt="...">
-                            </div>
+                            @endfor
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators_{{ $item->id }}"  data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
