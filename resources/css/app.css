@@ -109,8 +109,8 @@ main {
 /*Стили слайдера на главной*/
 
 /* Common Scroller Styles */
-.roundabout-holder 					{list-style:none; width:50%; height:800px; margin:0px auto;}
-.roundabout-moveable-item 			{font-size:12px!important; height:800px; width:1200px; cursor:pointer; padding:5px; border:1px solid #aaaaaa; -webkit-border-radius:5px; -moz-border-radius:5px; background:#f9f9f9;}
+.roundabout-holder 					{list-style:none; width:45%; height:800px; margin:0px auto;}
+.roundabout-moveable-item 			{font-size:12px!important; height:667px; width:1000px; cursor:pointer; padding:5px; border:1px solid #aaaaaa; -webkit-border-radius:5px; -moz-border-radius:5px; background:#f9f9f9;}
 .roundabout-moveable-item img 		{height:100%; width:100%; background-color:#FFFFFF; margin:0;}
 .roundabout-in-focus 				{cursor:auto;}
 .roundabout-in-focus:hover			{-webkit-box-shadow:0px 0px 20px #787878; -moz-box-shadow:0px 0px 20px #787878; background:#f9f9f9;}
@@ -122,31 +122,43 @@ main {
 .roundabou li 						{margin:0}
 a img								{border:none; outline:0;}
 
-#featured			{margin:10px 0 40px 0;}
+#featured			{margin:10px 0 40px 0; width: 100%}
 
 /*Media*/
 @media screen and (max-width: 640px){
+    /* Common Scroller Styles */
+    .roundabout-moveable-item 			{font-size:12px!important; height:133px; width:200px; cursor:pointer; padding:5px; border:1px solid #aaaaaa; -webkit-border-radius:5px; -moz-border-radius:5px; background:#f9f9f9;}
+    .roundabout-holder 					{list-style:none; width:60%; height:200px; margin:0px auto;}
     .categoryCard{
-        grid-template-columns: repeat(1, 1fr);
-    }
+    grid-template-columns: repeat(1, 1fr);
+}
     .itemDescription{
-        height: 50%;
-        font-size: 10px;
-    }
+    height: 50%;
+    font-size: 10px;
+}
 
     .carousel-dark{
-        height: 30vh!important;
-    }
+    height: 30vh!important;
 }
-@media screen and (min-width: 640px) and (max-width: 1280px){
+
+}
+@media screen and (min-width: 640px) and (max-width: 1200px){
+    .roundabout-holder 					{list-style:none; width:40%; height:360px; margin:0px auto;}
+    .roundabout-moveable-item 			{font-size:12px!important; height:266px; width:400px; cursor:pointer; padding:5px; border:1px solid #aaaaaa; -webkit-border-radius:5px; -moz-border-radius:5px; background:#f9f9f9;}
+
     .categoryCard{
-        grid-template-columns: repeat(2, 1fr);
-    }
+    grid-template-columns: repeat(2, 1fr);
+}
     .itemDescription{
-        height: 50%;
-        font-size: 12px;
-    }
+    height: 50%;
+    font-size: 12px;
+}
     .carousel{
-        width: 100%;
-    }
+    width: 100%;
+}
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+    .roundabout-holder 					{list-style:none; width:50%; height:640px; margin:0px auto;}
+    .roundabout-moveable-item 			{font-size:12px!important; height:426px; width:640px; cursor:pointer; padding:5px; border:1px solid #aaaaaa; -webkit-border-radius:5px; -moz-border-radius:5px; background:#f9f9f9;}
 }
