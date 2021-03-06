@@ -18,32 +18,34 @@
         <div id="featured">
             <ul>
                 <li>
-                    <a href="#">
-                        <span>Read about this project</span>
+                    <h1>Добро пожаловать на сайт товарного направления "Посуда и Текстиль"</h1>
+                    <h2>Мы рады рассказать Вам о наших новинках на сезон 2021 - 2022</h2>
+                    <a href="{{ route('nav::goods', ['id' => 4]) }}">
+                        <span>Керамика</span>
                         <img src="storage/img/good/824-443.jpg" alt="" />
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <span>Read about this project</span>
+                    <a href="{{ route('nav::goods', ['id' => 3]) }}">
+                        <span>Поуда для приготовления</span>
                         <img src="storage/img/good/846-560.jpg" alt="" />
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <span>Read about this project</span>
-                        <img src="images/600x300.gif" alt="" />
+                    <a href="{{ route('nav::goods', ['id' => 2]) }}">
+                        <span>Текстиль</span>
+                        <img src="storage/img/good/434-081.jpg" alt="" />
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <span>Read about this project</span>
-                        <img src="storage/img/good/824-443.jpg" alt="" />
+                    <a href="{{ route('nav::goods', ['id' => 4]) }}">
+                        <span>Керамика</span>
+                        <img src="storage/img/good/824-419.jpg" alt="" />
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <span>Read about this project</span>
+                    <a href="{{ route('nav::goods', ['id' => 3]) }}">
+                        <span>Посуда для приготовления</span>
                         <img src="storage/img/good/822-199.jpg" alt="" />
                     </a>
                 </li>

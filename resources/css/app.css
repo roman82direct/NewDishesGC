@@ -116,6 +116,9 @@ main {
 .roundabout-in-focus:hover			{-webkit-box-shadow:0px 0px 20px #787878; -moz-box-shadow:0px 0px 20px #787878; background:#f9f9f9;}
 .roundabout-holder span				{display:none; font-size:12px;}
 .roundabout-in-focus:hover span		{display:inline; position:absolute; bottom:5px; right:5px; padding:8px 20px; background:#f9f9f9; color:#000000; z-index:999; -webkit-border-top-left-radius: 5px; -moz-border-radius-topLeft: 5px; font-size : 12px;border-left:1px solid #aaaaaa; border-top:1px solid #aaaaaa; }
+.roundabout h1                      {margin: 0 0 10px 0; font-size: 64px; font-weight: 700; line-height: 56px; text-transform: uppercase; color: #867777; text-shadow: -1px 0 2px #2f4d5a;}
+
+.roundabout h2                      {  color: #dd9e9e; margin-bottom: 50px; font-size: 20px; text-transform: uppercase; font-weight: 700; text-shadow: -1px 0 2px #2f4d5a;}
 .roundabout a:active,
 .roundabout a:focus,
 .roundabout a:visited				{outline:none; text-decoration:none;}
