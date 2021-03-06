@@ -9,6 +9,60 @@ main {
     min-height: calc(85vh - 70px);
 }
 
+/*Стили главной*/
+.hero-container {
+    position: absolute;
+    bottom: 30%;
+    top: 20%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.hero-container  h1 {
+    margin: 0 0 20px 0;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 64px;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: -1px 0 2px #2f4d5a;
+}
+
+.hero-container  h2 {
+    color: #fff;
+    margin-bottom: 50px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-shadow: -1px 0 2px #2f4d5a;
+}
+
+.btn-get-started {
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 0;
+    border-radius: 50px;
+    transition: 0.5s ease-in-out;
+    margin: 10px;
+    width: 64px;
+    height: 64px;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.hero-container  .btn-get-started:hover {
+    padding-top: 8px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+
 /*Change Bootstrap Styles*/
 .breadcrumb{
     margin-bottom: 0!important;
@@ -110,15 +164,12 @@ main {
 
 /* Common Scroller Styles */
 .roundabout-holder 					{list-style:none; width:45%; height:800px; margin:0px auto;}
-.roundabout-moveable-item 			{font-size:12px!important; height:667px; width:1000px; cursor:pointer; padding:5px; border:1px solid #aaaaaa; -webkit-border-radius:5px; -moz-border-radius:5px; background:#f9f9f9;}
+.roundabout-moveable-item 			{font-size:12px!important; height:667px; width:1000px; cursor:pointer; border:1px solid #f1f1f1; -webkit-border-radius:5px; -moz-border-radius:5px; background:#f9f9f9;}
 .roundabout-moveable-item img 		{height:100%; width:100%; background-color:#FFFFFF; margin:0;}
 .roundabout-in-focus 				{cursor:auto;}
 .roundabout-in-focus:hover			{-webkit-box-shadow:0px 0px 20px #787878; -moz-box-shadow:0px 0px 20px #787878; background:#f9f9f9;}
 .roundabout-holder span				{display:none; font-size:12px;}
 .roundabout-in-focus:hover span		{display:inline; position:absolute; bottom:5px; right:5px; padding:8px 20px; background:#f9f9f9; color:#000000; z-index:999; -webkit-border-top-left-radius: 5px; -moz-border-radius-topLeft: 5px; font-size : 12px;border-left:1px solid #aaaaaa; border-top:1px solid #aaaaaa; }
-.roundabout h1                      {margin: 0 0 10px 0; font-size: 64px; font-weight: 700; line-height: 56px; text-transform: uppercase; color: #867777; text-shadow: -1px 0 2px #2f4d5a;}
-
-.roundabout h2                      {  color: #dd9e9e; margin-bottom: 50px; font-size: 20px; text-transform: uppercase; font-weight: 700; text-shadow: -1px 0 2px #2f4d5a;}
 .roundabout a:active,
 .roundabout a:focus,
 .roundabout a:visited				{outline:none; text-decoration:none;}
@@ -130,8 +181,9 @@ a img								{border:none; outline:0;}
 /*Media*/
 @media screen and (max-width: 640px){
     /* Common Scroller Styles */
-    .roundabout-moveable-item 			{font-size:12px!important; height:133px; width:200px; cursor:pointer; padding:5px; border:1px solid #aaaaaa; -webkit-border-radius:5px; -moz-border-radius:5px; background:#f9f9f9;}
-    .roundabout-holder 					{list-style:none; width:60%; height:200px; margin:0px auto;}
+    .roundabout-moveable-item 			{height:133px; width:200px;}
+    .roundabout-holder 					{width:60%; height:200px;}
+
     .categoryCard{
     grid-template-columns: repeat(1, 1fr);
 }
@@ -143,11 +195,23 @@ a img								{border:none; outline:0;}
     .carousel-dark{
     height: 30vh!important;
 }
+    .hero-container h1,
+    .hero-container h2{
+        display: none;
+    }
+    .btn-get-started{
+        width: 30px;
+        height: 30px;
+    }
 
+    .btn-get-started svg{
+        width: 16px;
+        height: 16px;
+    }
 }
 @media screen and (min-width: 640px) and (max-width: 1200px){
-    .roundabout-holder 					{list-style:none; width:40%; height:360px; margin:0px auto;}
-    .roundabout-moveable-item 			{font-size:12px!important; height:266px; width:400px; cursor:pointer; padding:5px; border:1px solid #aaaaaa; -webkit-border-radius:5px; -moz-border-radius:5px; background:#f9f9f9;}
+    .roundabout-holder 					{width:40%; height:360px; margin:0px auto;}
+    .roundabout-moveable-item 			{height:266px; width:400px;}
 
     .categoryCard{
     grid-template-columns: repeat(2, 1fr);
@@ -159,9 +223,41 @@ a img								{border:none; outline:0;}
     .carousel{
     width: 100%;
 }
+    .hero-container{
+        bottom: 15%;
+        top: 15%;
+    }
+    .hero-container h1 {
+        font-size: 22px;
+        line-height: 24px;
+    }
+    .hero-container h2 {
+        font-size: 12px;
+        line-height: 14px;
+        margin-bottom: 15px;
+    }
+    .btn-get-started{
+        width: 48px;
+        height: 48px;
+    }
+    .btn-get-started svg{
+        width: 24px;
+        height: 24px;
+    }
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1400px) {
-    .roundabout-holder 					{list-style:none; width:50%; height:640px; margin:0px auto;}
-    .roundabout-moveable-item 			{font-size:12px!important; height:426px; width:640px; cursor:pointer; padding:5px; border:1px solid #aaaaaa; -webkit-border-radius:5px; -moz-border-radius:5px; background:#f9f9f9;}
+    .roundabout-holder 					{width:50%; height:640px;}
+    .roundabout-moveable-item 			{height:426px; width:640px;}
+
+    .hero-container h1 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+    .hero-container h2 {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 30px;
+    }
+
 }
