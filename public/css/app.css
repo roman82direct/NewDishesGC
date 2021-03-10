@@ -31616,7 +31616,8 @@ a img								{
   margin-bottom: 0;
 }
 
-.services .icon-box:hover .title a, .services .icon-box:hover .description {
+.services .icon-box:hover .title a,
+.services .icon-box:hover .description {
   color: #fff;
 }
 
@@ -31665,7 +31666,7 @@ a img								{
 }
 
 .footer {
-  height: 70px;
+  height: 80px;
 }
 
 .footer img{
@@ -31674,14 +31675,27 @@ a img								{
 
 .gc-link{
   display: flex;
+}
+
+.gc-link svg{
+  fill: #164194;
+  width: 130px;
   transition: 200ms;
   transition-timing-function: ease-in-out;
 }
 
-.gc-link:hover {
+.gc-link:hover .gc-svg{
+  fill: #6cb2eb;
   transition: 200ms;
   transition-timing-function: ease-in-out;
-  transform: scale(1.05);
+  transform: scale(1.02) rotate(2deg);
+}
+
+.gc-link:active .gc-svg{
+  fill: #164194;
+  transition: 200ms;
+  transition-timing-function: ease-in-out;
+  transform: scale(1.00) rotate(0deg);
 }
 
 /*Change Bootstrap Styles*/
