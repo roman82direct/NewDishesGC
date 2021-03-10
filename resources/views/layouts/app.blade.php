@@ -49,11 +49,13 @@
 
              <!-- Page Footer -->
             <footer class="bg-white shadow footer">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-around align-middle">
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
-                    </a> - today
-                    {{ date("d M Y H:i:s") }}
+                    </a>
+                    <a href="https://www.galacentre.ru/" target="_blank" class="gc-link">
+                        <img src="storage/img/svg/logo_gala.svg" alt="">
+                    </a>
                 </div>
             </footer>
         </div>
