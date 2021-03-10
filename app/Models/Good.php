@@ -65,6 +65,8 @@ class Good extends Model
 
     /**
      * TODO реализовать приведение пустых ячеек в столбце 'arrival' к формату DATETIME
+     *
+     * Парсится только .xlsx!!!
      * @param $file
      * @return \Illuminate\Support\Collection
      * @throws \Box\Spout\Common\Exception\IOException

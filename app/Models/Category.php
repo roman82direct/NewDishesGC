@@ -59,7 +59,8 @@ class Category extends Model
     }
 
     /**
-     * @param $file
+     * Парсится только .xlsx!!!
+     * @param $file -
      * @return \Illuminate\Support\Collection
      * @throws \Box\Spout\Common\Exception\IOException
      * @throws \Box\Spout\Common\Exception\UnsupportedTypeException

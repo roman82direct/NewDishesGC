@@ -51,7 +51,7 @@
             <footer class="bg-white shadow footer">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-around align-middle">
                     <a style="display: flex" class="navbar-brand" href="{{ url('/') }}">
-                        <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />{{ config('app.name', 'Laravel') }}
+                        <x-application-logo class="block h-10 w-auto fill-current text-gray-600" /> &copy {{ config('app.name', 'Laravel') }}
                     </a>
                     <a href="https://www.galacentre.ru/" target="_blank" class="gc-link">
                         <svg class="gc-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 555 92.7">

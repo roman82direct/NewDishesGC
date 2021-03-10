@@ -60,6 +60,7 @@
             </ul>
         </div>
 
+    <div class="py-12" style="background-image: url(../storage/img/about-bg.jpg)">
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
         <div class="container">
@@ -106,10 +107,11 @@
 
         </div>
     </section><!-- End Services Section -->
+    </div>
 
     <div class="py-12">
         <!-- ======= Cta Section ======= -->
-        <section id="cta" class="cta">
+        <section id="cta" class="cta" style="background-image: url(../storage/img/cta-bg.jpg)">
             <div class="container" data-aos="zoom-in">
 
                 <div class="text-center">
