@@ -31794,6 +31794,17 @@ a img								{
   height: 27vh;
 }
 
+/*Admin Cards Styles*/
+
+.grid-4{
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  align-self: center;
+  grid-gap: 1em;
+}
+
 /*Media*/
 
 @media screen and (max-width: 640px){
@@ -31808,6 +31819,10 @@ a img								{
   }
 
   .categoryCard{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .grid-5{
     grid-template-columns: repeat(1, 1fr);
   }
 
@@ -31846,6 +31861,10 @@ a img								{
   }
 
   .categoryCard{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-5{
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -31892,6 +31911,10 @@ a img								{
 
   .roundabout-moveable-item 			{
     height:426px; width:640px;
+  }
+
+  .grid-5{
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .hero-container h1 {
