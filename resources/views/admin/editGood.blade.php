@@ -68,13 +68,26 @@
                         {{--                        <div class="alert alert-danger">{{ $message }}</div>--}}
                         @enderror
                     </div>
-                    <div class="form-group">
-                        <label for="file">
-                            Загружен файл: <img class="" style="width: 30px" src="../../../{{$good->img}}" alt="">
-                        </label>
-                        <input type="file" name="file" class="form-control-file" id="file" accept="image/jpeg, image/png">
+                    <div class="flex justify-around">
+                        <div class="form-group flex">
+                            <label for="file">
+                                <img class="" style="width: 50px" src="../../../{{$good->img}}" alt="">
+                            </label>
+                            <input type="file" name="file" class="form-control-file" id="file" accept="image/jpeg, image/png">
+                        </div>
+                        <div class="form-group flex">
+                            <label for="file1">
+                                <img class="" style="width: 50px" src="../../../{{$good->img1}}" alt="">
+                            </label>
+                            <input type="file" name="file1" class="form-control-file" id="file1" accept="image/jpeg, image/png">
+                        </div>
+                        <div class="form-group flex">
+                            <label for="file2">
+                                <img class="" style="width: 50px" src="../../../{{$good->img2}}" alt="">
+                            </label>
+                            <input type="file" name="file2" class="form-control-file" id="file2" accept="image/jpeg, image/png">
+                        </div>
                     </div>
-
                     <button type="submit" class="btn btn-primary">{{ __('buttons.save') }}</button>
                 </form>
 

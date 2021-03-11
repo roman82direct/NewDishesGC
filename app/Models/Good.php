@@ -85,9 +85,9 @@ class Good extends Model
                 'collection' => $line['collection'],
                 'category_id' => Category::where('name', $line['category'])->value('id'),
                 'arrival' => $line['arrival'],
-                'img' => 'storage/img/good/'.$line['art'].'.jpg',
-                'img1' => 'storage/img/good/'.$line['art'].'_1.jpg',
-                'img2' => 'storage/img/good/'.$line['art'].'_2.jpg',
+                'img' => '/storage/img/good/'.$line['art'].'.jpg',
+                'img1' => '/storage/img/good/'.$line['art'].'_1.jpg',
+                'img2' => '/storage/img/good/'.$line['art'].'_2.jpg',
             ]);
         });
     }
