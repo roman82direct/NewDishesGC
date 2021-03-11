@@ -27,8 +27,8 @@
                                 <h4 class="card-title">{{ $item->art }}</h4>
                                 <h5 class="card-title">{{ $item->name }}</h5>
                                 <p class="card-text">{{ (\App\Models\Category::find($item->category_id)->name) }}</p>
-                                <a href="#" class="btn btn-primary">{{ __('buttons.update') }}</a>
-                                <a href="#" class="btn btn-danger">{{ __('buttons.delete') }}</a>
+                                <a href="{{ route('admin::good::update', ['id'=>$item->id]) }}" class="btn btn-outline-primary">{{ __('buttons.update') }}</a>
+                                <a href="{{ route('admin::good::delete', ['id'=>$item->id]) }}" class="btn btn-outline-danger">{{ __('buttons.delete') }}</a>
                             </div>
                         </div>
                     @empty

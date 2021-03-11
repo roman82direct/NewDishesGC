@@ -84,8 +84,15 @@ Route::group([
     Route::get('/update/{id}', [AdminController::class, 'updateGood'])
         ->name('update');
 
+    Route::post('/save', [AdminController::class, 'saveGood'])
+        ->name('save')
+        ->middleware(\App\Http\Middleware\SaveGood::class);
+
     Route::get('/delete/{id}', 'AdminController@deleteGood')
         ->name('delete');
+
+    Route::get('/deleteall', 'AdminController@deleteAll')
+        ->name('deleteAll');
 });
 
 Route::group([
