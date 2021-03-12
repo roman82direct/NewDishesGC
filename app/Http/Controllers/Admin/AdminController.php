@@ -31,6 +31,11 @@ class AdminController extends Controller
         return view('admin.editGood', ['good' => Good::find($id), 'categories' => Category::all()]);
     }
 
+    /**
+     * using middleware SaveGood
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Contracts\Container\BindingResolutionException
+     */
     public function saveGood(){
         $message = app()->make('message');
         if ($message == 'Данные сохранены'){
@@ -51,6 +56,7 @@ class AdminController extends Controller
     }
 
     /**
+     * using middleware FileUpload
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Box\Spout\Common\Exception\IOException
