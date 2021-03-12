@@ -31802,6 +31802,7 @@ a img								{
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
   align-self: center;
+  justify-items: center;
   grid-gap: 1em;
 }
 
@@ -31822,7 +31823,7 @@ a img								{
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .grid-5{
+  .grid-4{
     grid-template-columns: repeat(1, 1fr);
   }
 
@@ -31864,7 +31865,7 @@ a img								{
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .grid-5{
+  .grid-4{
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -31913,7 +31914,7 @@ a img								{
     height:426px; width:640px;
   }
 
-  .grid-5{
+  .grid-4{
     grid-template-columns: repeat(3, 1fr);
   }
 

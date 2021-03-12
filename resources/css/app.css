@@ -320,6 +320,7 @@ a img								{border:none; outline:0;}
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
     align-self: center;
+    justify-items: center;
     grid-gap: 1em;
 }
 
