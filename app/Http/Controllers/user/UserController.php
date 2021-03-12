@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
+use App\Models\Good;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class UserController extends Controller
     }
 
     public function downloadExcel(){
-        $users = User::all();
-        return (new \Rap2hpoutre\FastExcel\FastExcel($users))->download('users.xlsx');
+//        $users = User::all();
+        $goods = Good::all();
+        return (new \Rap2hpoutre\FastExcel\FastExcel($goods))->download('goods.xlsx');
     }
 }
