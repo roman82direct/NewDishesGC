@@ -9,7 +9,7 @@
             </nav>
         </h2>
     @include('layouts.adminNav')
-
+        @if($goods->total() > 0)
         <ul class="nav justify-content-end">
             <li class="nav-item">
                 <a class="nav-link btn btn-outline-primary btn-sm" aria-current="page" href="{{ route('admin::good::create') }}">Добавить товар</a>
@@ -18,6 +18,7 @@
                 <a class="nav-link btn btn-outline-danger btn-sm ml-1" href="{{ route('admin::good::deleteAll') }}">Удалить все товары</a>
             </li>
         </ul>
+        @endif
     </x-slot>
 
     @if (session('success'))

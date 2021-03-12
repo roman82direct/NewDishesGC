@@ -25,15 +25,15 @@
                     <input type="hidden" name="id" value="{{$good->id ?? ''}}">
                     <div class="row">
                         <div class="col-md-2 mb-3">
-                            <label class="form-label" for="art">Артикул</label>
-                            <input type="text" class="form-control" name="art" value="{{$good->art ?? old('art')}}">
+                            <label class="form-label font-medium text-sm text-gray-700" for="art">Артикул</label>
+                            <input type="text" class="form-control rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="art" value="{{$good->art ?? old('art')}}">
                             @error('art')
                             {{--                        <div class="alert alert-danger">{{ $message }}</div>--}}
                             @enderror
                         </div>
                         <div class="col-md-10 mb-3">
-                            <label class="form-label" for="name">Наименование</label>
-                            <input type="text" class="form-control" name="name" value="{{$good->name ?? old('name')}}">
+                            <label class="form-label font-medium text-sm text-gray-700" for="name">Наименование</label>
+                            <input type="text" class="form-control rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="name" value="{{$good->name ?? old('name')}}">
                             @error('name')
                             {{--                        <div class="alert alert-danger">{{ $message }}</div>--}}
                             @enderror
@@ -41,8 +41,8 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label class="form-label" for="category">Выберите категорию товаров</label>
-                            <select class="form-select" name="category" aria-label="category">
+                            <label class="form-label font-medium text-sm text-gray-700" for="category">Выберите категорию товаров</label>
+                            <select class="form-select rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="category" aria-label="category">
                                 <option selected>{{\App\Models\Category::find($good->category_id)->name ?? 'Нажмите для выбора'}}</option>
                                 @foreach($categories as $category)
                                     <option> {{$category->name}} </option>
@@ -50,24 +50,24 @@
                             </select>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label class="form-label" for="brand">Бренд</label>
-                            <input type="text" class="form-control" name="brand" value="{{$good->brand ?? ''}}" placeholder="">
+                            <label class="form-label font-medium text-sm text-gray-700" for="brand">Бренд</label>
+                            <input type="text" class="form-control rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="brand" value="{{$good->brand ?? ''}}" placeholder="">
                         </div>
                         <div class="col-md-2 mb-3">
-                            <label class="form-label" for="collection">Коллекция</label>
-                            <input type="text" class="form-control" name="collection" value="{{$good->collection ?? ''}}" placeholder="">
+                            <label class="form-label font-medium text-sm text-gray-700" for="collection">Коллекция</label>
+                            <input type="text" class="form-control rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="collection" value="{{$good->collection ?? ''}}" placeholder="">
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label" for="text">Описание</label>
-                        <textarea class="form-control" name="text" id="" rows="5">{{$good->description ?? ''}}</textarea>
+                        <label class="form-label font-medium text-sm text-gray-700" for="text">Описание</label>
+                        <textarea class="form-control rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="text" id="" rows="5">{{$good->description ?? ''}}</textarea>
                         @error('text')
 {{--                        <div class="alert alert-danger">{{ $message }}</div>--}}
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label class="form-label" for="arrival">Дата прихода</label>
-                        <input type="date" class="form-control" name="arrival" value="{{$good->arrival ?? ''}}" placeholder="">
+                        <label class="form-label font-medium text-sm text-gray-700" for="arrival">Дата прихода</label>
+                        <input type="date" class="form-control rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="arrival" value="{{$good->arrival ?? ''}}" placeholder="">
                         @error('arrival')
                         {{--                        <div class="alert alert-danger">{{ $message }}</div>--}}
                         @enderror
