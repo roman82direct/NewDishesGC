@@ -81,10 +81,13 @@ Route::group([
     'middleware' => ['auth', 'checkrole:admin']
 
 ], function () {
+    Route::match(['GET', 'POST'], '/createGood', [AdminController::class, 'createGood'])
+        ->name('create');
+
     Route::get('/update/{id}', [AdminController::class, 'updateGood'])
         ->name('update');
 
-    Route::post('/save', [AdminController::class, 'saveGood'])
+    Route::match(['get', 'post'], '/save', [AdminController::class, 'saveGood'])
         ->name('save')
         ->middleware(\App\Http\Middleware\SaveGood::class);
 

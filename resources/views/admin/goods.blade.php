@@ -9,6 +9,15 @@
             </nav>
         </h2>
     @include('layouts.adminNav')
+
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link btn btn-outline-primary btn-sm" aria-current="page" href="{{ route('admin::good::create') }}">Добавить товар</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn btn-outline-danger btn-sm ml-1" href="{{ route('admin::good::deleteAll') }}">Удалить все товары</a>
+            </li>
+        </ul>
     </x-slot>
 
     @if (session('success'))
@@ -32,7 +41,16 @@
                             </div>
                         </div>
                     @empty
-                        Товаров нет!
+                        <div>
+                            <h3>В каталоге нет товаров. Выберите файл .xlsx для загрузки.</h3>
+                            <form method="POST" enctype="multipart/form-data" action="{{ route('admin::upload') }}">
+                                @csrf
+                                <div class="flex items-center justify-start">
+                                    <input type="file" name="file" id="file" accept=" application/vnd.ms-excel,  application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+                                    <button class="btn btn-sm btn-outline-dark" type="submit">{{ __('buttons.upload') }}</button>
+                                </div>
+                            </form>
+                        </div>
                     @endforelse
                 </div>
             {{ $goods->links('vendor.pagination.tailwind') }}
