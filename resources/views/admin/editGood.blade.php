@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <h2 class="font-semibold text-lg text-gray-800 leading-tight">
+            <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('admin::panel') }}">{{__('menu.admin')}}</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('admin::goods') }}">{{__('menu.goods')}}</a></li>

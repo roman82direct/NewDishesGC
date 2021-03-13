@@ -1,22 +1,22 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <h2 class="font-semibold text-lg text-gray-800 leading-tight">
+            <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('nav::catalog') }}">{{__('menu.catalog') }}</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('nav::goods', ['id' => $item->category_id]) }}">
+                    <li class="breadcrumb-item text-sm"><a href="{{ route('nav::catalog') }}">{{__('menu.catalog') }}</a></li>
+                    <li class="breadcrumb-item text-sm"><a href="{{ route('nav::goods', ['id' => $item->category_id]) }}">
                             {{\App\Models\Category::find($item->category_id)->name }}</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">{{ $item->art }}</li>
+                    <li class="breadcrumb-item active text-sm" aria-current="page">{{ $item->art }}</li>
                 </ol>
             </nav>
 
         </h2>
     </x-slot>
 
-    <div class="py-8">
+    <div class="py-12">
     <section id="portfolio-details" class="portfolio-details bg-white shadow-sm max-w-7xl mx-auto sm:rounded-lg">
         <div class="container">
-            <div class="row gy-4">
+            <div class="row gy-3">
                 <div class="col-lg-8">
                     <div class="portfolio-details-slider swiper-container">
                         <div class="swiper-wrapper align-items-center">
@@ -35,9 +35,14 @@
                         <div class="swiper-button-next"></div>
                         <!-- If we need scrollbar -->
                         {{--                        <div class="swiper-scrollbar"></div>--}}
+                        <div class="item-card-links flex justify-between items-center p-1">
+                            <a class="item-card-link" href="" title="Нравится">@include('components.mysvg.like')</a>
+                            <a class="item-card-link" href="" title="Комментировать">@include('components.mysvg.comment')</a>
+                            <a class="item-card-link" href="" title="Поделиться">@include('components.mysvg.share')</a>
+                            <a class="item-card-link" href="" title="В избранные">@include('components.mysvg.favorites')</a>
+                        </div>
                     </div>
                 </div>
-
                 <div class="col-lg-4">
                     <div class="portfolio-info">
                         <h3>Информация</h3>
