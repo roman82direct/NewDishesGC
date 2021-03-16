@@ -12,7 +12,6 @@
 
         </h2>
     </x-slot>
-
     <div class="py-12">
     <section id="portfolio-details" class="portfolio-details bg-white shadow-sm max-w-7xl mx-auto sm:rounded-lg">
         <div class="container">
@@ -36,7 +35,7 @@
                         <!-- If we need scrollbar -->
                         {{--                        <div class="swiper-scrollbar"></div>--}}
                         <div class="item-card-links flex justify-between items-center p-1">
-                            <a class="item-card-link" href="" title="Нравится">@include('components.mysvg.like')</a>
+                            <a class="item-card-link" href="{{ route('user::like', ['id'=>$item->id]) }}" title="Нравится">@include('components.mysvg.like')</a>
                             <a class="item-card-link" href="" title="Комментировать">@include('components.mysvg.comment')</a>
                             <a class="item-card-link" href="" title="Поделиться">@include('components.mysvg.share')</a>
                             <a class="item-card-link" href="" title="В избранные">@include('components.mysvg.favorites')</a>

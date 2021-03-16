@@ -5,7 +5,6 @@
 @import "aos/dist/aos.css";
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css");
 
-
 /*My Own styles*/
 .mypd{
     padding: 0.3em;
@@ -13,7 +12,6 @@
 .mymrgleft{
     margin-left: 0.3em;
 }
-
 .vh70{
     height: 70vh!important;
 }

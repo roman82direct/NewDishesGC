@@ -1,4 +1,6 @@
-<svg class="soc-svg" xmlns="http://www.w3.org/2000/svg"
+<svg
+    @if($is_like) style="fill: red" @endif
+     class="soc-svg" xmlns="http://www.w3.org/2000/svg"
      width="21px" height="21px" viewBox="0 0 612 612">
 			<path d="M449.438,38.25c-62.137,0-116.069,34.884-143.438,86.101C278.632,73.134,224.7,38.25,162.562,38.25
 				C72.79,38.25,0,111.04,0,200.812c0,27.521,6.904,53.397,18.972,76.118c0.459,3.442,5.011,10.404,12.794,20.119

@@ -57,6 +57,9 @@ Route::group([
 
     Route::get('/download', [UserController::class, 'downloadExcel'])
         ->name('download');
+
+    Route::get('/like{id}', [UserController::class, 'createLike'])
+        ->name('like');
 });
 
 // Действия Admin
