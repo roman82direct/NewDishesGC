@@ -2,6 +2,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import 'swiper/swiper-bundle.css';
+@import "aos/dist/aos.css";
 
 
 /*My Own styles*/
@@ -94,6 +95,9 @@ a img								{border:none; outline:0;}
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
+.services {
+background: url("/storage/img/cta-bg.jpg") fixed center center;
+}
 .services .icon-box {
     padding: 30px;
     position: relative;
@@ -163,8 +167,7 @@ a img								{border:none; outline:0;}
 # Cta
 --------------------------------------------------------------*/
 .cta {
-    background: linear-gradient(rgba(103, 176, 209, 0.8), rgba(103, 176, 209, 0.8)), fixed center center;
-    /*background-image: url("../storage/img/cta-bg.jpg");*/
+    background: linear-gradient(rgba(103, 176, 209, 0.8), rgba(103, 176, 209, 0.8)), url("/storage/img/cta-bg.jpg") fixed center center;
     background-size: cover;
     padding: 60px 0;
 }

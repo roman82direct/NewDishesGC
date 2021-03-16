@@ -21,6 +21,7 @@
         "tailwindcss": "^2.0.2"
     },
     "dependencies": {
+        "aos": "^2.3.4",
         "bootstrap-icons": "^1.4.0",
         "swiper": "^6.5.0"
     }

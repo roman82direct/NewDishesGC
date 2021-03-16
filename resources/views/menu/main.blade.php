@@ -5,15 +5,6 @@
         </h2>
     </x-slot>
 
-{{--    <div class="py-12">--}}
-{{--        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">--}}
-{{--            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">--}}
-{{--                <div class="p-6 bg-white border-b border-gray-200">--}}
-{{--                    You're logged in!--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--   </div>--}}
-
         <!-- Featured Image Slider -->
         <div id="featured">
             <ul>
@@ -60,9 +51,9 @@
             </ul>
         </div>
 
-    <div class="py-12" style="background-image: url(../storage/img/about-bg.jpg)">
+    <div class="py-12">
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
+    <section id="services" class="services p-20">
         <div class="container">
 
             <div class="section-title" data-aos="fade-in" data-aos-delay="100">
@@ -111,9 +102,8 @@
 
     <div class="py-12">
         <!-- ======= Cta Section ======= -->
-        <section id="cta" class="cta" style="background-image: url(../storage/img/cta-bg.jpg)">
+        <section id="cta" class="cta">
             <div class="container" data-aos="zoom-in">
-
                 <div class="text-center">
                     <h3>Call To Action</h3>
                     <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>

@@ -22,6 +22,7 @@
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
         <script type="text/javascript" src="{{ asset('js/jquery.roundabout-1.0.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
+        <script type="text/javascript" src="js/aos.js"></script>
         <script type="text/javascript">
             $(document).ready(function() { //Start up our Featured Project Carosuel
                 $('#featured ul').roundabout({

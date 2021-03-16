@@ -2,6 +2,8 @@ require('./bootstrap');
 
 require('alpinejs');
 
+require('aos');
+
 import Swiper from 'swiper/bundle';
 
 $(document).ready(function (){
@@ -27,5 +29,17 @@ $(document).ready(function (){
         scrollbar: {
             el: '.swiper-scrollbar',
         }
+    });
+});
+
+/**
+ * Animation on scroll
+ */
+window.addEventListener('load', () => {
+    AOS.init({
+        duration: 1000,
+        easing: "ease-in-out",
+        once: true,
+        mirror: false
     });
 });
