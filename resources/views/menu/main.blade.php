@@ -100,8 +100,33 @@
     </section><!-- End Services Section -->
     </div>
 
+{{--    Trade Marks Section--}}
     <div class="py-12">
-        <!-- ======= Cta Section ======= -->
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8" data-aos="zoom-in">
+{{--            <div class="bg-white shadow-sm sm:rounded-lg p-3">--}}
+                <div class="row shadow row-cols-1 row-cols-lg-5 row-cols-md-3 row-cols-sm-2 g-4 p-12">
+                    <div class="col flex justify-center items-center mb-4">
+                        <a class="tm-link" href="">@include('components.mysvg.tm_vetta')</a>
+                    </div>
+                    <div class="col flex justify-center items-center mb-4">
+                        <a class="tm-link" href="" >@include('components.mysvg.tm_satoshi')</a>
+                    </div>
+                    <div class="col flex justify-center items-center mb-4">
+                        <a class="tm-link" href="">@include('components.mysvg.tm_slavyana')</a>
+                    </div>
+                    <div class="col flex justify-center items-center mb-4">
+                        <a class="tm-link" href="">@include('components.mysvg.tm_millimi')</a>
+                    </div>
+                    <div class="col flex justify-center items-center mb-4">
+                        <a class="tm-link" href="">@include('components.mysvg.tm_provance')</a>
+                    </div>
+                </div>
+{{--            </div>--}}
+        </div>
+    </div>
+
+    <!-- ======= Cta Section ======= -->
+    <div class="py-12">
         <section id="cta" class="cta">
             <div class="container" data-aos="zoom-in">
                 <div class="text-center">

@@ -33256,6 +33256,35 @@ a img								{
 }
 
 /*--------------------------------------------------------------
+# Trademarks section
+--------------------------------------------------------------*/
+
+.tm-link{
+  display: contents;
+}
+
+.svg-vetta,
+.svg-satoshi,
+.svg-slavyana,
+.svg-millimi,
+.svg-provance
+{
+  transition: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
+.tm-link:hover .svg-vetta,
+.tm-link:hover .svg-satoshi,
+.tm-link:hover .svg-slavyana,
+.tm-link:hover .svg-millimi,
+.tm-link:hover .svg-provance
+{
+  transition: 200ms;
+  transition-timing-function: ease-in-out;
+  transform: scale(1.02) /*rotate(2deg)*/;
+}
+
+/*--------------------------------------------------------------
 # Cta
 --------------------------------------------------------------*/
 
@@ -33307,17 +33336,24 @@ a img								{
 }
 
 .gc-link svg{
-  fill: #164194;
+  fill: #2353b7;
   width: 130px;
   transition: 200ms;
   transition-timing-function: ease-in-out;
 }
 
 .gc-link:hover .gc-svg{
-  fill: #6cb2eb;
+  fill: #1f96f6;
   transition: 200ms;
   transition-timing-function: ease-in-out;
-  transform: scale(1.02) rotate(2deg);
+  transform: scale(1.02) /*rotate(2deg)*/;
+}
+
+.gc-link:hover .gc-svg .st6,
+.gc-link:hover .gc-svg .st7{
+  fill: #f18c3f;
+  transition: 200ms;
+  transition-timing-function: ease-in-out;
 }
 
 .gc-link:active .gc-svg{
@@ -33691,6 +33727,53 @@ a img								{
   align-self: center;
   justify-items: center;
   grid-gap: 1em;
+}
+
+/*SVG Trademarks styles*/
+
+.svg-vetta .st0{
+  fill: #e30613;
+}
+
+.svg-vetta .st1{
+  fill: #686b6e;
+}
+
+.svg-satoshi .st0{
+  fill: black;
+}
+
+.svg-satoshi .st1{
+  fill:#FFFFFF;
+}
+
+.svg-slavyana{
+  width: 70%;
+}
+
+.svg-slavyana .st0,
+.svg-slavyana .st1{
+  fill:#791D16;
+}
+
+.svg-millimi .st0{
+  fill:#E30613;
+}
+
+.svg-millimi .st1{
+  fill:#E30613;
+  stroke:#E30613;
+  stroke-width:1.7132;
+  stroke-miterlimit:10;
+}
+
+.svg-provance .st0{
+  fill:#1C1F2A;
+}
+
+.svg-provance .st1,
+.svg-provance .st2{
+  fill:#FFFFFF;
 }
 
 /*Media*/
