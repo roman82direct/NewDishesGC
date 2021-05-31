@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Good;
+use App\Models\Like;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class NavController extends Controller
 {
@@ -25,7 +28,8 @@ class NavController extends Controller
 
     public function showGoodItem($id){
         $item = Good::find($id);
-        return view('goodItem', ['item' => $item]);
+        $is_like = (Auth::user()) ? (new Like())->getId($id, Auth::user()->id) : null;
+        return view('goodItem', ['item' => $item, 'is_like'=>$is_like]);
     }
 
     public function showAdminPanel(){

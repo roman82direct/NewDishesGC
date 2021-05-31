@@ -1,60 +1,75 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <h2 class="font-semibold text-lg text-gray-800 leading-tight">
+            <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('nav::catalog') }}">{{__('menu.catalog') }}</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('nav::goods', ['id' => $item->category_id]) }}">
+                    <li class="breadcrumb-item text-sm"><a href="{{ route('nav::catalog') }}">{{__('menu.catalog') }}</a></li>
+                    <li class="breadcrumb-item text-sm"><a href="{{ route('nav::goods', ['id' => $item->category_id]) }}">
                             {{\App\Models\Category::find($item->category_id)->name }}</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">{{ $item->art }}</li>
+                    <li class="breadcrumb-item active text-sm" aria-current="page">{{ $item->art }}</li>
                 </ol>
             </nav>
 
         </h2>
     </x-slot>
-
     <div class="py-12">
-        <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg goodCard">
-                <div class="goodItem">
-                    <h2 class="itemHeader">{{ $item->art }}</h2>
-                    <div id="carouselExampleIndicators_{{ $item->id }}" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators_{{ $item->id }}" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators_{{ $item->id }}" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators_{{ $item->id }}" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active vh70">
-                                <img src="{{ $item->img }}" class="d-block w-100" alt="...">
+    <section id="portfolio-details" class="portfolio-details bg-white shadow-sm max-w-7xl mx-auto sm:rounded-lg">
+        <div class="container">
+            <div class="row gy-3">
+                <div class="col-lg-8">
+                    <div class="portfolio-details-slider swiper-container">
+                        <div class="swiper-wrapper align-items-center">
+                            <div class="swiper-slide">
+                                <img src="{{ $item->img }}" alt="">
                             </div>
-                            <div class="carousel-item vh70">
-                                <img src="{{ $item->img1 }}" class="d-block w-100" alt="...">
+                            <div class="swiper-slide">
+                                <img src="{{ $item->img1 }}" alt="">
                             </div>
-                            <div class="carousel-item vh70">
-                                <img src="{{ $item->img2 }}" class="d-block w-100" alt="...">
+                            <div class="swiper-slide">
+                                <img src="{{ $item->img2 }}" alt="">
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators_{{ $item->id }}"  data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators_{{ $item->id }}"  data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                        <!-- If we need scrollbar -->
+                        {{--                        <div class="swiper-scrollbar"></div>--}}
+                        <div class="item-card-links flex justify-between items-center p-1">
+                            <a class="item-card-link" href="{{ route('user::like', ['id'=>$item->id]) }}" title="Нравится">@include('components.mysvg.like')</a>
+                            <a class="item-card-link" href="" title="Комментировать">@include('components.mysvg.comment')</a>
+                            <a class="item-card-link" href="" title="Поделиться">@include('components.mysvg.share')</a>
+                            <a class="item-card-link" href="" title="В избранные">@include('components.mysvg.favorites')</a>
+                        </div>
                     </div>
-                    <p class="itemDescription">{{ $item->name }}</p>
-                    @auth()
-                        @if(Auth::user()->hasRole('admin'))
-                            <div class="md:inline-flex mypd">
-                                <a class="btn btn-outline-secondary mymrgleft" href="{{route('admin::good::update', ['id' => $item->id])}}">{{ __('buttons.update') }}</a>
-                                <a class="btn btn-outline-danger mymrgleft" href="{{route('admin::good::delete', ['id' => $item->id])}}">{{ __('buttons.delete') }}</a>
-                            </div>
-                        @endif
-                    @endauth
                 </div>
+                <div class="col-lg-4">
+                    <div class="portfolio-info">
+                        <h3>Информация</h3>
+                        <ul>
+                            <li><strong>Артикул</strong>: {{ $item->art }}</li>
+                            <li><strong>Наименование</strong>: {{ $item->name }}</li>
+                            <li><strong>Категория</strong>: {{ \App\Models\Category::find($item->category_id)->name}}</li>
+                            <li><strong>Дата прихода</strong>: {{ $item->arrival }}</li>
+                            <li><strong>Упаковка</strong>: <a href="#">www.example.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="portfolio-description">
+                        <h2>Описание</h2>
+                        <p>{{ $item->description }}</p>
+                    </div>
+                </div>
+                @auth()
+                    @if(Auth::user()->hasRole('admin'))
+                        <div class="md:inline-flex mypd">
+                            <a class="btn btn-outline-secondary mymrgleft" href="{{route('admin::good::update', ['id' => $item->id])}}">{{ __('buttons.update') }}</a>
+                            <a class="btn btn-outline-danger mymrgleft" href="{{route('admin::good::delete', ['id' => $item->id])}}">{{ __('buttons.delete') }}</a>
+                        </div>
+                    @endif
+                @endauth
+
             </div>
+
         </div>
+    </section>
     </div>
 </x-app-layout>

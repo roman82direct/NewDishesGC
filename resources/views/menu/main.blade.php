@@ -1,18 +1,9 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="font-semibold text-lg text-gray-800 leading-tight">
             {{__('menu.main')}}
         </h2>
     </x-slot>
-
-{{--    <div class="py-12">--}}
-{{--        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">--}}
-{{--            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">--}}
-{{--                <div class="p-6 bg-white border-b border-gray-200">--}}
-{{--                    You're logged in!--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--   </div>--}}
 
         <!-- Featured Image Slider -->
         <div id="featured">
@@ -30,13 +21,13 @@
                     </div>
                     <a href="{{ route('nav::goods', ['id' => 4]) }}">
                         <span>Текстиль</span>
-                        <img src="storage/img/good/434-081.jpg" alt="" />
+                        <img src="storage/img/good/421-272.jpg" alt="" />
                     </a>
                 </li>
                 <li>
                     <a href="{{ route('nav::goods', ['id' => 3]) }}">
                         <span>Поуда для приготовления</span>
-                        <img src="storage/img/good/846-560.jpg" alt="" />
+                        <img src="storage/img/good/846-513.jpg" alt="" />
                     </a>
                 </li>
                 <li>
@@ -60,9 +51,9 @@
             </ul>
         </div>
 
-    <div class="py-12" style="background-image: url(../storage/img/about-bg.jpg)">
+    <div class="py-12">
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
+    <section id="services" class="services p-20">
         <div class="container">
 
             <div class="section-title" data-aos="fade-in" data-aos-delay="100">
@@ -73,7 +64,7 @@
             <div class="row">
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="icon-box" data-aos="fade-up">
-                        <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                        <div class="icon"><i class="bi-alarm"></i></div>
                         <h4 class="title"><a href="">Lorem Ipsum</a></h4>
                         <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
                     </div>
@@ -81,7 +72,7 @@
 
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon"><i class="bx bx-file"></i></div>
+                        <div class="icon"><i class="bi bi-archive"></i></div>
                         <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
                         <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
                     </div>
@@ -89,7 +80,7 @@
 
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon"><i class="bx bx-tachometer"></i></div>
+                        <div class="icon"><i class="bi bi-bag-check"></i></div>
                         <h4 class="title"><a href="">Magni Dolores</a></h4>
                         <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
                     </div>
@@ -97,7 +88,7 @@
 
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-                        <div class="icon"><i class="bx bx-world"></i></div>
+                        <div class="icon"><i class="bi bi-basket"></i></div>
                         <h4 class="title"><a href="">Nemo Enim</a></h4>
                         <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
                     </div>
@@ -109,11 +100,35 @@
     </section><!-- End Services Section -->
     </div>
 
+{{--    Trade Marks Section--}}
     <div class="py-12">
-        <!-- ======= Cta Section ======= -->
-        <section id="cta" class="cta" style="background-image: url(../storage/img/cta-bg.jpg)">
-            <div class="container" data-aos="zoom-in">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8" data-aos="zoom-in">
+{{--            <div class="bg-white shadow-sm sm:rounded-lg p-3">--}}
+                <div class="row shadow row-cols-1 row-cols-lg-5 row-cols-md-3 row-cols-sm-2 g-4 p-12">
+                    <div class="col flex justify-center items-center mb-4">
+                        <a class="tm-link" href="">@include('components.mysvg.tm_vetta')</a>
+                    </div>
+                    <div class="col flex justify-center items-center mb-4">
+                        <a class="tm-link" href="" >@include('components.mysvg.tm_satoshi')</a>
+                    </div>
+                    <div class="col flex justify-center items-center mb-4">
+                        <a class="tm-link" href="">@include('components.mysvg.tm_slavyana')</a>
+                    </div>
+                    <div class="col flex justify-center items-center mb-4">
+                        <a class="tm-link" href="">@include('components.mysvg.tm_millimi')</a>
+                    </div>
+                    <div class="col flex justify-center items-center mb-4">
+                        <a class="tm-link" href="">@include('components.mysvg.tm_provance')</a>
+                    </div>
+                </div>
+{{--            </div>--}}
+        </div>
+    </div>
 
+    <!-- ======= Cta Section ======= -->
+    <div class="py-12">
+        <section id="cta" class="cta">
+            <div class="container" data-aos="zoom-in">
                 <div class="text-center">
                     <h3>Call To Action</h3>
                     <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -123,6 +138,5 @@
             </div>
         </section><!-- End Cta Section -->
     </div>
-
 
    </x-app-layout>

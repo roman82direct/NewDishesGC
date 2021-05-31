@@ -75,6 +75,7 @@ class Good extends Model
      */
     public function fillFromXLS($file)
     {
+        Like::truncate();
         Good::truncate();
         return (new FastExcel)->import($file, function ($line){
             return Good::create([

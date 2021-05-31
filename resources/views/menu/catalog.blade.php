@@ -1,42 +1,17 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="font-semibold text-lg text-gray-800 leading-tight">
             {{__('menu.catalog')}}
         </h2>
     </x-slot>
 
-    <div class="py-12">
+    <div class="py-8">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg categoryCard">
                 @foreach($categories as $item)
                 <div class="categoryItem">
                     <h2 class="itemHeader">{{ $item->name }}</h2>
-                    <div id="carouselExampleIndicators_{{ $item->id }}" class="carousel slide" data-bs-ride="carousel">
-                        @php($img = (new \App\Models\Category())->getRandomImg($item->id, 3))
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators_{{ $item->id }}" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            @for($i = 1; $i < count($img); $i++)
-                            <button type="button" data-bs-target="#carouselExampleIndicators_{{ $item->id }}" data-bs-slide-to="{{$i}}" aria-label="Slide 2"></button>
-                            @endfor
-                        </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="{{ $img[0] }}" class="d-block w-100" alt="...">
-                            </div>
-                            @for($i = 1; $i < count($img); $i++)
-                            <div class="carousel-item">
-                                <img src="{{ $img[$i] }}" class="d-block w-100" alt="...">
-                            </div>
-                            @endfor
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators_{{ $item->id }}"  data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators_{{ $item->id }}"  data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
+                    <img src="{{ $item->img }}" class="d-block w-100" alt="...">
                         <div class="card-links">
                             <a href="{{ route('nav::goods', ['id' => $item->id]) }}" class="card-link">
                                 <svg class="card-svg" xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25">
@@ -44,7 +19,6 @@
                                 </svg>
                             </a>
                         </div>
-                    </div>
                     <p class="itemDescription">{{ $item->description }}</p>
                     @auth()
                         @if(Auth::user()->hasRole('admin'))
