@@ -21,13 +21,13 @@
                     </div>
                     <a href="{{ route('nav::goods', ['id' => 4]) }}">
                         <span>Текстиль</span>
-                        <img src="storage/img/good/434-081.jpg" alt="" />
+                        <img src="storage/img/good/421-272.jpg" alt="" />
                     </a>
                 </li>
                 <li>
                     <a href="{{ route('nav::goods', ['id' => 3]) }}">
                         <span>Поуда для приготовления</span>
-                        <img src="storage/img/good/846-560.jpg" alt="" />
+                        <img src="storage/img/good/846-513.jpg" alt="" />
                     </a>
                 </li>
                 <li>

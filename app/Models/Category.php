@@ -77,6 +77,7 @@ class Category extends Model
                 return Category::create([
                     'name' => $line['category'],
                     'description' => $line['category_description'],
+                    'img' => '/storage/img/good/'.$line['art'].'_catalog'.'.jpg',
                 ]);
             } else return null;
         });

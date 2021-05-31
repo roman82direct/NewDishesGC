@@ -506,12 +506,13 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
     align-self: center;
     grid-gap: 1em;
 }
-.categoryCard:hover .card-links{
+.categoryItem:hover .card-links{
     display: block;
 }
 .categoryItem{
     /*border-radius: 0.5em;*/
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
 }
@@ -537,7 +538,7 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
     justify-content: space-between;
     position: absolute;
     left: 47%;
-    top: 35%;
+    top: 40%;
     z-index: 1;
     display: none;
     transition: 200ms;
