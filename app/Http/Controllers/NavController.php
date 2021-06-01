@@ -11,7 +11,12 @@ use Illuminate\Support\Facades\DB;
 
 class NavController extends Controller
 {
-    public function index(){
+    public function main(){
+        $categories = Category::get()->random(6);
+        return view('menu.main', ['categories' => $categories]);
+    }
+
+    public function catalog(){
         $categories = Category::all();
         return view('menu.catalog', ['categories' => $categories]);
     }

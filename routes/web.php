@@ -25,11 +25,10 @@ Route::group([
     'as' => 'nav::',
     'namespace' => '\App\Http\Controllers'
 ], function () {
-    Route::get('/', function () {
-        return view('menu.main');
-    })->name('main');
+    Route::get('/', [NavController::class, 'main'])
+        ->name('main');
 
-    Route::get('/catalog', [NavController::class, 'index'])
+    Route::get('/catalog', [NavController::class, 'catalog'])
         ->name('catalog');
 
     Route::get('/contacts', 'NavController@contact')

@@ -81,7 +81,9 @@ class Category extends Model
                     'name' => $line['category2'],
                     'category1_id' => Maincategory::where('name', $line['category1'])->value('id'),
                     'description' => $line['category_description'],
-                    'img' => '/storage/img/good/'.$line['art'].'_catalog'.'.jpg',
+                    'img' => '/storage/img/good/'.$line['art'].'_catalog.jpg',
+                    'img1' => '/storage/img/good/main/'.$line['art'].'_1.jpg',
+                    'img2' => '/storage/img/good/main/'.$line['art'].'_2.jpg'
                 ]);
             } else return null;
         });

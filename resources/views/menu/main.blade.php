@@ -19,35 +19,19 @@
                             </svg>
                         </a>
                     </div>
-                    <a href="{{ route('nav::goods', ['id' => 4]) }}">
-                        <span>Текстиль</span>
-                        <img src="storage/img/good/421-272.jpg" alt="" />
-                    </a>
+{{--                    <a href="{{ route('nav::goods', ['id' => 4]) }}">--}}
+                        <img src="{{ $categories[3]->img1 }}" alt="" />
+{{--                    </a>--}}
                 </li>
-                <li>
-                    <a href="{{ route('nav::goods', ['id' => 3]) }}">
-                        <span>Поуда для приготовления</span>
-                        <img src="storage/img/good/846-513.jpg" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('nav::goods', ['id' => 2]) }}">
-                        <span>Керамика</span>
-                        <img src="storage/img/good/824-443.jpg" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('nav::goods', ['id' => 4]) }}">
-                        <span>Керамика</span>
-                        <img src="storage/img/good/824-419.jpg" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('nav::goods', ['id' => 3]) }}">
-                        <span>Посуда для приготовления</span>
-                        <img src="storage/img/good/822-199.jpg" alt="" />
-                    </a>
-                </li>
+
+                @foreach($categories as $item)
+                    <li>
+                        <a href="{{ route('nav::goods', ['id' => $item->id ]) }}">
+                            <span>{{ $item->name }}</span>
+                            <img src="{{ $item->img1 }}" alt="" />
+                        </a>
+                    </li>
+                @endforeach
             </ul>
         </div>
 
