@@ -546,7 +546,7 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
 }
 
 .card-svg {
-    fill: #fff;
+    fill: #f1efef;
     transition: 200ms;
     transition-timing-function: ease-in-out;
 }

@@ -71,11 +71,11 @@ class Category extends Model
         Category::truncate();
         return (new FastExcel)->import($file, function ($line) {
             $exists = Category::query()
-                ->where('name', $line['category'])
+                ->where('name', $line['category2'])
                 ->exists();
             if (!$exists) {
                 return Category::create([
-                    'name' => $line['category'],
+                    'name' => $line['category2'],
                     'description' => $line['category_description'],
                     'img' => '/storage/img/good/'.$line['art'].'_catalog'.'.jpg',
                 ]);
