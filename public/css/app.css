@@ -33072,6 +33072,14 @@ button.swiper-pagination-bullet {
   height: 70vh!important;
 }
 
+/*Стили навигации*/
+
+.nav-item{
+}
+
+.nav-link{
+}
+
 /*Стили главной*/
 
 main {
@@ -33617,8 +33625,8 @@ a img								{
 .categoryCard{
   padding: 1rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   align-self: center;
   grid-gap: 1em;
 }
@@ -33640,7 +33648,7 @@ a img								{
   width: 100%;
   background-color: lightgray;
   padding: 1em;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .itemHeader{

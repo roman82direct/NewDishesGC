@@ -7,8 +7,8 @@
 
         <!-- Featured Image Slider -->
         <div id="featured">
-            <ul>
-                <li>
+            <ul data-aos="zoom-in" data-aos-delay="200">
+                <li data-aos="fade-in" data-aos-delay="400">
                     <div class="hero-container">
                         <h1>"Посуда и Домашний текстиль"</h1>
                         <h2>Новинки сезона 2021 - 2022</h2>
@@ -20,12 +20,12 @@
                         </a>
                     </div>
 {{--                    <a href="{{ route('nav::goods', ['id' => 4]) }}">--}}
-                        <img src="{{ $categories[3]->img1 }}" alt="" />
+                        <img src="{{ $categories[3]->img2 }}" alt="" />
 {{--                    </a>--}}
                 </li>
 
                 @foreach($categories as $item)
-                    <li>
+                    <li data-aos="fade-in" data-aos-delay="100">
                         <a href="{{ route('nav::goods', ['id' => $item->id ]) }}">
                             <span>{{ $item->name }}</span>
                             <img src="{{ $item->img1 }}" alt="" />

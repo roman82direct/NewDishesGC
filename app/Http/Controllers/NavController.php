@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Good;
 use App\Models\Like;
+use App\Models\Maincategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -12,13 +13,11 @@ use Illuminate\Support\Facades\DB;
 class NavController extends Controller
 {
     public function main(){
-        $categories = Category::get()->random(6);
-        return view('menu.main', ['categories' => $categories]);
+        return view('menu.main', ['categories' => Category::get()->random(6)]);
     }
 
     public function catalog(){
-        $categories = Category::all();
-        return view('menu.catalog', ['categories' => $categories]);
+        return view('menu.catalog');
     }
 
     public function contact(){
@@ -32,9 +31,8 @@ class NavController extends Controller
     }
 
     public function showGoodItem($id){
-        $item = Good::find($id);
         $is_like = (Auth::user()) ? (new Like())->getId($id, Auth::user()->id) : null;
-        return view('goodItem', ['item' => $item, 'is_like'=>$is_like]);
+        return view('goodItem', ['item' => Good::find($id), 'is_like'=>$is_like]);
     }
 
     public function showAdminPanel(){
