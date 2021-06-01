@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Maincategory;
 use App\Models\Good;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Rap2hpoutre\FastExcel\FastExcel;
@@ -67,6 +69,7 @@ class AdminController extends Controller
     public function uploadGoodsFromExcel(){
         $file = app()->make('file');            //извлекаем переданные из посредника в контейнер данные
         try {
+            (new Maincategory)->fillFromXLS($file);
             (new Category)->fillFromXLS($file);
             (new Good)->fillFromXLS($file);
             $message = 'New data from file: '.$file.' loaded successfully';
@@ -89,6 +92,7 @@ class AdminController extends Controller
     }
 
     public function deleteAll(){
+        Maincategory::truncate();
         Category::truncate();
         Good::truncate();
         return redirect()->back()->with('success', 'Все позиции удалены из каталога');

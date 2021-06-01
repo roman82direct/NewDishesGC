@@ -29,6 +29,8 @@ use Rap2hpoutre\FastExcel\FastExcel;
  * @method static \Illuminate\Database\Eloquent\Builder|Category whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Category whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property int $category1_id
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereCategory1Id($value)
  */
 class Category extends Model
 {
@@ -36,6 +38,7 @@ class Category extends Model
 
     protected $fillable = [
         'name',
+        'category1_id',
         'description',
         'img',
         'img1',
@@ -76,6 +79,7 @@ class Category extends Model
             if (!$exists) {
                 return Category::create([
                     'name' => $line['category2'],
+                    'category1_id' => Maincategory::where('name', $line['category1'])->value('id'),
                     'description' => $line['category_description'],
                     'img' => '/storage/img/good/'.$line['art'].'_catalog'.'.jpg',
                 ]);

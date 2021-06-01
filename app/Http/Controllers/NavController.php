@@ -33,7 +33,6 @@ class NavController extends Controller
     }
 
     public function showAdminPanel(){
-        $goods = Good::count();
-        return view('admin.panel', ['count' => $goods]);
+        return view('admin.panel', ['count' => Good::count()]);
     }
 }
