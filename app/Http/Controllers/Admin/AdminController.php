@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Maincategory;
 use App\Models\Good;
 use App\Models\User;
+use App\Services\LoadDataXLS;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -67,15 +68,7 @@ class AdminController extends Controller
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
     public function uploadGoodsFromExcel(){
-        $file = app()->make('file');            //извлекаем переданные из посредника в контейнер данные
-        try {
-            (new Maincategory)->fillFromXLS($file);
-            (new Category)->fillFromXLS($file);
-            (new Good)->fillFromXLS($file);
-            $message = 'New data from file: '.$file.' loaded successfully';
-        } catch (\Exception $exception){
-            $message = "Error: " .$exception->getMessage();
-        }
+        $message = (new LoadDataXLS)->loadXLS();
         return redirect()->back()->with('success', $message);
     }
 

@@ -13,7 +13,7 @@ class FileUpload
      * Handle an incoming request.
      *
      * Сохраняем файл на диске
-     * если файл не выбран, возвращаем тестовый фал для парсинга
+     * если файл не выбран, возвращаем тестовый файл для парсинга
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
@@ -28,7 +28,7 @@ class FileUpload
         } else {
             $newFileName = 'test.xlsx';
         }
-        app()->instance('file', $newFileName);  //передаем экземпляр в контейнер, чтобы извлечь в контроллере
+        app()->instance('file', $newFileName);  //передаем экземпляр в контейнер, чтобы извлечь в сервисе LoadDataXLS
 
         return $next($request);
     }
