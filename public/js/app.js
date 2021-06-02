@@ -9,9 +9,7 @@
 
 // require('./bootstrap');
 __webpack_require__(/*! ./squad */ "./resources/js/squad.js"); // require('alpinejs');
-//
 // require('aos');
-//
 // require('glightbox');
 
 /***/ }),
@@ -28,7 +26,7 @@ function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread n
 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 
@@ -78,144 +76,132 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   /**
    * Easy on scroll event listener
    */
+  // const onscroll = (el, listener) => {
+  //   el.addEventListener('scroll', listener)
+  // }
 
-
-  var onscroll = function onscroll(el, listener) {
-    el.addEventListener('scroll', listener);
-  };
   /**
    * Navbar links active state on scroll
    */
+  // let navbarlinks = select('#navbar .scrollto', true)
+  // const navbarlinksActive = () => {
+  //   let position = window.scrollY + 200
+  //   navbarlinks.forEach(navbarlink => {
+  //     if (!navbarlink.hash) return
+  //     let section = select(navbarlink.hash)
+  //     if (!section) return
+  //     if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+  //       navbarlink.classList.add('active')
+  //     } else {
+  //       navbarlink.classList.remove('active')
+  //     }
+  //   })
+  // }
+  // window.addEventListener('load', navbarlinksActive)
+  // onscroll(document, navbarlinksActive)
 
-
-  var navbarlinks = select('#navbar .scrollto', true);
-
-  var navbarlinksActive = function navbarlinksActive() {
-    var position = window.scrollY + 200;
-    navbarlinks.forEach(function (navbarlink) {
-      if (!navbarlink.hash) return;
-      var section = select(navbarlink.hash);
-      if (!section) return;
-
-      if (position >= section.offsetTop && position <= section.offsetTop + section.offsetHeight) {
-        navbarlink.classList.add('active');
-      } else {
-        navbarlink.classList.remove('active');
-      }
-    });
-  };
-
-  window.addEventListener('load', navbarlinksActive);
-  onscroll(document, navbarlinksActive);
   /**
    * Scrolls to an element with header offset
    */
+  // const scrollto = (el) => {
+  //   let header = select('#header')
+  //   let offset = header.offsetHeight
+  //
+  //   if (!header.classList.contains('header-scrolled')) {
+  //     offset -= 24
+  //   }
+  //
+  //   let elementPos = select(el).offsetTop
+  //   window.scrollTo({
+  //     top: elementPos - offset,
+  //     behavior: 'smooth'
+  //   })
+  // }
 
-  var scrollto = function scrollto(el) {
-    var header = select('#header');
-    var offset = header.offsetHeight;
-
-    if (!header.classList.contains('header-scrolled')) {
-      offset -= 24;
-    }
-
-    var elementPos = select(el).offsetTop;
-    window.scrollTo({
-      top: elementPos - offset,
-      behavior: 'smooth'
-    });
-  };
   /**
    * Toggle .header-scrolled class to #header when page is scrolled
    */
+  // let selectHeader = select('#header')
+  // if (selectHeader) {
+  //   const headerScrolled = () => {
+  //     if (window.scrollY > 100) {
+  //       selectHeader.classList.add('header-scrolled')
+  //     } else {
+  //       selectHeader.classList.remove('header-scrolled')
+  //     }
+  //   }
+  //   window.addEventListener('load', headerScrolled)
+  //   onscroll(document, headerScrolled)
+  // }
 
-
-  var selectHeader = select('#header');
-
-  if (selectHeader) {
-    var headerScrolled = function headerScrolled() {
-      if (window.scrollY > 100) {
-        selectHeader.classList.add('header-scrolled');
-      } else {
-        selectHeader.classList.remove('header-scrolled');
-      }
-    };
-
-    window.addEventListener('load', headerScrolled);
-    onscroll(document, headerScrolled);
-  }
   /**
    * Back to top button
    */
+  // let backtotop = select('.back-to-top')
+  // if (backtotop) {
+  //   const toggleBacktotop = () => {
+  //     if (window.scrollY > 100) {
+  //       backtotop.classList.add('active')
+  //     } else {
+  //       backtotop.classList.remove('active')
+  //     }
+  //   }
+  //   window.addEventListener('load', toggleBacktotop)
+  //   onscroll(document, toggleBacktotop)
+  // }
 
-
-  var backtotop = select('.back-to-top');
-
-  if (backtotop) {
-    var toggleBacktotop = function toggleBacktotop() {
-      if (window.scrollY > 100) {
-        backtotop.classList.add('active');
-      } else {
-        backtotop.classList.remove('active');
-      }
-    };
-
-    window.addEventListener('load', toggleBacktotop);
-    onscroll(document, toggleBacktotop);
-  }
   /**
    * Mobile nav toggle
    */
+  // on('click', '.mobile-nav-toggle', function(e) {
+  //   select('#navbar').classList.toggle('navbar-mobile')
+  //   this.classList.toggle('bi-list')
+  //   this.classList.toggle('bi-x')
+  // })
 
-
-  on('click', '.mobile-nav-toggle', function (e) {
-    select('#navbar').classList.toggle('navbar-mobile');
-    this.classList.toggle('bi-list');
-    this.classList.toggle('bi-x');
-  });
   /**
    * Mobile nav dropdowns activate
    */
+  // on('click', '.navbar .dropdown > a', function(e) {
+  //   if (select('#navbar').classList.contains('navbar-mobile')) {
+  //     e.preventDefault()
+  //     this.nextElementSibling.classList.toggle('dropdown-active')
+  //   }
+  // }, true)
 
-  on('click', '.navbar .dropdown > a', function (e) {
-    if (select('#navbar').classList.contains('navbar-mobile')) {
-      e.preventDefault();
-      this.nextElementSibling.classList.toggle('dropdown-active');
-    }
-  }, true);
   /**
    * Scrool with ofset on links with a class name .scrollto
    */
+  // on('click', '.scrollto', function(e) {
+  //   if (select(this.hash)) {
+  //     e.preventDefault()
+  //
+  //     let navbar = select('#navbar')
+  //     if (navbar.classList.contains('navbar-mobile')) {
+  //       navbar.classList.remove('navbar-mobile')
+  //       let navbarToggle = select('.mobile-nav-toggle')
+  //       navbarToggle.classList.toggle('bi-list')
+  //       navbarToggle.classList.toggle('bi-x')
+  //     }
+  //     scrollto(this.hash)
+  //   }
+  // }, true)
 
-  on('click', '.scrollto', function (e) {
-    if (select(this.hash)) {
-      e.preventDefault();
-      var navbar = select('#navbar');
-
-      if (navbar.classList.contains('navbar-mobile')) {
-        navbar.classList.remove('navbar-mobile');
-        var navbarToggle = select('.mobile-nav-toggle');
-        navbarToggle.classList.toggle('bi-list');
-        navbarToggle.classList.toggle('bi-x');
-      }
-
-      scrollto(this.hash);
-    }
-  }, true);
   /**
    * Scroll with ofset on page load with hash links in the url
    */
+  // window.addEventListener('load', () => {
+  //   if (window.location.hash) {
+  //     if (select(window.location.hash)) {
+  //       scrollto(window.location.hash)
+  //     }
+  //   }
+  // });
 
-  window.addEventListener('load', function () {
-    if (window.location.hash) {
-      if (select(window.location.hash)) {
-        scrollto(window.location.hash);
-      }
-    }
-  });
   /**
    * Porfolio isotope and filter
    */
+
 
   window.addEventListener('load', function () {
     var portfolioContainer = select('.portfolio-container');
@@ -244,10 +230,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   /**
    * Initiate portfolio lightbox
    */
+  // const portfolioLightbox = GLightbox({
+  //   selector: '.portfolio-lightbox'
+  // });
 
-  var portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
-  });
   /**
    * Portfolio details slider
    */
@@ -270,33 +256,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     },
     scrollbar: {
       el: '.swiper-scrollbar'
-    }
-  });
-  /**
-   * Testimonials slider
-   */
-
-  new Swiper('.testimonials-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 40
-      },
-      1200: {
-        slidesPerView: 3
-      }
     }
   });
   /**
@@ -336,8 +295,9 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		if(__webpack_module_cache__[moduleId]) {
-/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
@@ -356,10 +316,38 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = __webpack_modules__;
 /******/ 	
-/******/ 	// the startup function
-/******/ 	// It's empty as some runtime module handles the default behavior
-/******/ 	__webpack_require__.x = x => {};
 /************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					result = fn();
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -382,15 +370,12 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		
 /******/ 		// object to store loaded and loading chunks
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
-/******/ 		// Promise = chunk loading, 0 = chunk loaded
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"/js/app": 0
+/******/ 			"/js/app": 0,
+/******/ 			"css/app": 0
 /******/ 		};
 /******/ 		
-/******/ 		var deferredModules = [
-/******/ 			["./resources/js/app.js"],
-/******/ 			["./resources/css/app.css"]
-/******/ 		];
 /******/ 		// no chunk on demand loading
 /******/ 		
 /******/ 		// no prefetching
@@ -401,75 +386,44 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		
 /******/ 		// no HMR manifest
 /******/ 		
-/******/ 		var checkDeferredModules = x => {};
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
 /******/ 		
 /******/ 		// install a JSONP callback for chunk loading
 /******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
-/******/ 			var [chunkIds, moreModules, runtime, executeModules] = data;
+/******/ 			var [chunkIds, moreModules, runtime] = data;
 /******/ 			// add "moreModules" to the modules object,
 /******/ 			// then flag all "chunkIds" as loaded and fire callback
-/******/ 			var moduleId, chunkId, i = 0, resolves = [];
-/******/ 			for(;i < chunkIds.length; i++) {
-/******/ 				chunkId = chunkIds[i];
-/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
-/******/ 					resolves.push(installedChunks[chunkId][0]);
-/******/ 				}
-/******/ 				installedChunks[chunkId] = 0;
-/******/ 			}
+/******/ 			var moduleId, chunkId, i = 0;
 /******/ 			for(moduleId in moreModules) {
 /******/ 				if(__webpack_require__.o(moreModules, moduleId)) {
 /******/ 					__webpack_require__.m[moduleId] = moreModules[moduleId];
 /******/ 				}
 /******/ 			}
-/******/ 			if(runtime) runtime(__webpack_require__);
+/******/ 			if(runtime) var result = runtime(__webpack_require__);
 /******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
-/******/ 			while(resolves.length) {
-/******/ 				resolves.shift()();
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkIds[i]] = 0;
 /******/ 			}
-/******/ 		
-/******/ 			// add entry modules from loaded chunk to deferred list
-/******/ 			if(executeModules) deferredModules.push.apply(deferredModules, executeModules);
-/******/ 		
-/******/ 			// run deferred modules when all chunks ready
-/******/ 			return checkDeferredModules();
+/******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
 /******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
-/******/ 		
-/******/ 		function checkDeferredModulesImpl() {
-/******/ 			var result;
-/******/ 			for(var i = 0; i < deferredModules.length; i++) {
-/******/ 				var deferredModule = deferredModules[i];
-/******/ 				var fulfilled = true;
-/******/ 				for(var j = 1; j < deferredModule.length; j++) {
-/******/ 					var depId = deferredModule[j];
-/******/ 					if(installedChunks[depId] !== 0) fulfilled = false;
-/******/ 				}
-/******/ 				if(fulfilled) {
-/******/ 					deferredModules.splice(i--, 1);
-/******/ 					result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
-/******/ 				}
-/******/ 			}
-/******/ 			if(deferredModules.length === 0) {
-/******/ 				__webpack_require__.x();
-/******/ 				__webpack_require__.x = x => {};
-/******/ 			}
-/******/ 			return result;
-/******/ 		}
-/******/ 		var startup = __webpack_require__.x;
-/******/ 		__webpack_require__.x = () => {
-/******/ 			// reset startup function so it can be called again when more startup code is added
-/******/ 			__webpack_require__.x = startup || (x => {});
-/******/ 			return (checkDeferredModules = checkDeferredModulesImpl)();
-/******/ 		};
 /******/ 	})();
 /******/ 	
 /************************************************************************/
 /******/ 	
-/******/ 	// run startup
-/******/ 	var __webpack_exports__ = __webpack_require__.x();
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;

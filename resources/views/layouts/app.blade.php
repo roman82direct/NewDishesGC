@@ -21,25 +21,8 @@
         <!-- Main CSS -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-        <!-- Vendor JS Files -->
-        <script src="{{ asset('vendor/aos/aos.js') }}"></script>
-        <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-        <script src="{{ asset('vendor/glightbox/js/glightbox.min.js') }}"></script>
-        <script src="{{ asset('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
-        <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-        <script type="text/javascript" src="{{ asset('js/jquery.roundabout-1.0.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
-        <script type="text/javascript">
-            $(document).ready(function() { //Start up our Featured Project Carosuel
-                $('#featured ul').roundabout({
-                    easing: 'easeOutInCirc',
-                    duration: 600
-                });
-            });
-        </script>
+
+
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
@@ -62,6 +45,25 @@
             </footer>
 
         </div>
+        <!-- Vendor JS Files -->
+        <script src="{{ asset('vendor/aos/aos.js') }}"></script>
+        <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('vendor/glightbox/js/glightbox.min.js') }}"></script>
+        <script src="{{ asset('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+        <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}" defer></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery.roundabout-1.0.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
+        <script type="text/javascript">
+            $(document).ready(function() { //Start up our Featured Project Carosuel
+                $('#featured ul').roundabout({
+                    easing: 'easeOutInCirc',
+                    duration: 600
+                });
+            });
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
     </body>
 </html>

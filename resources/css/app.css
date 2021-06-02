@@ -436,13 +436,13 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
 }
 
 #portfolio-flters {
-    padding: 0;
     margin: 0 auto 35px auto;
     list-style: none;
     text-align: center;
-    background: #d2eef6;
+    /*background: #d2eef6;*/
     border-radius: 50px;
-    padding: 2px 15px;
+    padding: 6px 15px 1px;
+    border: 2px solid gray;
 }
 
 #portfolio-flters li {
@@ -450,7 +450,7 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
     display: inline-block;
     padding: 10px 15px 8px 15px;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 800;
     line-height: 1;
     text-transform: uppercase;
     color: #2f4d5a;
@@ -459,7 +459,7 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
 }
 
 #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
-    color: #67b0d1;
+    color: rgb(129, 140, 248) !important;
 }
 
 #portfolio-flters li:last-child {
@@ -469,9 +469,6 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
 /*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/
-.portfolio-details {
-    /*padding-top: 40px;*/
-}
 
 .portfolio-details .portfolio-details-slider img {
     width: 100%;
@@ -535,13 +532,6 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
 .breadcrumb{
     margin-bottom: 0!important;
 }
-
-/*.carousel-dark{*/
-/*    height: 80vh!important;*/
-/*}*/
-/*.inner-main{*/
-/*    height: 100%;*/
-/*}*/
 
 /*Category Cards Styles*/
 .categoryCard{

@@ -14,7 +14,13 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
         <!-- Scripts -->
+        <!-- Vendor JS Files -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('vendor/aos/aos.js') }}"></script>
+        <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('vendor/glightbox/js/glightbox.min.js') }}"></script>
+        <script src="{{ asset('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+        <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
         <script type="text/javascript" src="js/aos.js"></script>
     </head>
