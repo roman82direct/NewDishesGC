@@ -1,10 +1,4 @@
 <x-app-layout>
-{{--    <x-slot name="header">--}}
-{{--        <h2 class="font-semibold text-lg text-gray-800 leading-tight pt-8">--}}
-{{--            {{__('menu.main')}}--}}
-{{--        </h2>--}}
-{{--    </x-slot>--}}
-
         <!-- Featured Image Slider -->
         <div id="featured">
             <ul data-aos="zoom-in" data-aos-delay="200">
@@ -16,9 +10,7 @@
                             <i style="color: white" class="bx bx-chevrons-down"></i>
                         </a>
                     </div>
-{{--                    <a href="{{ route('nav::goods', ['id' => 4]) }}">--}}
                         <img src="{{ $categories[3]->img2 }}" alt="" />
-{{--                    </a>--}}
                 </li>
 
                 @foreach($categories as $item)
@@ -85,7 +77,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8" data-aos="zoom-in">
 {{--            <div class="bg-white shadow-sm sm:rounded-lg p-3">--}}
-                <div class="row shadow row-cols-1 row-cols-lg-5 row-cols-md-3 row-cols-sm-2 g-4 p-12">
+                <div class="row row-cols-1 row-cols-lg-5 row-cols-auto row-cols-md-3 row-cols-sm-2 g-4 p-4">
                     <div class="col flex justify-center items-center mb-4">
                         <a class="tm-link" href="">@include('components.mysvg.tm_vetta')</a>
                     </div>

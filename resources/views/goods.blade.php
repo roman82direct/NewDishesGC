@@ -1,10 +1,10 @@
 <x-app-layout>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-50 py-8">
-            <div class="bg-white shadow-sm sm:rounded-lg p-3">
+            <div class="bg-white shadow-sm sm:rounded-lg p-3" data-aos="fade-up">
                 <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 g-4">
                     @foreach($goods as $item)
                         <div class="col">
-                            <div class="card h-100">
+                            <div class="card h-100" data-aos="fade-up">
                                 <h5 class="card-header itemHeader text-center">{{ $item->art }}</h5>
                                 <img src="{{ $item->img }}" class="" alt="...">
                                 <div class="card-links">

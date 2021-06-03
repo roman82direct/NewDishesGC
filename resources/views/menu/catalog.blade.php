@@ -1,10 +1,4 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-lg text-gray-800 leading-tight pt-8">
-            {{__('menu.catalog')}}
-        </h2>
-    </x-slot>
-
         <div id="portfolio" class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-50 py-8">
             <div class="row" data-aos="fade-in">
                 <div class="col-lg-12 d-flex justify-content-center">
@@ -21,9 +15,8 @@
             @foreach(\App\Models\Maincategory::all() as $group)
                     @foreach(\App\Models\Category::where('category1_id', $group->id)->get() as $item)
                         <div class="col-lg-3 col-md-6 portfolio-item filter-{{ $group->id }}">
-
                             <div class="card h-100 mb-3">
-                                <img src="{{ $item->img }}" class="" alt="...">
+                                <img src="{{ $item->img }}" alt="...">
                                 <div class="card-links">
                                     <a href="{{ route('nav::goods', ['id' => $item->id]) }}" class="card-link">
                                         <svg class="card-svg" xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25">

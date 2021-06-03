@@ -9,11 +9,11 @@
                 </ol>
             </nav>
     </div>
-    <section id="portfolio-details" class="portfolio-details bg-white shadow-sm max-w-7xl mx-auto sm:rounded-lg py-8">
+    <section id="portfolio-details" class="portfolio-details bg-white shadow-sm max-w-7xl mx-auto sm:rounded-lg py-8 mb-6" data-aos="fade-up">
         <div class="container">
             <div class="row gy-3">
                 <div class="col-lg-8">
-                    <div class="portfolio-details-slider swiper-container">
+                    <div class="portfolio-details-slider swiper-container" data-aos="fade-up">
                         <div class="swiper-wrapper align-items-center">
                             <div class="swiper-slide">
                                 <img src="{{ $item->img }}" alt="">
