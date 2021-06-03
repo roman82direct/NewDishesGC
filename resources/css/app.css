@@ -696,14 +696,10 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
     .hero-container h2{
         display: none;
     }
-    .btn-get-started{
-        width: 30px;
-        height: 30px;
-    }
 
-    .btn-get-started svg{
-        width: 16px;
-        height: 16px;
+    .btn-get-started {
+        width: 48px;
+        height: 48px;
     }
 }
 @media screen and (min-width: 640px) and (max-width: 1200px){
@@ -739,10 +735,6 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
     .btn-get-started{
         width: 48px;
         height: 48px;
-    }
-    .btn-get-started svg{
-        width: 24px;
-        height: 24px;
     }
 }
 

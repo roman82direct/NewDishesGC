@@ -22,7 +22,6 @@
         <script src="{{ asset('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
         <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-        <script type="text/javascript" src="js/aos.js"></script>
     </head>
     <body>
         <div class="font-sans text-gray-900 antialiased">

@@ -32223,14 +32223,9 @@ a img								{
     display: none;
   }
 
-  .btn-get-started{
-    width: 30px;
-    height: 30px;
-  }
-
-  .btn-get-started svg{
-    width: 16px;
-    height: 16px;
+  .btn-get-started {
+    width: 48px;
+    height: 48px;
   }
 }
 
@@ -32279,11 +32274,6 @@ a img								{
   .btn-get-started{
     width: 48px;
     height: 48px;
-  }
-
-  .btn-get-started svg{
-    width: 24px;
-    height: 24px;
   }
 }
 

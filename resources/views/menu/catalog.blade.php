@@ -10,7 +10,7 @@
             <div class="row" data-aos="fade-in">
                 <div class="col-lg-12 d-flex justify-content-center">
                     <ul id="portfolio-flters">
-                        <li data-filter="*" class="filter-active">Показать все товары</li>
+                        <li data-filter="*" class="filter-active">Показать всё</li>
                         @foreach(\App\Models\Maincategory::all() as $group)
                             <li data-filter=".filter-{{ $group->id }}">{{ $group->name }}</li>
                         @endforeach
