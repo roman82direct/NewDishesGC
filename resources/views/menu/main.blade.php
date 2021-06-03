@@ -24,14 +24,12 @@
             </ul>
         </div>
 
-    <div class="py-12">
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services p-20">
+    <section id="services" class="services pt-16">
         <div class="container">
 
             <div class="section-title" data-aos="fade-in" data-aos-delay="100">
-                <h2>Services</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <h2>Товары</h2>
             </div>
 
             <div class="row">
@@ -71,45 +69,49 @@
 
         </div>
     </section><!-- End Services Section -->
-    </div>
 
-{{--    Trade Marks Section--}}
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8" data-aos="zoom-in">
-{{--            <div class="bg-white shadow-sm sm:rounded-lg p-3">--}}
-                <div class="row row-cols-1 row-cols-lg-5 row-cols-auto row-cols-md-3 row-cols-sm-2 g-4 p-4">
-                    <div class="col flex justify-center items-center mb-4">
-                        <a class="tm-link" href="">@include('components.mysvg.tm_vetta')</a>
-                    </div>
-                    <div class="col flex justify-center items-center mb-4">
-                        <a class="tm-link" href="" >@include('components.mysvg.tm_satoshi')</a>
-                    </div>
-                    <div class="col flex justify-center items-center mb-4">
-                        <a class="tm-link" href="">@include('components.mysvg.tm_slavyana')</a>
-                    </div>
-                    <div class="col flex justify-center items-center mb-4">
-                        <a class="tm-link" href="">@include('components.mysvg.tm_millimi')</a>
-                    </div>
-                    <div class="col flex justify-center items-center mb-4">
-                        <a class="tm-link" href="">@include('components.mysvg.tm_provance')</a>
-                    </div>
+    <!-- Brands Section -->
+    <section id="brands" class="brands section-bg">
+        <div class="container">
+
+            <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+                <h2>Торговые марки</h2>
+            </div>
+
+            <div class="brands-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+                <div style="height: 340px" class="swiper-wrapper">
+
+                    @foreach(\App\Models\Brand::all() as $item)
+                        <div class="swiper-slide">
+                            <div class="brand-item">
+                                <a class="tm-link" href="">@include($item->img)</a>
+{{--                                <p>--}}
+{{--                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>--}}
+{{--                                    {{ $item->shortdiscr }}--}}
+{{--                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>--}}
+{{--                                </p>--}}
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
-{{--            </div>--}}
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+            </div>
         </div>
-    </div>
+    </section><!-- End brands Section -->
+
 
     <!-- ======= Cta Section ======= -->
-    <div class="py-12">
         <section id="cta" class="cta">
             <div class="container" data-aos="zoom-in">
                 <div class="text-center">
-                    <h3>Call To Action</h3>
-                    <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+{{--                    <h3>Call To Action</h3>--}}
+{{--                    <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>--}}
                     <a class="cta-btn" href="#">Call To Action</a>
                 </div>
 
             </div>
         </section><!-- End Cta Section -->
-    </div>
-
    </x-app-layout>

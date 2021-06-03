@@ -31747,6 +31747,49 @@ select {
   display: block;
 }
 
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.section-bg {
+  background-color: #f4f9fc;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 30px;
+  color: #2f4d5a;
+  z-index: 2;
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 122px;
+  height: 66px;
+  background: url(/storage/img/section-title-bg.png) no-repeat;
+  z-index: -1;
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+
 /*Стили главной*/
 
 main {
@@ -31931,19 +31974,18 @@ a img								{
 }
 
 /*--------------------------------------------------------------
-# Trademarks section
+# Brands
 --------------------------------------------------------------*/
-
-.tm-link{
-  display: contents;
-}
 
 .svg-vetta,
 .svg-satoshi,
 .svg-slavyana,
 .svg-millimi,
-.svg-provance
+.svg-provance,
+.svg-tramontina,
+.svg-by
 {
+  transform: scale(0.7);
   transition: 200ms;
   transition-timing-function: ease-in-out;
 }
@@ -31952,11 +31994,95 @@ a img								{
 .tm-link:hover .svg-satoshi,
 .tm-link:hover .svg-slavyana,
 .tm-link:hover .svg-millimi,
-.tm-link:hover .svg-provance
+.tm-link:hover .svg-provance,
+.tm-link:hover .svg-tramontina,
+.tm-link:hover .svg-by
 {
   transition: 200ms;
   transition-timing-function: ease-in-out;
-  transform: scale(1.02) /*rotate(2deg)*/;
+  transform: scale(0.72) /*rotate(2deg)*/;
+}
+
+.brands .brand-item {
+  box-sizing: content-box;
+  text-align: center;
+  /*min-height: 320px;*/
+}
+
+/*.brands .brand-item .brand-img {*/
+
+/*    width: 90px;*/
+
+/*    border-radius: 50%;*/
+
+/*    margin: 0 auto;*/
+
+/*}*/
+
+.brands .brand-item .quote-icon-left, .brands .brand-item .quote-icon-right {
+  color: #d5e9f2;
+  font-size: 26px;
+}
+
+.brands .brand-item .quote-icon-left {
+  display: inline-block;
+  left: -5px;
+  position: relative;
+}
+
+.brands .brand-item .quote-icon-right {
+  display: inline-block;
+  right: -5px;
+  position: relative;
+  top: 10px;
+}
+
+.tm-link{
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  padding: 1rem;
+}
+
+.brands .brand-item p {
+  font-style: italic;
+  min-height: 30%;
+  margin: 0 15px 15px 15px;
+  padding: 20px;
+  background: #fff;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.brands .brand-item p::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-bottom: 20px solid #fff;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+  position: absolute;
+  bottom: 100px;
+  left: calc(50% - 20px);
+}
+
+.brands .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.brands .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #67b0d1;
+}
+
+.brands .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #67b0d1;
 }
 
 /*--------------------------------------------------------------
