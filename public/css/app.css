@@ -31453,7 +31453,7 @@ select {
 }
 
 .mt-50{
-  margin-top: 5.4rem;
+  margin-top: 4.8rem;
 }
 
 /*Стили навигации*/
@@ -31475,7 +31475,7 @@ select {
 #header {
   transition: all 0.5s;
   z-index: 997;
-  padding: 15px 0;
+  padding: 10px 0;
   background: rgba(236, 238, 239, 0.8);
 }
 
@@ -31484,7 +31484,7 @@ select {
 }
 
 #header.header-scrolled {
-  background: rgba(198, 233, 252, 0.9);
+  background: rgba(252, 252, 252, 0.9);
   /*padding: 12px;*/
 }
 
@@ -31625,6 +31625,10 @@ select {
   color: #525151;
 }
 
+.authblock {
+  margin-left: 40%;
+}
+
 @media (max-width: 1366px) {
   .navbar .dropdown .dropdown ul {
     left: -90%;
@@ -31654,7 +31658,16 @@ select {
   }
 
   .navbar ul {
+    width: 80% !important;
     display: none;
+  }
+
+  .navbar div {
+    flex-direction: column;
+  }
+
+  .authblock {
+    margin-left: 0;
   }
 }
 
@@ -31840,7 +31853,7 @@ a img								{
 }
 
 #featured			{
-  margin:87px 0 40px 0; width: 100%
+  margin:0px 0 40px 0; width: 100%
 }
 
 /*--------------------------------------------------------------
