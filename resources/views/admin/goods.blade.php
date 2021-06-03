@@ -1,33 +1,21 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-lg text-gray-800 leading-tight">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('admin::panel') }}">{{__('menu.admin')}}</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">{{__('menu.goods')}}</li>
-                </ol>
-            </nav>
-        </h2>
-    @include('layouts.adminNav')
-        @if($goods->total() > 0)
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link btn btn-outline-primary btn-sm" aria-current="page" href="{{ route('admin::good::create') }}">Добавить товар</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link btn btn-outline-danger btn-sm ml-1" href="{{ route('admin::good::deleteAll') }}">Удалить все товары</a>
-            </li>
-        </ul>
-        @endif
-    </x-slot>
-
     @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
     @endif
-    <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            @include('layouts.adminNav')
+            @if($goods->total() > 0)
+                <ul class="nav justify-content-end mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-primary btn-sm" aria-current="page" href="{{ route('admin::good::create') }}">Добавить товар</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-danger btn-sm ml-1" href="{{ route('admin::good::deleteAll') }}">Удалить все товары</a>
+                    </li>
+                </ul>
+            @endif
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="grid-4">
                     @forelse($goods as $item)
@@ -57,5 +45,4 @@
             {{ $goods->links('vendor.pagination.tailwind') }}
             </div>
         </div>
-    </div>
 </x-app-layout>

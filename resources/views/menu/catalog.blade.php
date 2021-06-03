@@ -1,12 +1,11 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-lg text-gray-800 leading-tight">
+        <h2 class="font-semibold text-lg text-gray-800 leading-tight pt-8">
             {{__('menu.catalog')}}
         </h2>
     </x-slot>
 
-    <div class="py-8">
-        <div id="portfolio" class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div id="portfolio" class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-50 py-8">
             <div class="row" data-aos="fade-in">
                 <div class="col-lg-12 d-flex justify-content-center">
                     <ul id="portfolio-flters">
@@ -49,5 +48,4 @@
             @endforeach
             </div>
         </div>
-    </div>
 </x-app-layout>

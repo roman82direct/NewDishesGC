@@ -1,18 +1,11 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-lg text-gray-800 leading-tight">
-            {{__('menu.admin')}}
-        </h2>
-        @include('layouts.adminNav')
-    </x-slot>
-
     @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
     @endif
-    <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            @include('layouts.adminNav')
             <div style="padding: 2rem" class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 @if($count > 0)
                     <p>В каталоге {{$count}} поз.</p>
@@ -30,5 +23,4 @@
                 @endif
             </div>
         </div>
-    </div>
 </x-app-layout>

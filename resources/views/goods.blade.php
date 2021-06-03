@@ -1,16 +1,5 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-lg text-gray-800 leading-tight">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item text-sm"><a href="{{ route('nav::catalog') }}">{{__('menu.catalog') }}</a></li>
-                    <li class="breadcrumb-item text-sm active" aria-current="page">{{ \App\Models\Category::find($id)->name }}</li>
-                </ol>
-            </nav>
-        </h2>
-    </x-slot>
-    <div class="py-8">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-50 py-8">
             <div class="bg-white shadow-sm sm:rounded-lg p-3">
                 <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 g-4">
                     @foreach($goods as $item)
@@ -45,6 +34,6 @@
                 </div>
             </div>
         </div>
-    </div>
+
 
 </x-app-layout>

@@ -10,8 +10,7 @@
             {{ session('success') }}
         </div>
     @endif
-    <div class="py-8">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div id="contacts" class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-8 mt-50">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-4">
                 <form class="max-w-2xl m-auto" action="" method="POST">
                     @csrf
@@ -45,5 +44,4 @@
 
             </div>
         </div>
-    </div>
 </x-app-layout>

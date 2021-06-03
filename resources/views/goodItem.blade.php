@@ -1,7 +1,12 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-lg text-gray-800 leading-tight">
-            <nav aria-label="breadcrumb">
+{{--        <h2 class="font-semibold text-lg text-gray-800 leading-tight">--}}
+{{--        </h2>--}}
+    </x-slot>
+
+    <section id="portfolio-details" class="portfolio-details bg-white shadow-sm max-w-7xl mx-auto sm:rounded-lg py-8">
+        <div class="container">
+            <nav class="" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item text-sm"><a href="{{ route('nav::catalog') }}">{{__('menu.catalog') }}</a></li>
                     <li class="breadcrumb-item text-sm"><a href="{{ route('nav::goods', ['id' => $item->category_id]) }}">
@@ -9,12 +14,6 @@
                     <li class="breadcrumb-item active text-sm" aria-current="page">{{ $item->art }}</li>
                 </ol>
             </nav>
-
-        </h2>
-    </x-slot>
-    <div class="py-12">
-    <section id="portfolio-details" class="portfolio-details bg-white shadow-sm max-w-7xl mx-auto sm:rounded-lg">
-        <div class="container">
             <div class="row gy-3">
                 <div class="col-lg-8">
                     <div class="portfolio-details-slider swiper-container">
@@ -71,5 +70,5 @@
 
         </div>
     </section>
-    </div>
+
 </x-app-layout>
