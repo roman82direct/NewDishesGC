@@ -25,7 +25,7 @@
         </div>
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services pt-16">
+    <section id="services" class="services">
         <div class="container">
 
             <div class="section-title" data-aos="fade-in" data-aos-delay="100">
@@ -84,7 +84,9 @@
                     @foreach(\App\Models\Brand::all() as $item)
                         <div class="swiper-slide">
                             <div class="brand-item">
-                                <a class="tm-link" href="">@include($item->img)</a>
+{{--                                Modal Links--}}
+                                <a class="tm-link" data-bs-toggle="modal" data-bs-target="#brandModal{{$item->id}}"
+                                   href="#brandModal{{$item->id}}">@include($item->img)</a>
 {{--                                <p>--}}
 {{--                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>--}}
 {{--                                    {{ $item->shortdiscr }}--}}
@@ -100,6 +102,28 @@
 
             </div>
         </div>
+        <!-- Modal Brands-->
+        @foreach(\App\Models\Brand::all() as $item)
+            <div class="modal fade" id="brandModal{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div style="justify-content: center" class="modal-header">
+                            <b class="modal-title" id="exampleModalLabel">{{$item->shortdiscr}}</b>
+                        </div>
+                        <div id="exampleModalLabel">@include($item->img)</div>
+                        <div class="modal-body">
+                            <i>{{$item->description}}</i>
+                        </div>
+{{--                        <div class="modal-footer">--}}
+{{--                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>--}}
+{{--                        </div>--}}
+                    </div>
+                </div>
+            </div>
+        @endforeach
     </section><!-- End brands Section -->
 
 

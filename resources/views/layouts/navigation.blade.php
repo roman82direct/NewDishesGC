@@ -26,7 +26,7 @@
                             @endforeach
                         </ul>
                     </li>
-                    <li><a class="nav-link" href="{{ route('nav::contacts') }}">{{ __('menu.contacts') }}</a></li>
+{{--                    <li><a class="nav-link" href="{{ route('nav::contacts') }}">{{ __('menu.contacts') }}</a></li>--}}
                 </div>
 
                 <div class="authblock d-flex justify-content-between">

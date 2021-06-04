@@ -31752,7 +31752,7 @@ select {
 --------------------------------------------------------------*/
 
 section {
-  padding: 60px 0;
+  padding: 30px 0;
   overflow: hidden;
 }
 
@@ -31762,14 +31762,14 @@ section {
 
 .section-title {
   text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 .section-title h2 {
   font-size: 32px;
   font-weight: bold;
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   color: #2f4d5a;
   z-index: 2;
 }
@@ -31896,7 +31896,7 @@ a img								{
 }
 
 #featured			{
-  margin:0px 0 40px 0; width: 100%
+  margin:30px 0 70px 0; width: 100%
 }
 
 /*--------------------------------------------------------------
@@ -32019,23 +32019,35 @@ a img								{
 
 /*}*/
 
-.brands .brand-item .quote-icon-left, .brands .brand-item .quote-icon-right {
-  color: #d5e9f2;
-  font-size: 26px;
-}
+/*.brands .brand-item .quote-icon-left, .brands .brand-item .quote-icon-right {*/
 
-.brands .brand-item .quote-icon-left {
-  display: inline-block;
-  left: -5px;
-  position: relative;
-}
+/*    color: #d5e9f2;*/
 
-.brands .brand-item .quote-icon-right {
-  display: inline-block;
-  right: -5px;
-  position: relative;
-  top: 10px;
-}
+/*    font-size: 26px;*/
+
+/*}*/
+
+/*.brands .brand-item .quote-icon-left {*/
+
+/*    display: inline-block;*/
+
+/*    left: -5px;*/
+
+/*    position: relative;*/
+
+/*}*/
+
+/*.brands .brand-item .quote-icon-right {*/
+
+/*    display: inline-block;*/
+
+/*    right: -5px;*/
+
+/*    position: relative;*/
+
+/*    top: 10px;*/
+
+/*}*/
 
 .tm-link{
   min-height: 300px;

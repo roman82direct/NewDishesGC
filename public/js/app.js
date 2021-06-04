@@ -269,8 +269,19 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         slidesPerView: 1,
         spaceBetween: 40
       },
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 40
+      },
+      900: {
+        slidesPerView: 3,
+        spaceBetween: 40
+      },
       1200: {
         slidesPerView: 4
+      },
+      1400: {
+        slidesPerView: 5
       }
     }
   });
