@@ -1,10 +1,10 @@
 <x-app-layout>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-50 py-8">
-            <div class="bg-white shadow-sm sm:rounded-lg p-3" data-aos="fade-up">
+            <div class="sm:rounded-lg p-3" data-aos="fade-up">
                 <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 g-4">
                     @foreach($goods as $item)
                         <div class="col">
-                            <div class="card h-100" data-aos="fade-up">
+                            <div class="cardhover card h-100" data-aos="fade-up">
                                 <h5 class="card-header itemHeader text-center">{{ $item->art }}</h5>
                                 <img src="{{ $item->img }}" class="" alt="...">
                                 <div class="card-links">
@@ -25,7 +25,7 @@
                                         </div>
                                     @endif
                                 @endauth
-                                <div class="card-footer">
+                                <div class="card-footer card-text">
                                     <small class="text-muted">Дата прихода: {{ $item->arrival }}</small>
                                 </div>
                             </div>

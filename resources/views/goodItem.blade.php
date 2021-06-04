@@ -9,7 +9,7 @@
                 </ol>
             </nav>
     </div>
-    <section id="portfolio-details" class="portfolio-details bg-white shadow-sm max-w-7xl mx-auto sm:rounded-lg py-8 mb-6" data-aos="fade-up">
+    <section id="portfolio-details" class="portfolio-details max-w-7xl mx-auto sm:rounded-lg py-8 mb-6" data-aos="fade-up">
         <div class="container">
             <div class="row gy-3">
                 <div class="col-lg-8">

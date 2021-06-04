@@ -713,7 +713,7 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
     display: inline-block;
     background: #2f4d5a;
     color: #fff;
-    line-height: 1;
+    line-height: 0;
     padding: 9px 0;
     margin-right: 4px;
     border-radius: 50%;
@@ -780,7 +780,7 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
     background: #fff;
     padding: 6px 10px;
     position: relative;
-    border-radius: 4;
+    border-radius: 4px;
 }
 
 #footer .footer-top .footer-newsletter form input[type="email"] {
@@ -797,11 +797,10 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
     border: 0;
     background: none;
     font-size: 16px;
-    padding: 0 20px;
+    padding: 0 10px;
     background: #67b0d1;
     color: #fff;
     transition: 0.3s;
-    border-radius: 4;
 }
 
 #footer .footer-top .footer-newsletter form input[type="submit"]:hover {
@@ -916,7 +915,7 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
 }
 
 .portfolio-details .portfolio-description {
-    padding-top: 30px;
+    padding: 30px;
 }
 
 .portfolio-details .portfolio-description h2 {
@@ -982,6 +981,10 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
     transition-timing-function: ease-in-out;
 }
 
+.card-text {
+    text-align: center;
+}
+
 .card-svg {
     fill: #f1efef;
     transition: 200ms;
@@ -1018,6 +1021,13 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
     transition: 200ms;
     transition-timing-function: ease-in-out;
     transform: scale(1.1);
+}
+.cardhover {
+    border: none!important;
+}
+.cardhover:hover{
+    --tw-shadow: 0 1px 15px 0 rgba(0, 0, 0, 0.4), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 /*Good Cards Styles*/

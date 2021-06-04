@@ -11,11 +11,13 @@
                 </div>
             </div>
 
-            <div class="row portfolio-container bg-white shadow-sm sm:rounded-lg pt-2 pb-2" data-aos="fade-up">
+            <div class="row portfolio-container
+{{--                        bg-white shadow-sm--}}
+                        sm:rounded-lg pt-2 pb-2" data-aos="fade-up">
             @foreach(\App\Models\Maincategory::all() as $group)
                     @foreach(\App\Models\Category::where('category1_id', $group->id)->get() as $item)
                         <div class="col-lg-3 col-md-6 portfolio-item filter-{{ $group->id }}">
-                            <div class="card h-100 mb-3">
+                            <div class="cardhover card h-100 mb-3">
                                 <img src="{{ $item->img }}" alt="...">
                                 <div class="card-links">
                                     <a href="{{ route('nav::goods', ['id' => $item->id]) }}" class="card-link">
