@@ -40,7 +40,7 @@
                 {{ $slot }}
             </main>
 
-            <footer class="py-8">
+            <footer class="pt-14">
                 @include('layouts.footer')
             </footer>
 
