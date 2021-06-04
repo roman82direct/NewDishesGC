@@ -92,5 +92,15 @@ class Good extends Model
             ]);
         });
     }
+    /**
+     * Выбираем ТОПы на главную
+     *@param $count
+     * количество товаров
+    */
+    public static function getByLikes($count){
+        return Good::query()->orderByDesc('likes')
+            ->limit($count)
+            ->get();
+    }
 
 }

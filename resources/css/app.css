@@ -859,11 +859,39 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
 }
 
 #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
-    color: rgb(129, 140, 248) !important;
+    color: #67b0d1 !important;
 }
 
 #portfolio-flters li:last-child {
     margin-right: 0;
+}
+
+.portfolio-wrap {
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.portfolio-wrap::before {
+    content: "";
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: all ease-in-out 0.3s;
+    z-index: 2;
+    opacity: 0;
+}
+
+.portfolio-wrap:hover::before {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
 }
 
 /*--------------------------------------------------------------
@@ -975,7 +1003,7 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
     position: absolute;
     left: 47%;
     top: 40%;
-    z-index: 1;
+    z-index: 3;
     display: none;
     transition: 200ms;
     transition-timing-function: ease-in-out;
@@ -986,7 +1014,7 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
 }
 
 .card-svg {
-    fill: #f1efef;
+    fill: #badbf1;
     transition: 200ms;
     transition-timing-function: ease-in-out;
 }
@@ -1000,7 +1028,7 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
     display: block;
 }
 .card-link:hover .card-svg {
-    fill: #86755f;
+    fill: #67b0d1;
     transition: 200ms;
     transition-timing-function: ease-in-out;
     transform: scale(1.8);
@@ -1023,9 +1051,11 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
     transform: scale(1.1);
 }
 .cardhover {
+    transition: all ease-in-out 0.3s;
     border: none!important;
 }
 .cardhover:hover{
+    transition: all ease-in-out 0.3s;
     --tw-shadow: 0 1px 15px 0 rgba(0, 0, 0, 0.4), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }

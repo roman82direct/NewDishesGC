@@ -4,8 +4,8 @@
                 <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 g-4">
                     @foreach($goods as $item)
                         <div class="col">
-                            <div class="cardhover card h-100" data-aos="fade-up">
-                                <h5 class="card-header itemHeader text-center">{{ $item->art }}</h5>
+                            <div class="portfolio-wrap cardhover card h-100" data-aos="fade-up">
+                                <h5 class="card-footer itemHeader text-sm border-0">{{ $item->art }}</h5>
                                 <img src="{{ $item->img }}" class="" alt="...">
                                 <div class="card-links">
                                     <a href="{{ route('nav::showGoodItem', ['id' => $item->id]) }}" class="card-link">
@@ -15,7 +15,7 @@
                                     </a>
                                 </div>
                                 <div class="card-body">
-                                    <p class="card-text">{{ $item->name }}</p>
+                                    <p class="card-text text-sm">{{ $item->name }}</p>
                                 </div>
                                 @auth()
                                     @if(Auth::user()->hasRole('admin'))
@@ -25,7 +25,7 @@
                                         </div>
                                     @endif
                                 @endauth
-                                <div class="card-footer card-text">
+                                <div class="card-footer card-text border-0">
                                     <small class="text-muted">Дата прихода: {{ $item->arrival }}</small>
                                 </div>
                             </div>

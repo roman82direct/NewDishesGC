@@ -13,7 +13,9 @@ use Illuminate\Support\Facades\DB;
 class NavController extends Controller
 {
     public function main(){
-        return view('menu.main', ['categories' => Category::get()->random(6)]);
+        return view('menu.main',
+            ['categories' => Category::get()->random(6),
+             'goodsByLikes' => Good::getByLikes(20)]);
     }
 
     public function catalog(){

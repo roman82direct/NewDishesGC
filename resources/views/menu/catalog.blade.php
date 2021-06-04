@@ -17,7 +17,7 @@
             @foreach(\App\Models\Maincategory::all() as $group)
                     @foreach(\App\Models\Category::where('category1_id', $group->id)->get() as $item)
                         <div class="col-lg-3 col-md-6 portfolio-item filter-{{ $group->id }}">
-                            <div class="cardhover card h-100 mb-3">
+                            <div class="portfolio-wrap cardhover card h-100 mb-3">
                                 <img src="{{ $item->img }}" alt="...">
                                 <div class="card-links">
                                     <a href="{{ route('nav::goods', ['id' => $item->id]) }}" class="card-link">
@@ -27,7 +27,7 @@
                                     </a>
                                 </div>
                                 <div class="card-body">
-                                    <p class="card-text">{{ $item->name }}</p>
+                                    <p class="card-text text-sm">{{ $item->name }}</p>
                                 </div>
                                 @auth()
                                     @if(Auth::user()->hasRole('admin'))
