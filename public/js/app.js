@@ -273,14 +273,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         slidesPerView: 2,
         spaceBetween: 40
       },
-      900: {
+      1025: {
         slidesPerView: 3,
         spaceBetween: 40
       },
       1200: {
         slidesPerView: 4
       },
-      1400: {
+      1540: {
         slidesPerView: 5
       }
     }
@@ -324,6 +324,33 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       },
       1400: {
         slidesPerView: 5
+      }
+    }
+  });
+  /**
+   * Testimonials slider
+   */
+
+  new Swiper('.testimonials-slider', {
+    speed: 600,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    slidesPerView: 'auto',
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 40
+      },
+      1200: {
+        slidesPerView: 3
       }
     }
   });
