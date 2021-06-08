@@ -34,9 +34,6 @@ Route::group([
     Route::get('/contacts', 'NavController@contact')
         ->name('contacts');
 
-//    Route::get('category{id}/goods',[NavController::class, 'showGoods'])
-//        ->name('goods');
-
     Route::get('/goods{id}',[NavController::class, 'showGoods'])
         ->name('goods');
 
@@ -134,8 +131,5 @@ Route::get('/goo', function (Request $request){
     return redirect()->route('nav::main')->with('success', 'File add!');
 })->middleware('auth');
 
-//Route::get('/dashboard', function () {
-//    return view('dashboard');
-//})->middleware(['auth'])->name('dashboard');
-//
+
 require __DIR__.'/auth.php';

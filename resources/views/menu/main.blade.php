@@ -2,6 +2,7 @@
         <!-- Featured Image Slider -->
         <div id="featured">
             <ul data-aos="zoom-in" data-aos-delay="200">
+                @if($categories)
                 <li data-aos="fade-in" data-aos-delay="400">
                     <div class="hero-container" data-aos="fade-up">
                         <h1>"Посуда и Домашний текстиль"</h1>
@@ -21,6 +22,7 @@
                         </a>
                     </li>
                 @endforeach
+                @endif
             </ul>
         </div>
 

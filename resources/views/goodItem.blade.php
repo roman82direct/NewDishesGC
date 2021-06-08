@@ -62,10 +62,7 @@
                         </div>
                     @endif
                 @endauth
-
             </div>
-
         </div>
     </section>
-
 </x-app-layout>
