@@ -53,7 +53,7 @@
         <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
         <script type="text/javascript" src="{{ asset('js/jquery.roundabout-1.0.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
         <script type="text/javascript">
