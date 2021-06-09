@@ -13,12 +13,10 @@ class UserController extends Controller
 {
     public function index(){
         $user = \Auth::user();
-//        dd($user);
         return view('user.profile', ['user' => $user]);
     }
 
     public function downloadExcel(){
-//        $users = User::all();
         $goods = Good::all();
         return (new \Rap2hpoutre\FastExcel\FastExcel($goods))->download('goods.xlsx');
     }

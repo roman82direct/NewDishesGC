@@ -29,6 +29,9 @@
 {{--                    <li><a class="nav-link" href="{{ route('nav::contacts') }}">{{ __('menu.contacts') }}</a></li>--}}
                 </div>
 
+{{--                Поиск--}}
+                @include('layouts.search')
+
                 <div class="authblock d-flex justify-content-between">
                     @if (Route::has('login'))
                         @auth
