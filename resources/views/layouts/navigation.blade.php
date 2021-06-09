@@ -34,9 +34,9 @@
                         @auth
                         @else
                             <li><a class="auth-link" href="{{ route('login') }}">{{ __('buttons.login') }}</a></li>
-                            @if (Route::has('register'))
-                                <li><a class="auth-link" href="{{ route('register') }}">{{ __('buttons.register') }}</a></li>
-                            @endif
+{{--                            @if (Route::has('register'))--}}
+{{--                                <li><a class="auth-link" href="{{ route('register') }}">{{ __('buttons.register') }}</a></li>--}}
+{{--                            @endif--}}
                         @endauth
                     @endif
 

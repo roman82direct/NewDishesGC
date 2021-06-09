@@ -27,7 +27,10 @@ class UserController extends Controller
         $is_like = (new Like())->getId($id, Auth::user()->id);
         if (!$is_like){
             Like::insert(['user_id'=>Auth::user()->id, 'good_id'=>$id]);
-            Good::find($id)->increment('likes');
+            $good = Good::find($id);
+            $good->likes++;
+            $good->save();
+//            Good::find($id)->increment('likes'); // Не работает на HOST
         }
         return redirect()->back()->with('is_like',$is_like);
     }
