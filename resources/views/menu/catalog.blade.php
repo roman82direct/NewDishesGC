@@ -18,7 +18,7 @@
                     @foreach(\App\Models\Category::where('category1_id', $group->id)->get() as $item)
                         <div class="col-lg-3 col-md-6 portfolio-item filter-{{ $group->id }}">
                             <div class="portfolio-wrap cardhover card h-100 mb-3">
-                                <img src="{{ $item->img }}" alt="...">
+                                <img src="{{ $item->img }}" onError="this.src='/storage/img/good/temp.jpg'" alt="...">
                                 <div class="card-links">
                                     <a href="{{ route('nav::goods', ['id' => $item->id]) }}" class="card-link">
                                         <svg class="card-svg" xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25">

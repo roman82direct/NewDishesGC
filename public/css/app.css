@@ -31626,6 +31626,10 @@ select {
 }
 
 .authblock {
+  margin-left: 15px;
+}
+
+.searchblock {
   margin-left: 40%;
 }
 

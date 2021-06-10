@@ -16,13 +16,13 @@
                     <div class="portfolio-details-slider swiper-container" data-aos="fade-up">
                         <div class="swiper-wrapper align-items-center">
                             <div class="swiper-slide">
-                                <img src="{{ $item->img }}" alt="">
+                                <img src="{{ $item->img }}" onError="this.src='/storage/img/good/temp.jpg'" alt="">
                             </div>
                             <div class="swiper-slide">
-                                <img src="{{ $item->img1 }}" alt="">
+                                <img src="{{ $item->img1 }}" onError="this.src='/storage/img/good/temp.jpg'" alt="">
                             </div>
                             <div class="swiper-slide">
-                                <img src="{{ $item->img2 }}" alt="">
+                                <img src="{{ $item->img2 }}" onError="this.src='/storage/img/good/temp.jpg'" alt="">
                             </div>
                         </div>
                         <div class="swiper-pagination"></div>

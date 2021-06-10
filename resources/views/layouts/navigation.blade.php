@@ -16,7 +16,7 @@
                     <li class="dropdown"><a href="{{ route('nav::catalog') }}"><span>{{ __('menu.catalog') }}</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             @foreach(\App\Models\Maincategory::all() as $group)
-                                <li class="dropdown"><a href="#"><span>{{  $group->name }}</span> <i class="bi bi-chevron-right"></i></a>
+                                <li class="dropdown"><a href="#"><span>{{ $group->name }}</span> <i class="bi bi-chevron-right"></i></a>
                                     <ul>
                                         @foreach(\App\Models\Category::where('category1_id', $group->id)->get() as $item)
                                             <li><a href="{{ route('nav::goods', ['id' => $item->id]) }}">{{ $item->name }}</a></li>
@@ -29,14 +29,15 @@
 {{--                    <li><a class="nav-link" href="{{ route('nav::contacts') }}">{{ __('menu.contacts') }}</a></li>--}}
                 </div>
 
+{{--                Поиск--}}
+                @include('layouts.search')
+
+{{--                Auth--}}
                 <div class="authblock d-flex justify-content-between">
                     @if (Route::has('login'))
                         @auth
                         @else
                             <li><a class="auth-link" href="{{ route('login') }}">{{ __('buttons.login') }}</a></li>
-{{--                            @if (Route::has('register'))--}}
-{{--                                <li><a class="auth-link" href="{{ route('register') }}">{{ __('buttons.register') }}</a></li>--}}
-{{--                            @endif--}}
                         @endauth
                     @endif
 
@@ -66,6 +67,13 @@
             </ul>
 
             <i style="color: #5c636a" class="bi bi-list mobile-nav-toggle"></i>
+
+{{--Search result element--}}
+            <div id="searchResult" class="hidden absolute top-14 -right-0 bg-gray-50 opacity-80">
+                <ul class="flex-column align-items-start opacity-80" id="searchList">
+                </ul>
+            </div>
+
         </nav><!-- .navbar -->
 
     </div>

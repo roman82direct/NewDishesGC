@@ -13,12 +13,10 @@ class UserController extends Controller
 {
     public function index(){
         $user = \Auth::user();
-//        dd($user);
         return view('user.profile', ['user' => $user]);
     }
 
     public function downloadExcel(){
-//        $users = User::all();
         $goods = Good::all();
         return (new \Rap2hpoutre\FastExcel\FastExcel($goods))->download('goods.xlsx');
     }
@@ -30,8 +28,17 @@ class UserController extends Controller
             $good = Good::find($id);
             $good->likes++;
             $good->save();
-//            Good::find($id)->increment('likes'); // Не работает на HOST
         }
-        return redirect()->back()->with('is_like',$is_like);
+        return redirect()->route('nav::showGoodItem', ['id'=>$id]);
+    }
+
+    public function search(Request $request){
+        $search = $request->input('search');
+
+        $result = Good::where('art', 'like', "%$search%")
+            ->orWhere('name', 'like', "%$search%")
+            ->get();
+
+        return view('layouts.searchresult')->with('searchgoods', $result);
     }
 }
