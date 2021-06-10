@@ -6,7 +6,7 @@
                         <div class="col">
                             <div class="portfolio-wrap cardhover card h-100" data-aos="fade-up">
                                 <h5 class="card-footer itemHeader text-sm border-0">{{ $item->art }}</h5>
-                                <img src="{{ $item->img }}" class="" alt="...">
+                                <img src="{{ $item->img }}" onError="this.src='/storage/img/good/temp.jpg'" class="" alt="...">
                                 <div class="card-links">
                                     <a href="{{ route('nav::showGoodItem', ['id' => $item->id]) }}" class="card-link">
                                         <svg class="card-svg" xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25">

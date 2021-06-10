@@ -40,7 +40,7 @@
                         <div class="swiper-slide p-4">
                             <div class="portfolio-wrap cardhover card h-100" data-aos="fade-up">
                                 <div style="min-height: 300px">
-                                    <img src="{{ $item->img }}" class="" alt="...">
+                                    <img src="{{ $item->img }}" onError="this.src='/storage/img/good/temp.jpg'" class="" alt="...">
                                 </div>
                                 <div class="card-links">
                                     <a href="{{ route('nav::showGoodItem', ['id' => $item->id]) }}" class="card-link">

@@ -28,8 +28,7 @@ class UserController extends Controller
             $good = Good::find($id);
             $good->likes++;
             $good->save();
-//            Good::find($id)->increment('likes'); // Не работает на HOST
         }
-        return redirect()->back()->with('is_like',$is_like);
+        return redirect()->route('nav::showGoodItem', ['id'=>$id]);
     }
 }

@@ -20,7 +20,7 @@
                 <div class="grid-4">
                     @forelse($goods as $item)
                         <div class="card" style="width: 17rem;">
-                            <img style="" src="../{{ $item->img }}" class="card-img-top" alt="...">
+                            <img style="" src="../{{ $item->img }}" onError="this.src='/storage/img/good/temp.jpg'" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h4 class="card-title">{{ $item->art }}</h4>
                                 <h5 class="card-title">{{ $item->name }}</h5>
