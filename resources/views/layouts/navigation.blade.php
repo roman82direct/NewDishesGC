@@ -32,14 +32,12 @@
 {{--                Поиск--}}
                 @include('layouts.search')
 
+{{--                Auth--}}
                 <div class="authblock d-flex justify-content-between">
                     @if (Route::has('login'))
                         @auth
                         @else
                             <li><a class="auth-link" href="{{ route('login') }}">{{ __('buttons.login') }}</a></li>
-{{--                            @if (Route::has('register'))--}}
-{{--                                <li><a class="auth-link" href="{{ route('register') }}">{{ __('buttons.register') }}</a></li>--}}
-{{--                            @endif--}}
                         @endauth
                     @endif
 
@@ -69,6 +67,13 @@
             </ul>
 
             <i style="color: #5c636a" class="bi bi-list mobile-nav-toggle"></i>
+
+{{--Search result element--}}
+            <div id="searchResult" class="hidden absolute top-14 -right-0 bg-gray-50 opacity-80">
+                <ul class="flex-column align-items-start opacity-80" id="searchList">
+                </ul>
+            </div>
+
         </nav><!-- .navbar -->
 
     </div>

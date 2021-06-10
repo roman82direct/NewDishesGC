@@ -46,16 +46,21 @@ Route::group([
     'prefix' => '/user',
     'as' => 'user::',
     'namespace' => '\App\Http\Controllers',
-    'middleware' => ['auth']
 ], function (){
-    Route::get('/profile', [\App\Http\Controllers\user\UserController::class, 'index'])
+    Route::get('/profile', [UserController::class, 'index'])
+        ->middleware('auth')
         ->name('profile');
 
     Route::get('/download', [UserController::class, 'downloadExcel'])
+        ->middleware('auth')
         ->name('download');
 
     Route::get('/like{id}', [UserController::class, 'createLike'])
+        ->middleware('auth')
         ->name('like');
+
+    Route::get('/search', [UserController::class, 'search'])
+        ->name('search');
 });
 
 // Действия Admin

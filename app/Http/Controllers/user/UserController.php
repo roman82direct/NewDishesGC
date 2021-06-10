@@ -31,4 +31,14 @@ class UserController extends Controller
         }
         return redirect()->route('nav::showGoodItem', ['id'=>$id]);
     }
+
+    public function search(Request $request){
+        $search = $request->input('search');
+
+        $result = Good::where('art', 'like', "%$search%")
+            ->orWhere('name', 'like', "%$search%")
+            ->get();
+
+        return view('layouts.searchresult')->with('searchgoods', $result);
+    }
 }
