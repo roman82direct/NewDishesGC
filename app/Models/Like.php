@@ -32,9 +32,10 @@ class Like extends Model
      * @param $user_id
      * @return mixed
      */
-    public function getId($good_id, $user_id){
+    public static function getId($good_id, $user_id){
         return Like::whereGoodId($good_id)
             ->where('user_id', $user_id)
             ->value('id');
     }
+
 }

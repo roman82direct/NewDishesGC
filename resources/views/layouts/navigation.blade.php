@@ -43,25 +43,37 @@
 
                 <!-- Settings Dropdown -->
                     @auth()
-                        <li class="dropdown">
-                            <a class="auth-link sm:flex sm:items-center" href="#">
-                                {{ Auth::user()->name }}<i class="bi bi-chevron-down"></i>
-                            </a>
+                        <div class="userblock flex justify-content-between align-items-center">
+                            <li class="dropdown">
+                                <a class="auth-link sm:flex sm:items-center" href="#">
+                                    {{ Auth::user()->name }}<i class="bi bi-chevron-down"></i>
+                                </a>
 
-                            <ul>
-                                <li><a href="{{ route('user::profile') }}">{{ __('menu.profile') }}</a></li>
-                                @if(\Illuminate\Support\Facades\Auth::user()->hasRole('admin'))
-                                    <li><a href="{{ route('admin::panel') }}">{{ __('menu.admin') }}</a></li>
+                                <ul>
+                                    <li><a href="{{ route('user::profile') }}">{{ __('menu.profile') }}</a></li>
+                                    @if(\Illuminate\Support\Facades\Auth::user()->hasRole('admin'))
+                                        <li><a href="{{ route('admin::panel') }}">{{ __('menu.admin') }}</a></li>
+                                    @endif
+                                    <li><hr></li>
+                                    <li>
+                                        <form method="POST" action="{{ route('logout') }}">
+                                            @csrf
+                                            <button type="submit" class="dropdown-item auth-link">{{ __('buttons.logout') }}</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                            <a class="relative" href="#">
+                                @if(!\App\Models\Favorite::whereUserId(\Illuminate\Support\Facades\Auth::user()->id)->count())
+                                    <i id="navFavorites" style="font-size: 1.5rem" class="bi bi-bookmarks text-gray-500"></i>
+                                @else
+                                    <i id="navFavorites" style="font-size: 1.6rem; color: #faa3a3" class="bi bi-bookmarks-fill"></i>
+                                    <div id="favoritesCount" class="favoritesCount">
+                                        {{ \App\Models\Favorite::whereUserId(\Illuminate\Support\Facades\Auth::id())->count() }}
+                                    </div>
                                 @endif
-                                <li><hr></li>
-                                <li>
-                                    <form method="POST" action="{{ route('logout') }}">
-                                        @csrf
-                                        <button type="submit" class="dropdown-item auth-link">{{ __('buttons.logout') }}</button>
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
+                            </a>
+                        </div>
                     @endauth
                 </div>
             </ul>
@@ -69,8 +81,8 @@
             <i style="color: #5c636a" class="bi bi-list mobile-nav-toggle"></i>
 
 {{--Search result element--}}
-            <div id="searchResult" class="hidden absolute top-14 -right-0 bg-gray-50 opacity-80">
-                <ul class="flex-column align-items-start opacity-80" id="searchList">
+            <div id="searchResult" class="searchresult hidden absolute top-14 right-16 bg-gray-50 opacity-95">
+                <ul class="flex-column align-items-start bg-white" id="searchList">
                 </ul>
             </div>
 
