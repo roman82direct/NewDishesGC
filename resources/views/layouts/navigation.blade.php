@@ -63,8 +63,16 @@
                                     </li>
                                 </ul>
                             </li>
-                            <a id="navFavorites" href="#"><i style="font-size: 1.5rem" class="bi bi-bookmarks text-gray-500"></i></a>
-                            {{--                            <i class="bi bi-bookmarks-fill"></i>--}}
+                            <a class="relative" href="#">
+                                @if(!\App\Models\Favorite::whereUserId(\Illuminate\Support\Facades\Auth::user()->id)->count())
+                                    <i id="navFavorites" style="font-size: 1.5rem" class="bi bi-bookmarks text-gray-500"></i>
+                                @else
+                                    <i id="navFavorites" style="font-size: 1.6rem; color: #faa3a3" class="bi bi-bookmarks-fill"></i>
+                                    <div id="favoritesCount" class="favoritesCount">
+                                        {{ \App\Models\Favorite::whereUserId(\Illuminate\Support\Facades\Auth::id())->count() }}
+                                    </div>
+                                @endif
+                            </a>
                         </div>
                     @endauth
                 </div>

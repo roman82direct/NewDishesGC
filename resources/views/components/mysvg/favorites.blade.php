@@ -1,4 +1,7 @@
-<svg
+<svg id="favoriteSvg"
+    @if($is_favorite)
+        style="fill: red"
+    @endif
     class="soc-svg" viewBox="0 0 30 30"
     width="20" height="20"
     xmlns="http://www.w3.org/2000/svg">

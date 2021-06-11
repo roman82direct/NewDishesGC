@@ -50,6 +50,21 @@ $(document).ready(function(){
         });
     });
 
+    // Ajax Favorites
+    $('#toFavorites').click(function(e){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        e.preventDefault();
+        let itemId = $('#toFavorites').attr('data-id');
+        $.get("/user/favorites", {id:itemId}, function(data){
+            $('#favoriteSvg').css('fill', 'red');
+            $('#navFavorites').css('color', '#67b0d1');
+        });
+    });
+
     // $("#btn-request").click(function (e) {
     //     $.ajaxSetup({
     //         headers: {

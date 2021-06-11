@@ -2,6 +2,8 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\CheckFavorites;
+use App\Http\Middleware\CheckLike;
 use App\Http\Middleware\CheckRole;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -59,6 +61,8 @@ class Kernel extends HttpKernel
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'checkrole' => CheckRole::class,
+        'checklikes' => CheckLike::class,
+        'checkfavorites' => CheckFavorites::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'password.confirm' => \Illuminate\Auth\Middleware\RequirePassword::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,

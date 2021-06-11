@@ -56,8 +56,12 @@ Route::group([
         ->name('download');
 
     Route::get('/like', [UserController::class, 'createLike'])
-        ->middleware('auth')
+        ->middleware(['auth', 'checklikes'])
         ->name('like');
+
+    Route::get('/favorites', [UserController::class, 'addToFavorites'])
+        ->middleware(['auth', 'checkfavorites'])
+        ->name('favorites');
 
     Route::get('/search', [UserController::class, 'search'])
         ->name('search');

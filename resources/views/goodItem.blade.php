@@ -37,7 +37,7 @@
                             >@include('components.mysvg.like')
                             </a>
                             <a id="toFavorites" data-id="{{ $item->id }}" class="item-card-link" href="#"
-                               title="В избранные"
+                               title="{{ Auth::user() ? 'В избранные' : 'Войдите, чтобы добавить в избранные...' }}"
                             >@include('components.mysvg.favorites')
                             </a>
                             <a id="toComment" data-id="{{ $item->id }}" class="item-card-link" href="#"

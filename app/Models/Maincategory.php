@@ -13,6 +13,20 @@ use Rap2hpoutre\FastExcel\FastExcel;
  * @method static \Illuminate\Database\Eloquent\Builder|Maincategory newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Maincategory query()
  * @mixin \Eloquent
+ * @property int $id
+ * @property string $name
+ * @property string $img Path to the main img of the category
+ * @property string $img1
+ * @property string $img2
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|Maincategory whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Maincategory whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Maincategory whereImg($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Maincategory whereImg1($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Maincategory whereImg2($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Maincategory whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Maincategory whereUpdatedAt($value)
  */
 class Maincategory extends Model
 {
