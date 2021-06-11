@@ -61,7 +61,7 @@ $(document).ready(function(){
         let itemId = $('#toFavorites').attr('data-id');
         $.get("/user/favorites", {id:itemId}, function(data){
             $('#favoriteSvg').css('fill', 'red');
-            $('#navFavorites').css('color', '#67b0d1');
+            $('#navFavorites').css('color', '#faa3a3');
         });
     });
 
