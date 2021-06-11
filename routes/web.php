@@ -55,7 +55,7 @@ Route::group([
         ->middleware('auth')
         ->name('download');
 
-    Route::get('/like{id}', [UserController::class, 'createLike'])
+    Route::get('/like', [UserController::class, 'createLike'])
         ->middleware('auth')
         ->name('like');
 

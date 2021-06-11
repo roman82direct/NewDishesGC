@@ -31,11 +31,23 @@
                         <!-- If we need scrollbar -->
                         {{--                        <div class="swiper-scrollbar"></div>--}}
                         <div class="item-card-links flex justify-between items-center p-1">
-                            <a class="item-card-link" href="{{ route('user::like', ['id'=>$item->id]) }}" title="Нравится">@include('components.mysvg.like')</a>
-                            <a class="item-card-link" href="" title="Комментировать">@include('components.mysvg.comment')</a>
-                            <a class="item-card-link" href="" title="Поделиться">@include('components.mysvg.share')</a>
-                            <a class="item-card-link" href="" title="В избранные">@include('components.mysvg.favorites')</a>
+                            <a id="toLike" data-id="{{ $item->id }}" class="item-card-link" href="#"
+{{--                               title=@if(!Auth::user())"Нравится? Войдите, чтобы лайкнуть..."@endif--}}
+                                title="{{ Auth::user() ? 'Нравится' : 'Войдите, чтобы лайкнуть...' }}"
+                            >@include('components.mysvg.like')
+                            </a>
+                            <a id="toComment" data-id="{{ $item->id }}" class="item-card-link" href="#" title="Комментировать"
+                               >@include('components.mysvg.comment')
+                            </a>
+                            <a id="toShare" data-id="{{ $item->id }}" class="item-card-link" href="#" title="Поделиться"
+                               >@include('components.mysvg.share')
+                            </a>
+                            <a id="toFavorites" data-id="{{ $item->id }}" class="item-card-link" href="#" title="В избранные"
+                               >@include('components.mysvg.favorites')
+                            </a>
                         </div>
+{{--                        Toast for item links--}}
+
                     </div>
                 </div>
                 <div class="col-lg-4">

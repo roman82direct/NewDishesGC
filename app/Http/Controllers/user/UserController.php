@@ -21,15 +21,17 @@ class UserController extends Controller
         return (new \Rap2hpoutre\FastExcel\FastExcel($goods))->download('goods.xlsx');
     }
 
-    public function createLike($id){
-        $is_like = (new Like())->getId($id, Auth::user()->id);
+    public function createLike(Request $request){
+        $is_like = (new Like())->getId($request->input('id'), Auth::user()->id);
         if (!$is_like){
-            Like::insert(['user_id'=>Auth::user()->id, 'good_id'=>$id]);
-            $good = Good::find($id);
+            Like::insert(['user_id'=>Auth::user()->id, 'good_id'=>$request->input('id')]);
+            $good = Good::find($request->input('id'));
             $good->likes++;
             $good->save();
-        }
-        return redirect()->route('nav::showGoodItem', ['id'=>$id]);
+            $message = 'Your Like accepted';
+        } else
+            $message = 'Like is already exists';
+        return response()->json(['success'=>$message], 202);
     }
 
     public function search(Request $request){

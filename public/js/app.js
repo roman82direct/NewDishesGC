@@ -14,12 +14,19 @@ __webpack_require__(/*! ./squad */ "./resources/js/squad.js"); // require('alpin
 
 
 $(document).ready(function () {
-  $.ajaxSetup({
-    headers: {
-      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  $('#searchForm').keydown(function (event) {
+    if (event.keyCode == 13) {
+      event.preventDefault();
+      return false;
     }
-  });
+  }); // Ajax Search
+
   $('#search').keyup(function () {
+    $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+    });
     var search = $('#search').val();
 
     if (search == "") {
@@ -33,7 +40,53 @@ $(document).ready(function () {
         $('#searchResult').show();
       });
     }
-  });
+  }); // Ajax Like
+
+  $('#toLike').click(function (e) {
+    $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+    });
+    e.preventDefault();
+    var itemId = $('#toLike').attr('data-id');
+    $.get("/user/like", {
+      id: itemId
+    }, function (data) {
+      $('#likeSvg').css('fill', 'red');
+    });
+  }); // $("#btn-request").click(function (e) {
+  //     $.ajaxSetup({
+  //         headers: {
+  //             'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content') // Обязательно для передачи!!!
+  //         }
+  //     });
+  //     e.preventDefault();
+  //     var is_checked = jQuery('#favorites').prop("checked") ? 1 : 0
+  //     var predefined = $('#predefined').val()
+  //     var methods = [
+  //         'GET',
+  //         'POST',
+  //         'PUT',
+  //         'DELETE'
+  //     ];
+  //     var formData = {
+  //         name: jQuery('#task_name').val(),
+  //     };
+  //     $.ajax({
+  //         type: methods[1],
+  //         url: '/api/tasks',
+  //         data: formData,
+  //         dataType: 'json',
+  //         success: function (data) {
+  //             console.log(data);
+  //             jQuery('#formModal').modal('hide')
+  //         },
+  //         error: function () {
+  //             jQuery('#formModal').modal('hide')
+  //         }
+  //     });
+  // });
 });
 
 /***/ }),
