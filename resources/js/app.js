@@ -35,6 +35,7 @@ $(document).ready(function(){
             })
         }
     });
+
     // Ajax Like
     $('#toLike').click(function(e){
         $.ajaxSetup({

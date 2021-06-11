@@ -30,23 +30,25 @@
                         <div class="swiper-button-next"></div>
                         <!-- If we need scrollbar -->
                         {{--                        <div class="swiper-scrollbar"></div>--}}
+
                         <div class="item-card-links flex justify-between items-center p-1">
                             <a id="toLike" data-id="{{ $item->id }}" class="item-card-link" href="#"
-{{--                               title=@if(!Auth::user())"Нравится? Войдите, чтобы лайкнуть..."@endif--}}
-                                title="{{ Auth::user() ? 'Нравится' : 'Войдите, чтобы лайкнуть...' }}"
+                               title="{{ Auth::user() ? 'Нравится' : 'Войдите, чтобы лайкнуть...' }}"
                             >@include('components.mysvg.like')
                             </a>
-                            <a id="toComment" data-id="{{ $item->id }}" class="item-card-link" href="#" title="Комментировать"
+                            <a id="toFavorites" data-id="{{ $item->id }}" class="item-card-link" href="#"
+                               title="В избранные"
+                            >@include('components.mysvg.favorites')
+                            </a>
+                            <a id="toComment" data-id="{{ $item->id }}" class="item-card-link" href="#"
+                               title="Комментировать"
                                >@include('components.mysvg.comment')
                             </a>
-                            <a id="toShare" data-id="{{ $item->id }}" class="item-card-link" href="#" title="Поделиться"
+                            <a id="toShare" data-id="{{ $item->id }}" class="item-card-link" href="#"
+                               title="Поделиться"
                                >@include('components.mysvg.share')
                             </a>
-                            <a id="toFavorites" data-id="{{ $item->id }}" class="item-card-link" href="#" title="В избранные"
-                               >@include('components.mysvg.favorites')
-                            </a>
                         </div>
-{{--                        Toast for item links--}}
 
                     </div>
                 </div>
@@ -58,7 +60,7 @@
                             <li><strong>Наименование</strong>: {{ $item->name }}</li>
                             <li><strong>Категория</strong>: {{ \App\Models\Category::find($item->category_id)->name}}</li>
                             <li><strong>Дата прихода</strong>: {{ $item->arrival }}</li>
-                            <li><strong>Упаковка</strong>: <a href="#">www.example.com</a></li>
+                            <li><strong>Упаковка</strong>: <p>Нет данных</p></li>
                         </ul>
                     </div>
                     <div class="portfolio-description">

@@ -43,25 +43,29 @@
 
                 <!-- Settings Dropdown -->
                     @auth()
-                        <li class="dropdown">
-                            <a class="auth-link sm:flex sm:items-center" href="#">
-                                {{ Auth::user()->name }}<i class="bi bi-chevron-down"></i>
-                            </a>
+                        <div class="userblock flex justify-content-between align-items-center">
+                            <li class="dropdown">
+                                <a class="auth-link sm:flex sm:items-center" href="#">
+                                    {{ Auth::user()->name }}<i class="bi bi-chevron-down"></i>
+                                </a>
 
-                            <ul>
-                                <li><a href="{{ route('user::profile') }}">{{ __('menu.profile') }}</a></li>
-                                @if(\Illuminate\Support\Facades\Auth::user()->hasRole('admin'))
-                                    <li><a href="{{ route('admin::panel') }}">{{ __('menu.admin') }}</a></li>
-                                @endif
-                                <li><hr></li>
-                                <li>
-                                    <form method="POST" action="{{ route('logout') }}">
-                                        @csrf
-                                        <button type="submit" class="dropdown-item auth-link">{{ __('buttons.logout') }}</button>
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
+                                <ul>
+                                    <li><a href="{{ route('user::profile') }}">{{ __('menu.profile') }}</a></li>
+                                    @if(\Illuminate\Support\Facades\Auth::user()->hasRole('admin'))
+                                        <li><a href="{{ route('admin::panel') }}">{{ __('menu.admin') }}</a></li>
+                                    @endif
+                                    <li><hr></li>
+                                    <li>
+                                        <form method="POST" action="{{ route('logout') }}">
+                                            @csrf
+                                            <button type="submit" class="dropdown-item auth-link">{{ __('buttons.logout') }}</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                            <a id="navFavorites" href="#"><i style="font-size: 1.5rem" class="bi bi-bookmarks text-gray-500"></i></a>
+                            {{--                            <i class="bi bi-bookmarks-fill"></i>--}}
+                        </div>
                     @endauth
                 </div>
             </ul>
@@ -69,8 +73,8 @@
             <i style="color: #5c636a" class="bi bi-list mobile-nav-toggle"></i>
 
 {{--Search result element--}}
-            <div id="searchResult" class="searchresult hidden absolute top-14 right-16 bg-gray-50 opacity-80">
-                <ul class="flex-column align-items-start opacity-90" id="searchList">
+            <div id="searchResult" class="searchresult hidden absolute top-14 right-16 bg-gray-50 opacity-95">
+                <ul class="flex-column align-items-start bg-white" id="searchList">
                 </ul>
             </div>
 
