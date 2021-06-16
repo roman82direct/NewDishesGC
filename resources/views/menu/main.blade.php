@@ -26,6 +26,57 @@
             </ul>
         </div>
 
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+        <div class="container">
+
+            <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+                <h2>Добро пожаловать</h2>
+            </div>
+
+            <div class="row no-gutters">
+                <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
+                    <div class="content">
+                        <h3>Веб-портал товарного направления "Посуда и Домашний текстиль"</h3>
+                        <p>
+                            Актуальные новинки Посуды и Текстиля на предстоящий сезон 2021 - 2022 года. Товары к Новому году и весенним праздникам.
+                            Последние обновления регулярного ассортимента...<br>
+                            {{--                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit--}}
+                        </p>
+                        {{--                        <a href="#" class="about-btn">About us <i class="bx bx-chevron-right"></i></a>--}}
+                    </div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-stretch">
+                    <div class="icon-boxes d-flex flex-column justify-content-center">
+                        <div class="row">
+                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                                <i class="bi bi-book"></i>
+                                <h4>Каталог новинок</h4>
+                                <p>В нашем каталоге собраны все товары в категориях "Посуда" и "Домашний текстиль", которые поступят на склад в преддверии нового сезона 2021-2022.</p>
+                            </div>
+                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                                <i class="bi bi-info-circle"></i>
+                                <h4>Информативность</h4>
+                                <p>Качественные фото. Описание каждого товара. Прогноз цены...</p>
+                            </div>
+                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                                <i class="bi bi-chat-text"></i>
+                                <h4>Пользовательский опыт</h4>
+                                <p>Авторизовавшись в системе, Вы сможете оценивать, комментировать товары, формировать свои списки товаров, делиться списками с другими пользователями.</p>
+                            </div>
+                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+                                <i class="bi bi-clock-history"></i>
+                                <h4>Оперативность и своевременность</h4>
+                                <p>Посетив портал, Вы сможете получить актуальную информацию по нашим новинкам из "первых рук"</p>
+                            </div>
+                        </div>
+                    </div><!-- End .content-->
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End About Section -->
+
     <!-- ======= goodsByLikes Section ======= -->
     <section id="services" class="services">
         <div class="container">
@@ -39,7 +90,7 @@
                     @foreach($goodsByLikes as $item)
                         <div class="swiper-slide p-4">
                             <div class="portfolio-wrap cardhover card h-100" data-aos="fade-up">
-                                <div style="min-height: 300px">
+                                <div style="min-height: 250px">
                                     <img src="{{ $item->img }}" onError="this.src='/storage/img/good/temp.jpg'" class="" alt="...">
                                 </div>
                                 <div class="card-links">
@@ -49,7 +100,7 @@
                                         </svg>
                                     </a>
                                 </div>
-                                <div style="min-height: 150px" class="card-body">
+                                <div style="min-height: 130px" class="card-body">
                                     <p class="card-text">{{ $item->art }}</p>
                                     <p style="font-size: 12px" class="card-text fst-italic">{{ $item->name }}</p>
                                 </div>
@@ -64,61 +115,16 @@
         </div>
     </section><!-- End goodsByLikes Section -->
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-        <div class="container">
-
-            <div class="row no-gutters">
-                <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
-                    <div class="content">
-                        <h3>Voluptatem dignissimos provident quasi</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                        </p>
-                        <a href="#" class="about-btn">About us <i class="bx bx-chevron-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-xl-7 d-flex align-items-stretch">
-                    <div class="icon-boxes d-flex flex-column justify-content-center">
-                        <div class="row">
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                                <i class="bx bx-receipt"></i>
-                                <h4>Corporis voluptates sit</h4>
-                                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
-                            </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-                                <i class="bx bx-cube-alt"></i>
-                                <h4>Ullamco laboris nisi</h4>
-                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-                            </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-                                <i class="bx bx-images"></i>
-                                <h4>Labore consequatur</h4>
-                                <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
-                            </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-                                <i class="bx bx-shield"></i>
-                                <h4>Beatae veritatis</h4>
-                                <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
-                            </div>
-                        </div>
-                    </div><!-- End .content-->
-                </div>
-            </div>
-
-        </div>
-    </section><!-- End About Section -->
-
     <!-- ======= Cta Section ======= -->
-    <section id="cta" class="cta">
-        <div class="container" data-aos="zoom-in">
-            <div class="text-center">
-                <h3>Call To Action</h3>
-                {{--                    <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>--}}
-                <a class="cta-btn" href="#">Call To Action</a>
-            </div>
-        </div>
-    </section><!-- End Cta Section -->
+{{--    <section id="cta" class="cta">--}}
+{{--        <div class="container" data-aos="zoom-in">--}}
+{{--            <div class="text-center">--}}
+{{--                <h3>Call To Action</h3>--}}
+{{--                --}}{{--                    <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>--}}
+{{--                <a class="cta-btn" href="#">Call To Action</a>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section><!-- End Cta Section -->--}}
 
     <!-- Brands Section -->
     <section id="brands" class="brands section-bg">
