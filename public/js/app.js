@@ -14,6 +14,11 @@ __webpack_require__(/*! ./squad */ "./resources/js/squad.js"); // require('alpin
 
 
 $(document).ready(function () {
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
   $('#searchForm').keydown(function (event) {
     if (event.keyCode == 13) {
       event.preventDefault();
@@ -22,11 +27,6 @@ $(document).ready(function () {
   }); // Ajax Search
 
   $('#search').keyup(function () {
-    $.ajaxSetup({
-      headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      }
-    });
     var search = $('#search').val();
 
     if (search == "") {
@@ -43,11 +43,6 @@ $(document).ready(function () {
   }); // Ajax Like
 
   $('#toLike').click(function (e) {
-    $.ajaxSetup({
-      headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      }
-    });
     e.preventDefault();
     var itemId = $('#toLike').attr('data-id');
     $.get("/user/like", {
@@ -58,11 +53,6 @@ $(document).ready(function () {
   }); // Ajax Favorites
 
   $('#toFavorites').click(function (e) {
-    $.ajaxSetup({
-      headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      }
-    });
     e.preventDefault();
     var itemId = $('#toFavorites').attr('data-id');
     $.get("/user/favorites", {
@@ -71,38 +61,40 @@ $(document).ready(function () {
       $('#favoriteSvg').css('fill', 'red');
       $('#navFavorites').css('color', '#faa3a3');
     });
-  }); // $("#btn-request").click(function (e) {
-  //     $.ajaxSetup({
-  //         headers: {
-  //             'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content') // Обязательно для передачи!!!
-  //         }
-  //     });
-  //     e.preventDefault();
-  //     var is_checked = jQuery('#favorites').prop("checked") ? 1 : 0
-  //     var predefined = $('#predefined').val()
-  //     var methods = [
-  //         'GET',
-  //         'POST',
-  //         'PUT',
-  //         'DELETE'
-  //     ];
-  //     var formData = {
-  //         name: jQuery('#task_name').val(),
-  //     };
-  //     $.ajax({
-  //         type: methods[1],
-  //         url: '/api/tasks',
-  //         data: formData,
-  //         dataType: 'json',
-  //         success: function (data) {
-  //             console.log(data);
-  //             jQuery('#formModal').modal('hide')
-  //         },
-  //         error: function () {
-  //             jQuery('#formModal').modal('hide')
-  //         }
-  //     });
-  // });
+  }); // Ajax Comment
+
+  $('#toCommentLink').click(function () {
+    $('#commentForm').trigger("reset");
+  });
+  $("#toCommentBtn").click(function (e) {
+    // $.ajaxSetup({
+    //     headers: {
+    //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    //     }
+    // });
+    e.preventDefault();
+    var formData = {
+      good_id: $('#goodId').val(),
+      user_id: $('#userId').val(),
+      comment: $('#comment').val(),
+      _token: $('meta[name="csrf-token"]').attr('content')
+    };
+    $.ajax({
+      type: 'POST',
+      url: '/user/comment',
+      data: formData,
+      // headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+      dataType: 'json',
+      success: function success(data) {
+        console.log(data);
+        $('#toCommentSvg').css('fill', 'red');
+      },
+      error: function error(e) {
+        console.log(e);
+        $('#toCommentSvg').css('fill', 'blue');
+      }
+    });
+  });
 });
 
 /***/ }),

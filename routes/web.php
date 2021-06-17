@@ -63,6 +63,10 @@ Route::group([
         ->middleware(['auth', 'checkfavorites'])
         ->name('favorites');
 
+    Route::match(['GET', 'POST'],'/comment', [UserController::class, 'commentGood'])
+        ->middleware('auth')
+        ->name('comment');
+
     Route::get('/search', [UserController::class, 'search'])
         ->name('search');
 });
