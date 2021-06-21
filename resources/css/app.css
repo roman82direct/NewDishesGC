@@ -89,6 +89,7 @@
     margin: 0;
     padding: 0;
     display: flex;
+    justify-content: center;
     list-style: none;
     align-items: center;
 }
@@ -187,7 +188,7 @@
 }
 
 .searchblock {
-    margin-left: 40%;
+    margin-left: 30%;
 }
 
 .favoritesCount {
@@ -1191,6 +1192,11 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
     transition-timing-function: ease-in-out;
     transform: scale(1.1);
 }
+/*toast style*/
+.toast-message{
+    display: none;
+}
+
 .cardhover {
     transition: all ease-in-out 0.3s;
     border: none!important;

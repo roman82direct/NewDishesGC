@@ -89,6 +89,22 @@ $(document).ready(function () {
         $('#toCommentSvg').css('fill', 'blue');
       }
     });
+  }); // show alert Auth toast on goodItem page
+
+  $('#toastLike').click(function () {
+    $('.toast-message').css('display', 'block');
+  });
+  $('#toastFavorites').click(function () {
+    $('.toast-message').css('display', 'block');
+  });
+  $('#toastComment').click(function () {
+    $('.toast-message').css('display', 'block');
+  });
+  $('#toastShare').click(function () {
+    $('.toast-message').css('display', 'block');
+  });
+  $('.btn-close').click(function () {
+    $('.toast-message').css('display', 'none');
   });
 });
 
@@ -112,12 +128,6 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-/**
-* Template Name: Squadfree - v4.0.1
-* Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 (function () {
   "use strict";
   /**
