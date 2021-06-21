@@ -5,6 +5,7 @@ return [
     'main' => 'Main',
     'catalog' => 'Catalog',
     'contacts' => 'Contact Us',
+    'comments' => 'Comments',
     'categories' => 'Categories',
     'goods' => 'Goods',
     //admin.menu

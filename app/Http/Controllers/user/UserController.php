@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CommentsRequest;
+use App\Models\Comment;
 use App\Models\Favorite;
 use App\Models\Good;
 use App\Models\Like;
@@ -30,6 +32,12 @@ class UserController extends Controller
 
     public function addToFavorites(){
         return response()->json(['success'=>'Added to Favorites'], 202);
+    }
+
+    public function commentGood(CommentsRequest $request){
+        $comment = Comment::create($request->all());
+
+        return response()->json($comment, 201);
     }
 
     public function search(Request $request){

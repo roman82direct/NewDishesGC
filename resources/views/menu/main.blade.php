@@ -26,6 +26,57 @@
             </ul>
         </div>
 
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+        <div class="container">
+
+            <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+                <h2>Добро пожаловать</h2>
+            </div>
+
+            <div class="row no-gutters">
+                <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
+                    <div class="content">
+                        <h3>Веб-портал товарного направления "Посуда и Домашний текстиль"</h3>
+                        <p>
+                            Актуальные новинки Посуды и Текстиля на предстоящий сезон 2021 - 2022 года. Товары к Новому году и весенним праздникам.
+                            Последние обновления регулярного ассортимента...<br>
+                            {{--                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit--}}
+                        </p>
+                        {{--                        <a href="#" class="about-btn">About us <i class="bx bx-chevron-right"></i></a>--}}
+                    </div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-stretch">
+                    <div class="icon-boxes d-flex flex-column justify-content-center">
+                        <div class="row">
+                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                                <i class="bi bi-book"></i>
+                                <h4>Каталог новинок</h4>
+                                <p>В нашем каталоге собраны все товары в категориях "Посуда" и "Домашний текстиль", которые поступят на склад в преддверии нового сезона 2021-2022.</p>
+                            </div>
+                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                                <i class="bi bi-info-circle"></i>
+                                <h4>Информативность</h4>
+                                <p>Качественные фото. Описание каждого товара. Прогноз цены...</p>
+                            </div>
+                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                                <i class="bi bi-chat-text"></i>
+                                <h4>Пользовательский опыт</h4>
+                                <p>Авторизовавшись в системе, Вы сможете оценивать, комментировать товары, формировать свои списки товаров, делиться списками с другими пользователями.</p>
+                            </div>
+                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+                                <i class="bi bi-clock-history"></i>
+                                <h4>Оперативность и своевременность</h4>
+                                <p>Посетив портал, Вы сможете получить актуальную информацию по нашим новинкам из "первых рук"</p>
+                            </div>
+                        </div>
+                    </div><!-- End .content-->
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End About Section -->
+
     <!-- ======= goodsByLikes Section ======= -->
     <section id="services" class="services">
         <div class="container">
@@ -39,7 +90,7 @@
                     @foreach($goodsByLikes as $item)
                         <div class="swiper-slide p-4">
                             <div class="portfolio-wrap cardhover card h-100" data-aos="fade-up">
-                                <div style="min-height: 300px">
+                                <div style="min-height: 250px">
                                     <img src="{{ $item->img }}" onError="this.src='/storage/img/good/temp.jpg'" class="" alt="...">
                                 </div>
                                 <div class="card-links">
@@ -49,7 +100,7 @@
                                         </svg>
                                     </a>
                                 </div>
-                                <div style="min-height: 150px" class="card-body">
+                                <div style="min-height: 130px" class="card-body">
                                     <p class="card-text">{{ $item->art }}</p>
                                     <p style="font-size: 12px" class="card-text fst-italic">{{ $item->name }}</p>
                                 </div>
@@ -64,61 +115,16 @@
         </div>
     </section><!-- End goodsByLikes Section -->
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-        <div class="container">
-
-            <div class="row no-gutters">
-                <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
-                    <div class="content">
-                        <h3>Voluptatem dignissimos provident quasi</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                        </p>
-                        <a href="#" class="about-btn">About us <i class="bx bx-chevron-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-xl-7 d-flex align-items-stretch">
-                    <div class="icon-boxes d-flex flex-column justify-content-center">
-                        <div class="row">
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                                <i class="bx bx-receipt"></i>
-                                <h4>Corporis voluptates sit</h4>
-                                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
-                            </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-                                <i class="bx bx-cube-alt"></i>
-                                <h4>Ullamco laboris nisi</h4>
-                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-                            </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-                                <i class="bx bx-images"></i>
-                                <h4>Labore consequatur</h4>
-                                <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
-                            </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-                                <i class="bx bx-shield"></i>
-                                <h4>Beatae veritatis</h4>
-                                <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
-                            </div>
-                        </div>
-                    </div><!-- End .content-->
-                </div>
-            </div>
-
-        </div>
-    </section><!-- End About Section -->
-
     <!-- ======= Cta Section ======= -->
-    <section id="cta" class="cta">
-        <div class="container" data-aos="zoom-in">
-            <div class="text-center">
-                <h3>Call To Action</h3>
-                {{--                    <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>--}}
-                <a class="cta-btn" href="#">Call To Action</a>
-            </div>
-        </div>
-    </section><!-- End Cta Section -->
+{{--    <section id="cta" class="cta">--}}
+{{--        <div class="container" data-aos="zoom-in">--}}
+{{--            <div class="text-center">--}}
+{{--                <h3>Call To Action</h3>--}}
+{{--                --}}{{--                    <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>--}}
+{{--                <a class="cta-btn" href="#">Call To Action</a>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section><!-- End Cta Section -->--}}
 
     <!-- Brands Section -->
     <section id="brands" class="brands section-bg">
@@ -181,50 +187,24 @@
 
             <div class="section-title" data-aos="fade-in" data-aos-delay="100">
                 <h2>Отзывы</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
             </div>
 
             <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
                 <div class="swiper-wrapper">
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                            <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                            <h3>Saul Goodman</h3>
-                            <h4>Ceo &amp; Founder</h4>
-                        </div>
-                    </div><!-- End testimonial item -->
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                            <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                            <h3>Sara Wilsson</h3>
-                            <h4>Designer</h4>
-                        </div>
-                    </div><!-- End testimonial item -->
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                            <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                            <h3>Jena Karlis</h3>
-                            <h4>Store Owner</h4>
-                        </div>
-                    </div><!-- End testimonial item -->
+                    @foreach($comments as $item)
+                        <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <p style="min-height: 280px">
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    {{ $item->comment }}
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" onError="this.src='/storage/img/good/temp.jpg'">
+                                <h3>{{ \App\Models\User::whereId($item->user_id)->value('name') }}</h3>
+                                <h4>арт.: {{ \App\Models\Good::whereId($item->good_id)->value('art') }}</h4>
+                            </div>
+                        </div><!-- End testimonial item -->
+                    @endforeach
                 </div>
                 <div class="swiper-pagination"></div>
             </div>

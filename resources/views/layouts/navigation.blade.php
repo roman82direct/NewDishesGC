@@ -9,7 +9,7 @@
             </div>
         </div>
 
-        <nav id="navbar" class="navbar d-flex justify-content-between w-75">
+        <nav id="navbar" class="navbar d-flex justify-content-between w-100">
             <ul class="w-100">
                 <div class="d-flex justify-content-between">
                     <li><a class="nav-link" href="{{ route('nav::main') }}">{{ __('menu.main') }}</a></li>
@@ -64,12 +64,13 @@
                                 </ul>
                             </li>
                             <a class="relative" href="#">
-                                @if(!\App\Models\Favorite::whereUserId(\Illuminate\Support\Facades\Auth::user()->id)->count())
+                                @php($favorites_count = \App\Models\Favorite::whereUserId(\Illuminate\Support\Facades\Auth::user()->id)->count())
+                                @if(!$favorites_count)
                                     <i id="navFavorites" style="font-size: 1.5rem" class="bi bi-bookmarks text-gray-500"></i>
                                 @else
                                     <i id="navFavorites" style="font-size: 1.6rem; color: #faa3a3" class="bi bi-bookmarks-fill"></i>
                                     <div id="favoritesCount" class="favoritesCount">
-                                        {{ \App\Models\Favorite::whereUserId(\Illuminate\Support\Facades\Auth::id())->count() }}
+                                        {{ $favorites_count }}
                                     </div>
                                 @endif
                             </a>
