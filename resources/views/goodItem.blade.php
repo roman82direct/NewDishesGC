@@ -82,6 +82,36 @@
             </div>
         </div>
     </section>
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials section-bg">
+        <div class="container">
+
+            <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+                <h2>Отзывы</h2>
+            </div>
+
+            <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper">
+                    @foreach(\App\Models\Comment::whereGoodId($item->id)->get() as $comment)
+                        <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <p style="min-height: 280px">
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    {{ $comment->comment }}
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" onError="this.src='/storage/img/man.png'">
+                                <h3>{{ \App\Models\User::whereId($comment->user_id)->value('name') }}</h3>
+                            </div>
+                        </div><!-- End testimonial item -->
+                    @endforeach
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+    </section><!-- End Testimonials Section -->
+
     <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasLabel">{{ Auth::user() ? 'Оставьте свой комментарий в текстовом поле ниже...' : 'Авторизуйтесь, чтобы оставить комментарий...' }}</h5>
