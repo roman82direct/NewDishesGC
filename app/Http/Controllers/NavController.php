@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Favorite;
 use App\Models\Good;
 use App\Models\Like;
@@ -20,6 +21,7 @@ class NavController extends Controller
         return view('menu.main',
             ['categories' => Category::get()->random(6),
              'goodsByLikes' => Good::getByLikes(20),
+             'comments' => Comment::whereIsModerate(true)->orderByDesc('created_at')->get()
              ]);
     }
 

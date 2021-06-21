@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Maincategory;
 use App\Models\Good;
 use App\Models\User;
@@ -55,6 +56,7 @@ class AdminController extends Controller
     public function deleteGood($id)
     {
         Good::destroy($id);
+
         return redirect()->back()->with('success', 'Данные удалены!');
     }
 
@@ -89,5 +91,22 @@ class AdminController extends Controller
         Category::truncate();
         Good::truncate();
         return redirect()->back()->with('success', 'Все позиции удалены из каталога');
+    }
+
+    public function showComments(){
+        return view('admin.comments', ['comments'=>Comment::whereIsModerate(false)->get()]);
+    }
+
+    public function moderateComment($id){
+        Comment::findOrFail($id)
+            ->update(['is_moderate' => 1]);
+
+        return redirect()->back()->with('success', 'Комментарий прошел модерацию');
+    }
+
+    public function deleteComment($id){
+        Comment::destroy($id);
+
+        return redirect()->back()->with('success', 'Комментарий удален');
     }
 }

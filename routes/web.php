@@ -125,6 +125,15 @@ Route::group([
     Route::get('/goods', [AdminController::class, 'showGoods'])
         ->name('goods');
 
+    Route::get('/comments', [AdminController::class, 'showComments'])
+        ->name('comments');
+
+    Route::get('/comments/moderate/{id}', [AdminController::class, 'moderateComment'])
+        ->name('moderate');
+
+    Route::get('/comments/delete/{id}', [AdminController::class, 'deleteComment'])
+        ->name('deleteComment');
+
     Route::match(['POST', 'GET'], '/upload', [AdminController::class, 'uploadGoodsFromExcel'])
     ->name('upload')
     ->middleware(\App\Http\Middleware\FileUpload::class);

@@ -5,4 +5,7 @@
     <li class="nav-item">
         <a class="nav-link" href="{{ route('admin::goods') }}">{{ __('menu.goods') }}</a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin::comments') }}">{{ __('menu.comments') }}</a>
+    </li>
 </ul>

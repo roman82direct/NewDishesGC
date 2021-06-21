@@ -59,13 +59,7 @@ $(document).ready(function(){
     });
 
     $("#toCommentBtn").click(function (e) {
-        // $.ajaxSetup({
-        //     headers: {
-        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        //     }
-        // });
         e.preventDefault();
-
         var formData = {
             good_id: $('#goodId').val(),
             user_id: $('#userId').val(),

@@ -38,7 +38,6 @@ class UserController extends Controller
         $comment = Comment::create($request->all());
 
         return response()->json($comment, 201);
-//        return response()->json(['success'=>'Your comment is accepted'], 202);
     }
 
     public function search(Request $request){
