@@ -21,7 +21,7 @@ class NavController extends Controller
         return view('menu.main',
             ['categories' => Category::get()->random(6),
              'goodsByLikes' => Good::getByLikes(20),
-             'comments' => Comment::whereIsModerate(true)->orderByDesc('created_at')->get()
+             'comments' => Comment::whereIsModerate(true)->orderByDesc('created_at')->get()->random(6)
              ]);
     }
 

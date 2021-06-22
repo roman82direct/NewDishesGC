@@ -83,6 +83,24 @@ $(document).ready(function(){
         });
     });
 
+// show alert Auth toast on goodItem page
+    $('#toastLike').click(function(){
+        $('.toast-message').css('display', 'block');
+    });
+    $('#toastFavorites').click(function(){
+        $('.toast-message').css('display', 'block');
+    });
+    $('#toastComment').click(function(){
+        $('.toast-message').css('display', 'block');
+    });
+    $('#toastShare').click(function(){
+        $('.toast-message').css('display', 'block');
+    });
+
+    $('.btn-close').click(function (){
+        $('.toast-message').css('display', 'none');
+    });
+
 });
 
 

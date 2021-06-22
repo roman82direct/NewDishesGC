@@ -31,29 +31,38 @@
                         <!-- If we need scrollbar -->
                         {{--                        <div class="swiper-scrollbar"></div>--}}
 
-                        <div class="item-card-links flex justify-between items-center p-1">
-                            <a id="toLike" data-id="{{ $item->id }}" class="item-card-link" href="#"
-                               title="{{ Auth::user() ? 'Нравится' : 'Войдите, чтобы лайкнуть...' }}"
-                            >@include('components.mysvg.like')
-                            </a>
-                            <a id="toFavorites" data-id="{{ $item->id }}" class="item-card-link" href="#"
-                               title="{{ Auth::user() ? 'В избранные' : 'Войдите, чтобы добавить в избранные...' }}"
-                            >@include('components.mysvg.favorites')
-                            </a>
-                            <a data-bs-toggle="offcanvas" href="#offcanvas"
-                               role="button" aria-controls="offcanvasExample" id="toCommentLink"
-                               class="item-card-link" href="#"
-                               title="Комментировать"
-                               >@include('components.mysvg.comment')
-                            </a>
-                            <a id="toShare" data-id="{{ $item->id }}" class="item-card-link" href="#"
-                               title="Поделиться"
-                               >@include('components.mysvg.share')
-                            </a>
-                        </div>
-
+                        @if(\Illuminate\Support\Facades\Auth::user())
+                            <div class="item-card-links flex justify-between items-center p-1">
+                                <a id="toLike" data-id="{{ $item->id }}" class="item-card-link" href="#"
+                                   title="{{ Auth::user() ? 'Нравится' : 'Войдите, чтобы лайкнуть...' }}"
+                                >@include('components.mysvg.like')
+                                </a>
+                                <a id="toFavorites" data-id="{{ $item->id }}" class="item-card-link" href="#"
+                                   title="{{ Auth::user() ? 'В избранные' : 'Войдите, чтобы добавить в избранные...' }}"
+                                >@include('components.mysvg.favorites')
+                                </a>
+                                <a data-bs-toggle="offcanvas" href="#offcanvas"
+                                   role="button" aria-controls="offcanvasExample" id="toCommentLink"
+                                   class="item-card-link" href="#"
+                                   title="Комментировать"
+                                >@include('components.mysvg.comment')
+                                </a>
+                                <a id="toShare" data-id="{{ $item->id }}" class="item-card-link" href="#"
+                                   title="Поделиться"
+                                >@include('components.mysvg.share')
+                                </a>
+                            </div>
+                        @else
+                            <div class="item-card-links flex justify-between items-center p-1">
+                                <a id="toastLike" class="item-card-link">@include('components.mysvg.like')</a>
+                                <a id="toastFavorites" class="item-card-link">@include('components.mysvg.favorites')</a>
+                                <a id="toastComment" class="item-card-link">@include('components.mysvg.comment')</a>
+                                <a id="toastShare" class="item-card-link">@include('components.mysvg.share')</a>
+                            </div>
+                        @endif()
                     </div>
                 </div>
+
                 <div class="col-lg-4">
                     <div class="portfolio-info">
                         <h3>Информация</h3>
@@ -82,6 +91,40 @@
             </div>
         </div>
     </section>
+
+{{--    Alert toast for auth--}}
+@include('components.authtoast')
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials section-bg">
+        <div class="container">
+
+            <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+                <h2>Отзывы</h2>
+            </div>
+
+            <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper">
+                    @foreach(\App\Models\Comment::whereGoodId($item->id)->get() as $comment)
+                        <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <p style="min-height: 280px">
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    {{ $comment->comment }}
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" onError="this.src='/storage/img/man.png'">
+                                <h3>{{ \App\Models\User::whereId($comment->user_id)->value('name') }}</h3>
+                            </div>
+                        </div><!-- End testimonial item -->
+                    @endforeach
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+    </section><!-- End Testimonials Section -->
+
     <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasLabel">{{ Auth::user() ? 'Оставьте свой комментарий в текстовом поле ниже...' : 'Авторизуйтесь, чтобы оставить комментарий...' }}</h5>
@@ -98,13 +141,11 @@
                         <textarea class="form-control" id="comment" name="comment" rows="4"></textarea>
                     </div>
                 </form>
-                <button type="button"
-                        id="toCommentBtn"
-                        data-bs-dismiss="offcanvas"
+                <button type="button" id="toCommentBtn" data-bs-dismiss="offcanvas"
                         class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent
-                                   rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700
-                                   active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25
-                                   transition ease-in-out duration-150">Отправить
+                               rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700
+                               active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25
+                               transition ease-in-out duration-150">Отправить
                 </button>
             </div>
             @endauth

@@ -67,7 +67,7 @@
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
                                 <i class="bi bi-clock-history"></i>
                                 <h4>Оперативность и своевременность</h4>
-                                <p>Посетив портал, Вы сможете получить актуальную информацию по нашим новинкам из "первых рук"</p>
+                                <p>Только актуальная информация по нашим новинкам из "первых рук"</p>
                             </div>
                         </div>
                     </div><!-- End .content-->
@@ -199,7 +199,7 @@
                                     {{ $item->comment }}
                                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                 </p>
-                                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" onError="this.src='/storage/img/good/temp.jpg'">
+                                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" onError="this.src='/storage/img/man.png'">
                                 <h3>{{ \App\Models\User::whereId($item->user_id)->value('name') }}</h3>
                                 <h4>арт.: {{ \App\Models\Good::whereId($item->good_id)->value('art') }}</h4>
                             </div>
