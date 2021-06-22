@@ -1186,6 +1186,7 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
     transition: 200ms;
     transition-timing-function: ease-in-out;
 }
+
 .item-card-link:hover .soc-svg {
     fill: #000000;
     transition: 200ms;

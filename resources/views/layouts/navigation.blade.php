@@ -41,7 +41,7 @@
                         @endauth
                     @endif
 
-                <!-- Settings Dropdown -->
+                    <!-- Settings Dropdown -->
                     @auth()
                         <div class="userblock flex justify-content-between align-items-center">
                             <li class="dropdown">
@@ -81,13 +81,12 @@
 
             <i style="color: #5c636a" class="bi bi-list mobile-nav-toggle"></i>
 
-{{--Search result element--}}
+            {{--Search result element--}}
             <div id="searchResult" class="searchresult hidden absolute top-14 right-16 bg-gray-50 opacity-95">
                 <ul class="flex-column align-items-start bg-white" id="searchList">
                 </ul>
             </div>
 
         </nav><!-- .navbar -->
-
     </div>
 </header><!-- End Header -->

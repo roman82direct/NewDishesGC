@@ -33,31 +33,31 @@
 
                         @if(\Illuminate\Support\Facades\Auth::user())
                             <div class="item-card-links flex justify-between items-center p-1">
-                                <a id="toLike" data-id="{{ $item->id }}" class="item-card-link" href="#"
+                                <a id="toLike" data-id="{{ $item->id }}" class="item-card-link ml-4" href="#"
                                    title="{{ Auth::user() ? 'Нравится' : 'Войдите, чтобы лайкнуть...' }}"
                                 >@include('components.mysvg.like')
                                 </a>
-                                <a id="toFavorites" data-id="{{ $item->id }}" class="item-card-link" href="#"
+                                <a id="toFavorites" data-id="{{ $item->id }}" class="item-card-link ml-4" href="#"
                                    title="{{ Auth::user() ? 'В избранные' : 'Войдите, чтобы добавить в избранные...' }}"
                                 >@include('components.mysvg.favorites')
                                 </a>
                                 <a data-bs-toggle="offcanvas" href="#offcanvas"
                                    role="button" aria-controls="offcanvasExample" id="toCommentLink"
-                                   class="item-card-link" href="#"
+                                   class="item-card-link  ml-4" href="#"
                                    title="Комментировать"
                                 >@include('components.mysvg.comment')
                                 </a>
-                                <a id="toShare" data-id="{{ $item->id }}" class="item-card-link" href="#"
+                                <a id="toShare" data-id="{{ $item->id }}" class="item-card-link ml-3" href="#"
                                    title="Поделиться"
                                 >@include('components.mysvg.share')
                                 </a>
                             </div>
                         @else
                             <div class="item-card-links flex justify-between items-center p-1">
-                                <a id="toastLike" class="item-card-link">@include('components.mysvg.like')</a>
-                                <a id="toastFavorites" class="item-card-link">@include('components.mysvg.favorites')</a>
-                                <a id="toastComment" class="item-card-link">@include('components.mysvg.comment')</a>
-                                <a id="toastShare" class="item-card-link">@include('components.mysvg.share')</a>
+                                <a id="toastLike" class="item-card-link ml-4">@include('components.mysvg.like')</a>
+                                <a id="toastFavorites" class="item-card-link ml-4">@include('components.mysvg.favorites')</a>
+                                <a id="toastComment" class="item-card-link ml-4">@include('components.mysvg.comment')</a>
+                                <a id="toastShare" class="item-card-link ml-3">@include('components.mysvg.share')</a>
                             </div>
                         @endif()
                     </div>
@@ -102,25 +102,29 @@
             <div class="section-title" data-aos="fade-in" data-aos-delay="100">
                 <h2>Отзывы</h2>
             </div>
-
-            <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
-                <div class="swiper-wrapper">
-                    @foreach(\App\Models\Comment::whereGoodId($item->id)->get() as $comment)
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <p style="min-height: 280px">
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    {{ $comment->comment }}
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
-                                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" onError="this.src='/storage/img/man.png'">
-                                <h3>{{ \App\Models\User::whereId($comment->user_id)->value('name') }}</h3>
-                            </div>
-                        </div><!-- End testimonial item -->
-                    @endforeach
+            @php($comments = \App\Models\Comment::whereGoodId($item->id)->get())
+            @if($comments->count() == 0)
+                <h3>Комментариев пока нет</h3>
+            @else
+                <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+                    <div class="swiper-wrapper">
+                        @foreach($comments as $comment)
+                            <div class="swiper-slide">
+                                <div class="testimonial-item">
+                                    <p style="min-height: 280px">
+                                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                        {{ $comment->comment }}
+                                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                    </p>
+                                    <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" onError="this.src='/storage/img/man.png'">
+                                    <h3>{{ \App\Models\User::whereId($comment->user_id)->value('name') }}</h3>
+                                </div>
+                            </div><!-- End testimonial item -->
+                        @endforeach
+                    </div>
+                    <div class="swiper-pagination"></div>
                 </div>
-                <div class="swiper-pagination"></div>
-            </div>
+            @endif
 
         </div>
     </section><!-- End Testimonials Section -->
