@@ -26,7 +26,7 @@ class NavController extends Controller
     }
 
     public function catalog(){
-        session()->flash('url.intended', \url()->current());
+//        session()->flash('url.intended', \url()->current());
         return view('menu.catalog');
     }
 
