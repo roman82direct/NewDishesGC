@@ -116,7 +116,7 @@
                                         {{ $comment->comment }}
                                         <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                     </p>
-                                    <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" onError="this.src='/storage/img/man.png'">
+{{--                                    <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" onError="this.src='/storage/img/man.png'">--}}
                                     <h3>{{ \App\Models\User::whereId($comment->user_id)->value('name') }}</h3>
                                 </div>
                             </div><!-- End testimonial item -->

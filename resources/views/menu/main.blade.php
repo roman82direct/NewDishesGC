@@ -199,7 +199,7 @@
                                     {{ $item->comment }}
                                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                 </p>
-                                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" onError="this.src='/storage/img/man.png'">
+                                <img src="" class="testimonial-img" onError="this.src='/storage/img/man.png'">
                                 <h3>{{ \App\Models\User::whereId($item->user_id)->value('name') }}</h3>
                                 <h4>арт.: {{ \App\Models\Good::whereId($item->good_id)->value('art') }}</h4>
                                 <i>{{ $item->created_at }}</i>
