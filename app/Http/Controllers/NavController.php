@@ -30,6 +30,10 @@ class NavController extends Controller
         return view('menu.catalog');
     }
 
+//    public function catalogbylist(){
+//        return view('layouts.catalogbylist');
+//    }
+
     public function contact(){
         return view('menu.contacts');
     }
