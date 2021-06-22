@@ -26,7 +26,7 @@
                                     @endif
                                 @endauth
                                 <div class="card-footer card-text border-0">
-                                    <small class="text-muted">Дата прихода: {{ $item->arrival }}</small>
+                                    <small class="text-muted">Дата прихода: {{ date('d.m.Y', strtotime($item->arrival)) }}</small>
                                 </div>
                             </div>
                         </div>

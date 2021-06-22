@@ -9,11 +9,14 @@
                         @endforeach
                     </ul>
                 </div>
+
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <a id="showGrid" class="item-card-link ml-4" href=""><i class="bi bi-grid-3x2-gap-fill fs-2"></i></a>
+                    <a id="showList" class="item-card-link ml-4" href=""><i class="bi bi-list fs-2"></i></a>
+                </div>
             </div>
 
-            <div class="row portfolio-container
-{{--                        bg-white shadow-sm--}}
-                        sm:rounded-lg pt-2 pb-2" data-aos="fade-up">
+            <div id="catalogContainer" class="row portfolio-container sm:rounded-lg pt-2 pb-2" data-aos="fade-up">
             @foreach(\App\Models\Maincategory::all() as $group)
                     @foreach(\App\Models\Category::where('category1_id', $group->id)->get() as $item)
                         <div class="col-lg-3 col-md-6 portfolio-item filter-{{ $group->id }}">

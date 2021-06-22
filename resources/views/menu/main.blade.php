@@ -202,7 +202,7 @@
                                 <img src="" class="testimonial-img" onError="this.src='/storage/img/man.png'">
                                 <h3>{{ \App\Models\User::whereId($item->user_id)->value('name') }}</h3>
                                 <h4>арт.: {{ \App\Models\Good::whereId($item->good_id)->value('art') }}</h4>
-                                <i>{{ $item->created_at }}</i>
+                                <i style="font-size: 12px">{{ $item->created_at->format('d.m.Y H:i') }}</i>
                             </div>
                         </div><!-- End testimonial item -->
                     @endforeach

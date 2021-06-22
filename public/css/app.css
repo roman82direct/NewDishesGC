@@ -32480,7 +32480,7 @@ a img								{
 }
 
 #portfolio-flters {
-  margin: 0 auto 35px auto;
+  margin: 0 auto auto;
   list-style: none;
   text-align: center;
   /*background: #d2eef6;*/

@@ -70,7 +70,7 @@
                             <li><strong>Артикул</strong>: {{ $item->art }}</li>
                             <li><strong>Наименование</strong>: {{ $item->name }}</li>
                             <li><strong>Категория</strong>: {{ \App\Models\Category::find($item->category_id)->name}}</li>
-                            <li><strong>Дата прихода</strong>: {{ $item->arrival }}</li>
+                            <li><strong>Дата прихода</strong>: {{ date('d.m.Y', strtotime($item->arrival)) }}</li>
                             <li><strong>Упаковка</strong>: <p>Нет данных</p></li>
                         </ul>
                     </div>
