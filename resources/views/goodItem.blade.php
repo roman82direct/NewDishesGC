@@ -44,7 +44,7 @@
                             <li><strong>Коллекция</strong>: {{ \App\Models\Collection::find($item->collection_id)->name}}</li>
                             <li><strong>Прогноз цены</strong>: {{ $item->price }} руб.</li>
                             <li><strong>Дата прихода</strong>: {{ date('d.m.Y', strtotime($item->arrival)) }}</li>
-                            <li><strong>Упаковка</strong>: <p>Нет данных</p></li>
+                            <li><strong>Упаковка</strong>: <p>{{ $item->pack }}</p></li>
                         </ul>
                     </div>
                     <div class="portfolio-description">
