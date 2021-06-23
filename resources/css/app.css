@@ -1045,7 +1045,6 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination {
-    /*margin-top: 20px;*/
     position: relative;
 }
 
@@ -1177,7 +1176,7 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
 }
 
 .item-card-links {
-    width: 10rem;
+    width: 12rem;
     transition: 200ms;
     transition-timing-function: ease-in-out;
 }
@@ -1326,6 +1325,12 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
         width: 48px;
         height: 48px;
     }
+    .item-card-links{
+        position: absolute;
+        top: 48%;
+        left: 60%;
+        z-index: 10;
+    }
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1400px) {
@@ -1349,8 +1354,8 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
 @media screen and (min-width: 1024px){
     .item-card-links{
         position: absolute;
-        top: 94%;
-        left: 76%;
+        top: 88%;
+        left: 45%;
         z-index: 10;
     }
     .item-card-link:hover .soc-svg {
@@ -1358,5 +1363,10 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
         transition: 200ms;
         transition-timing-function: ease-in-out;
         transform: scale(1.1);
+    }
+}
+@media screen and (min-width: 1280px){
+    .goodItem-card{
+        height: 80vh;
     }
 }

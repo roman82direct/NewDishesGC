@@ -52,8 +52,9 @@ class Good extends Model
         'art',
         'name',
         'description',
+        'price',
         'brand',
-        'collection',
+        'collection_id',
         'category_id',
         'arrival',
         'img',
@@ -64,8 +65,6 @@ class Good extends Model
     ];
 
     /**
-     * TODO реализовать приведение пустых ячеек в столбце 'arrival' к формату DATETIME
-     *
      * Парсится только .xlsx!!!
      * @param $file
      * @return \Illuminate\Support\Collection
@@ -82,8 +81,9 @@ class Good extends Model
                 'art' => $line['art'],
                 'name' => $line['name'],
                 'description' => $line['description'],
+                'price' => $line['price'],
                 'brand' => $line['brand'],
-                'collection' => $line['collection'],
+                'collection_id' => Collection::whereName($line['collection'])->value('id'),
                 'category_id' => Category::where('name', $line['category2'])->value('id'),
                 'arrival' => $line['arrival'],
                 'img' => '/storage/img/good/'.$line['art'].'.jpg',
