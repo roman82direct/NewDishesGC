@@ -3,7 +3,7 @@
         <div id="featured">
             <ul data-aos="zoom-in" data-aos-delay="200">
                 @if($categories)
-                <li data-aos="fade-in" data-aos-delay="400">
+                <li data-aos="fade-in" data-aos-delay="300">
                     <div class="hero-container" data-aos="fade-up">
                         <h1>"Посуда и Домашний текстиль"</h1>
                         <h2>Новинки сезона 2021 - 2022</h2>
@@ -36,7 +36,7 @@
 
             <div class="row no-gutters">
                 <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
-                    <div class="content">
+                    <div class="content px-4">
                         <h3>Веб-портал товарного направления "Посуда и Домашний текстиль"</h3>
                         <p>
                             Актуальные новинки Посуды и Текстиля на предстоящий сезон 2021 - 2022 года. Товары к Новому году и весенним праздникам.

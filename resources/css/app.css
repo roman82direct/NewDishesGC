@@ -1264,8 +1264,8 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
 /*Media*/
 @media screen and (max-width: 640px){
     /* Common Scroller Styles */
-    .roundabout-moveable-item 			{height:133px; width:200px;}
     .roundabout-holder 					{width:60%; height:200px;}
+    .roundabout-moveable-item 			{height:133px; width:200px;}
 
     .categoryCard{
     grid-template-columns: repeat(1, 1fr);
@@ -1292,8 +1292,8 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
     }
 }
 @media screen and (min-width: 640px) and (max-width: 1200px){
-    .roundabout-holder 					{width:40%; height:360px; margin:0px auto;}
-    .roundabout-moveable-item 			{height:266px; width:400px;}
+    .roundabout-holder 					{width:40%; height:420px; margin:0px auto;}
+    .roundabout-moveable-item 			{height:360px; width:540px;}
 
     .categoryCard{
     grid-template-columns: repeat(2, 1fr);
@@ -1334,8 +1334,8 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1400px) {
-    .roundabout-holder 					{width:50%; height:640px;}
-    .roundabout-moveable-item 			{height:426px; width:640px;}
+    /*.roundabout-holder 					{width:50%; height:640px;}*/
+    /*.roundabout-moveable-item 			{height:426px; width:640px;}*/
 
     .grid-4{
         grid-template-columns: repeat(3, 1fr);

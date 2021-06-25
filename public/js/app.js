@@ -386,7 +386,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         spaceBetween: 40
       },
       1200: {
-        slidesPerView: 3
+        slidesPerView: 4
       },
       1540: {
         slidesPerView: 5
@@ -457,8 +457,13 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         slidesPerView: 1,
         spaceBetween: 40
       },
-      1200: {
-        slidesPerView: 3
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 40
+      },
+      1025: {
+        slidesPerView: 3,
+        spaceBetween: 40
       }
     }
   });
