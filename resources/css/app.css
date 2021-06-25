@@ -1354,7 +1354,7 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
 @media screen and (min-width: 1024px){
     .item-card-links{
         position: absolute;
-        top: 88%;
+        top: 94%;
         left: 45%;
         z-index: 10;
     }

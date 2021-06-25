@@ -107,7 +107,7 @@
             </div>
             @php($comments = \App\Models\Comment::whereGoodId($item->id)->get())
             @if($comments->count() == 0)
-                <h3>Комментариев пока нет</h3>
+                <h3>Отзывов пока нет.</h3>
             @else
                 <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
                     <div class="swiper-wrapper">

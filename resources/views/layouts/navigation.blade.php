@@ -37,7 +37,11 @@
                     @if (Route::has('login'))
                         @auth
                         @else
-                            <li><a class="auth-link" href="{{ route('login') }}">{{ __('buttons.login') }}</a></li>
+                            <li>
+                                <a class="auth-link" href="{{ route('login') }}" title="Авторизация">
+                                    <i data-aos="zoom-in" data-aos-delay="100" class="bi bi-person-circle text-gray-500 fs-4 hover:text-gray-300"></i>
+                                </a>
+                            </li>
                         @endauth
                     @endif
 
