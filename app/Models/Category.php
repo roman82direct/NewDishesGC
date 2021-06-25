@@ -39,7 +39,7 @@ class Category extends Model
     protected $fillable = [
         'name',
         'category1_id',
-        'description',
+        'group_id',
         'img',
         'img1',
         'img2',
@@ -80,7 +80,7 @@ class Category extends Model
                 return Category::create([
                     'name' => $line['category2'],
                     'category1_id' => Maincategory::where('name', $line['category1'])->value('id'),
-                    'description' => $line['category_description'],
+                    'group_id' => Group::whereName($line['group'])->value('id'),
                     'img' => '/storage/img/good/'.$line['art'].'_catalog.jpg',
                     'img1' => '/storage/img/good/main/'.$line['art'].'_1.jpg',
                     'img2' => '/storage/img/good/main/'.$line['art'].'_2.jpg'

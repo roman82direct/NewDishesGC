@@ -117,7 +117,13 @@ $(document).ready(function () {
   });
   $('.btn-close').click(function () {
     $('.toast-message').hide('slow');
-  });
+  }); // show catalog by list
+  // $('#showList').click(function(e){
+  //     e.preventDefault();
+  //     $.get("/catalogbylist", function(data){
+  //         $('#catalogContainer').empty().html(data);
+  //     })
+  // });
 });
 
 /***/ }),

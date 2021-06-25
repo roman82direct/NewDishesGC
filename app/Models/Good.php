@@ -43,6 +43,10 @@ use Rap2hpoutre\FastExcel\FastExcel;
  * @method static \Illuminate\Database\Eloquent\Builder|Good whereArt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Good whereBrand($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Good whereCollection($value)
+ * @property int $price
+ * @property int $collection_id
+ * @method static \Illuminate\Database\Eloquent\Builder|Good whereCollectionId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Good wherePrice($value)
  */
 class Good extends Model
 {
@@ -52,9 +56,12 @@ class Good extends Model
         'art',
         'name',
         'description',
+        'price',
+        'pack',
         'brand',
-        'collection',
+        'collection_id',
         'category_id',
+        'group_id',
         'arrival',
         'img',
         'img1',
@@ -64,8 +71,6 @@ class Good extends Model
     ];
 
     /**
-     * TODO реализовать приведение пустых ячеек в столбце 'arrival' к формату DATETIME
-     *
      * Парсится только .xlsx!!!
      * @param $file
      * @return \Illuminate\Support\Collection
@@ -82,9 +87,12 @@ class Good extends Model
                 'art' => $line['art'],
                 'name' => $line['name'],
                 'description' => $line['description'],
+                'price' => $line['price'],
+                'pack' => $line['pack'],
                 'brand' => $line['brand'],
-                'collection' => $line['collection'],
+                'collection_id' => Collection::whereName($line['collection'])->value('id'),
                 'category_id' => Category::where('name', $line['category2'])->value('id'),
+                'group_id' => Group::whereName($line['group'])->value('id'),
                 'arrival' => $line['arrival'],
                 'img' => '/storage/img/good/'.$line['art'].'.jpg',
                 'img1' => '/storage/img/good/'.$line['art'].'_1.jpg',

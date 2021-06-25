@@ -9,9 +9,9 @@
                 </ol>
             </nav>
     </div>
-    <section id="portfolio-details" class="portfolio-details max-w-7xl mx-auto sm:rounded-lg py-8 mb-6" data-aos="fade-up">
+    <section id="portfolio-details" class="portfolio-details max-w-7xl mx-auto sm:rounded-lg py-2 mb-6" data-aos="fade-up">
         <div class="container">
-            <div class="row gy-3">
+            <div class="goodItem-card row gy-3">
                 <div class="col-lg-8">
                     <div class="portfolio-details-slider swiper-container" data-aos="fade-up">
                         <div class="swiper-wrapper align-items-center">
@@ -31,35 +31,6 @@
                         <!-- If we need scrollbar -->
                         {{--                        <div class="swiper-scrollbar"></div>--}}
 
-                        @if(\Illuminate\Support\Facades\Auth::user())
-                            <div class="item-card-links flex justify-between items-center p-1">
-                                <a id="toLike" data-id="{{ $item->id }}" class="item-card-link ml-4" href="#"
-                                   title="{{ Auth::user() ? 'Нравится' : 'Войдите, чтобы лайкнуть...' }}"
-                                >@include('components.mysvg.like')
-                                </a>
-                                <a id="toFavorites" data-id="{{ $item->id }}" class="item-card-link ml-4" href="#"
-                                   title="{{ Auth::user() ? 'В избранные' : 'Войдите, чтобы добавить в избранные...' }}"
-                                >@include('components.mysvg.favorites')
-                                </a>
-                                <a data-bs-toggle="offcanvas" href="#offcanvas"
-                                   role="button" aria-controls="offcanvasExample" id="toCommentLink"
-                                   class="item-card-link  ml-4" href="#"
-                                   title="Комментировать"
-                                >@include('components.mysvg.comment')
-                                </a>
-                                <a id="toShare" data-id="{{ $item->id }}" class="item-card-link ml-3" href="#"
-                                   title="Поделиться"
-                                >@include('components.mysvg.share')
-                                </a>
-                            </div>
-                        @else
-                            <div class="item-card-links flex justify-between items-center p-1">
-                                <a id="toastLike" class="item-card-link ml-4">@include('components.mysvg.like')</a>
-                                <a id="toastFavorites" class="item-card-link ml-4">@include('components.mysvg.favorites')</a>
-                                <a id="toastComment" class="item-card-link ml-4">@include('components.mysvg.comment')</a>
-                                <a id="toastShare" class="item-card-link ml-3">@include('components.mysvg.share')</a>
-                            </div>
-                        @endif()
                     </div>
                 </div>
 
@@ -70,8 +41,10 @@
                             <li><strong>Артикул</strong>: {{ $item->art }}</li>
                             <li><strong>Наименование</strong>: {{ $item->name }}</li>
                             <li><strong>Категория</strong>: {{ \App\Models\Category::find($item->category_id)->name}}</li>
-                            <li><strong>Дата прихода</strong>: {{ $item->arrival }}</li>
-                            <li><strong>Упаковка</strong>: <p>Нет данных</p></li>
+                            <li><strong>Коллекция</strong>: {{ \App\Models\Collection::find($item->collection_id)->name}}</li>
+                            <li><strong>Прогноз цены</strong>: {{ $item->price }} руб.</li>
+                            <li><strong>Дата прихода</strong>: {{ date('d.m.Y', strtotime($item->arrival)) }}</li>
+                            <li><strong>Упаковка</strong>: <p>{{ $item->pack }}</p></li>
                         </ul>
                     </div>
                     <div class="portfolio-description">
@@ -90,6 +63,36 @@
                 @endauth
             </div>
         </div>
+
+        @if(\Illuminate\Support\Facades\Auth::user())
+            <div class="item-card-links flex justify-between items-center p-1">
+                <a id="toLike" data-id="{{ $item->id }}" class="item-card-link ml-4" href="#"
+                   title="{{ Auth::user() ? 'Нравится' : 'Войдите, чтобы лайкнуть...' }}"
+                >@include('components.mysvg.like')
+                </a>
+                <a id="toFavorites" data-id="{{ $item->id }}" class="item-card-link ml-4" href="#"
+                   title="{{ Auth::user() ? 'В избранные' : 'Войдите, чтобы добавить в избранные...' }}"
+                >@include('components.mysvg.favorites')
+                </a>
+                <a data-bs-toggle="offcanvas" href="#offcanvas"
+                   role="button" aria-controls="offcanvasExample" id="toCommentLink"
+                   class="item-card-link  ml-4" href="#"
+                   title="Комментировать"
+                >@include('components.mysvg.comment')
+                </a>
+                <a id="toShare" data-id="{{ $item->id }}" class="item-card-link ml-3" href="#"
+                   title="Поделиться"
+                >@include('components.mysvg.share')
+                </a>
+            </div>
+        @else
+            <div class="item-card-links flex justify-between items-center p-1">
+                <a id="toastLike" class="item-card-link ml-4">@include('components.mysvg.like')</a>
+                <a id="toastFavorites" class="item-card-link ml-4">@include('components.mysvg.favorites')</a>
+                <a id="toastComment" class="item-card-link ml-4">@include('components.mysvg.comment')</a>
+                <a id="toastShare" class="item-card-link ml-3">@include('components.mysvg.share')</a>
+            </div>
+        @endif()
     </section>
 
 {{--    Alert toast for auth--}}
@@ -104,7 +107,7 @@
             </div>
             @php($comments = \App\Models\Comment::whereGoodId($item->id)->get())
             @if($comments->count() == 0)
-                <h3>Комментариев пока нет</h3>
+                <h3>Отзывов пока нет.</h3>
             @else
                 <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
                     <div class="swiper-wrapper">

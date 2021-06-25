@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Collection;
 use App\Models\Comment;
 use App\Models\Maincategory;
 use App\Models\Good;
@@ -89,8 +90,9 @@ class AdminController extends Controller
     public function deleteAll(){
         Maincategory::truncate();
         Category::truncate();
+        Collection::truncate();
         Good::truncate();
-        return redirect()->back()->with('success', 'Все позиции удалены из каталога');
+        return redirect()->back()->with('success', 'Данные удалены');
     }
 
     public function showComments(){

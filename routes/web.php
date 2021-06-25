@@ -39,6 +39,9 @@ Route::group([
 
     Route::get('/good{id}', [NavController::class, 'showGoodItem'])
         ->name('showGoodItem');
+
+//    Route::get('/catalogbylist', 'NavController@catalogbylist')
+//        ->name('bylist');
 });
 
 // Действия User

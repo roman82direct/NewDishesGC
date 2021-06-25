@@ -1,5 +1,13 @@
 <x-app-layout>
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-50 py-8">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-8">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <nav class="py-2" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item text-sm"><a href="{{ route('nav::catalog') }}">{{__('menu.catalog') }}</a></li>
+                        <li class="breadcrumb-item text-sm">{{\App\Models\Category::find($id)->name }}</li>
+                    </ol>
+                </nav>
+            </div>
             <div class="sm:rounded-lg p-3" data-aos="fade-up">
                 <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 g-4">
                     @foreach($goods as $item)
@@ -26,7 +34,7 @@
                                     @endif
                                 @endauth
                                 <div class="card-footer card-text border-0">
-                                    <small class="text-muted">Дата прихода: {{ $item->arrival }}</small>
+                                    <small class="text-muted">Дата прихода: {{ date('d.m.Y', strtotime($item->arrival)) }}</small>
                                 </div>
                             </div>
                         </div>

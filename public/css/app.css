@@ -32480,7 +32480,7 @@ a img								{
 }
 
 #portfolio-flters {
-  margin: 0 auto 35px auto;
+  margin: 0 auto auto;
   list-style: none;
   text-align: center;
   /*background: #d2eef6;*/
@@ -32547,7 +32547,6 @@ a img								{
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination {
-  /*margin-top: 20px;*/
   position: relative;
 }
 
@@ -32686,7 +32685,7 @@ a img								{
 }
 
 .item-card-links {
-  width: 10rem;
+  width: 12rem;
   transition: 200ms;
   transition-timing-function: ease-in-out;
 }
@@ -32879,6 +32878,13 @@ a img								{
     width: 48px;
     height: 48px;
   }
+
+  .item-card-links{
+    position: absolute;
+    top: 48%;
+    left: 60%;
+    z-index: 10;
+  }
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1400px) {
@@ -32910,7 +32916,7 @@ a img								{
   .item-card-links{
     position: absolute;
     top: 94%;
-    left: 76%;
+    left: 45%;
     z-index: 10;
   }
 
@@ -32919,6 +32925,12 @@ a img								{
     transition: 200ms;
     transition-timing-function: ease-in-out;
     transform: scale(1.1);
+  }
+}
+
+@media screen and (min-width: 1280px){
+  .goodItem-card{
+    height: 80vh;
   }
 }
 
