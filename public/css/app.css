@@ -32548,6 +32548,11 @@ a img								{
 
 .portfolio-details .portfolio-details-slider .swiper-pagination {
   position: relative;
+  bottom: 50px;
+}
+
+.swiper-slide{
+  /*height: 80%;*/
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
@@ -32881,7 +32886,7 @@ a img								{
 
   .item-card-links{
     position: absolute;
-    top: 48%;
+    top: 53%;
     left: 60%;
     z-index: 10;
   }
@@ -32911,7 +32916,7 @@ a img								{
 @media screen and (min-width: 1024px){
   .item-card-links{
     position: absolute;
-    top: 94%;
+    top: 88%;
     left: 45%;
     z-index: 10;
   }
@@ -32926,7 +32931,7 @@ a img								{
 
 @media screen and (min-width: 1280px){
   .goodItem-card{
-    height: 80vh;
+    height: 100%;
   }
 }
 

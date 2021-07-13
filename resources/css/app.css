@@ -1046,6 +1046,10 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
 
 .portfolio-details .portfolio-details-slider .swiper-pagination {
     position: relative;
+    bottom: 50px;
+}
+.swiper-slide{
+    /*height: 80%;*/
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
@@ -1327,7 +1331,7 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
     }
     .item-card-links{
         position: absolute;
-        top: 48%;
+        top: 53%;
         left: 60%;
         z-index: 10;
     }
@@ -1354,7 +1358,7 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
 @media screen and (min-width: 1024px){
     .item-card-links{
         position: absolute;
-        top: 94%;
+        top: 88%;
         left: 45%;
         z-index: 10;
     }
@@ -1367,6 +1371,6 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
 }
 @media screen and (min-width: 1280px){
     .goodItem-card{
-        height: 80vh;
+        height: 100%;
     }
 }

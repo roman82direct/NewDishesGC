@@ -28,7 +28,7 @@
                                     </svg>
                                 </a>
                             </div>
-                            <div class="card-body">
+                            <div style="height: 70px" class="card-body">
                                 <p class="card-text text-sm">{{ $item->name }}</p>
                             </div>
                             @auth()
