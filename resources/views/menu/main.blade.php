@@ -97,7 +97,7 @@
             </div>
 
             <div class="row portfolio-container mt-4" data-aos="fade-up">
-                @foreach(\App\Models\Category::all() as $category_item)
+                @foreach(\App\Models\Category::all()->sortBy('group_id') as $category_item)
                     <div class="col-xl-2 col-lg-3 col-md-6 portfolio-item filter-{{ $category_item->group_id }}">
                         <div class="portfolio-wrap cardhover card h-100 mb-3">
                             <img src="{{ $category_item->img }}" onError="this.src='/storage/img/good/temp.jpg'" alt="...">
