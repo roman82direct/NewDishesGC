@@ -45,7 +45,7 @@
 {{--                            <li><strong>Прогноз цены</strong>: {{ $item->price }} руб.</li>--}}
                             <li><strong>Дата прихода</strong>: {{ date('d.m.Y', strtotime($item->arrival)) }}</li>
                             <li><strong>Упаковка</strong>: <p>{{ $item->pack }}</p>
-                                <img style="height: 100px" src="{{ $item->img }}" alt=""></li>
+                                <img style="height: 100px" src="{{ $item->img_pack }}" alt=""></li>
                         </ul>
                     </div>
                     <div class="portfolio-description">

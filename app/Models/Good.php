@@ -66,6 +66,9 @@ class Good extends Model
         'img',
         'img1',
         'img2',
+        'img3',
+        'img4',
+        'img_pack',
         'likes',
         'dislikes',
     ];
@@ -94,9 +97,13 @@ class Good extends Model
                 'category_id' => Category::where('name', $line['category2'])->value('id'),
                 'group_id' => Group::whereName($line['group'])->value('id'),
                 'arrival' => $line['arrival'],
-                'img' => '/storage/img/good/'.$line['art'].'.jpg',
-                'img1' => '/storage/img/good/'.$line['art'].'_1.jpg',
-                'img2' => '/storage/img/good/'.$line['art'].'_2.jpg',
+//                'img' => '/storage/img/good/'.$line['art'].'.jpg',
+                'img' => file_exists(public_path().'/storage/img/good/'.$line['art'].'.jpg') ? '/storage/img/good/'.$line['art'].'.jpg' : null,
+                'img1' => file_exists(public_path().'/storage/img/good/'.$line['art'].'_1.jpg') ? '/storage/img/good/'.$line['art'].'_1.jpg' : null,
+                'img2' => file_exists(public_path().'/storage/img/good/'.$line['art'].'_2.jpg') ? '/storage/img/good/'.$line['art'].'_2.jpg' : null,
+                'img3' => file_exists(public_path().'/storage/img/good/'.$line['art'].'_3.jpg') ? '/storage/img/good/'.$line['art'].'_3.jpg' : null,
+                'img4' => file_exists(public_path().'/storage/img/good/'.$line['art'].'_4.jpg') ? '/storage/img/good/'.$line['art'].'_4.jpg' : null,
+                'img_pack' => file_exists(public_path().'/storage/img/good/'.$line['art'].'_pack.jpg') ? '/storage/img/good/'.$line['art'].'_pack.jpg' : null,
             ]);
         });
     }
