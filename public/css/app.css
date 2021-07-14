@@ -32893,9 +32893,13 @@ a img								{
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1400px) {
-  /*.roundabout-holder 					{width:50%; height:640px;}*/
+  .roundabout-holder 					{
+    width:50%; height: 560px;
+  }
 
-  /*.roundabout-moveable-item 			{height:426px; width:640px;}*/
+  .roundabout-moveable-item 			{
+    height:426px; width:640px;
+  }
 
   .grid-4{
     grid-template-columns: repeat(3, 1fr);
@@ -32910,6 +32914,35 @@ a img								{
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 30px;
+  }
+
+  .portfolio-details .portfolio-details-slider {
+    width: 640px;
+  }
+
+  .portfolio-details .portfolio-details-slider .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+
+  .portfolio-details .portfolio-details-slider img {
+    height: 480px!important;
+    width: 480px!important;
+  }
+
+  .portfolio-info {
+    height: 480px;
+  }
+
+  .portfolio-description {
+    display: none;
+  }
+
+  .item-card-links {
+    position: absolute!important;
+    top: 82% !important;
+    left: 36% !important;
+    z-index: 10!important;
   }
 }
 

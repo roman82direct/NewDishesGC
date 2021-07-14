@@ -42,9 +42,10 @@
                             <li><strong>Наименование</strong>: {{ $item->name }}</li>
                             <li><strong>Категория</strong>: {{ \App\Models\Category::find($item->category_id)->name}}</li>
                             <li><strong>Коллекция</strong>: {{ \App\Models\Collection::find($item->collection_id)->name}}</li>
-                            <li><strong>Прогноз цены</strong>: {{ $item->price }} руб.</li>
+{{--                            <li><strong>Прогноз цены</strong>: {{ $item->price }} руб.</li>--}}
                             <li><strong>Дата прихода</strong>: {{ date('d.m.Y', strtotime($item->arrival)) }}</li>
-                            <li><strong>Упаковка</strong>: <p>{{ $item->pack }}</p></li>
+                            <li><strong>Упаковка</strong>: <p>{{ $item->pack }}</p>
+                                <img style="height: 100px" src="{{ $item->img }}" alt=""></li>
                         </ul>
                     </div>
                     <div class="portfolio-description">
