@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use function PHPUnit\Framework\isNull;
 
 class NavController extends Controller
 {
@@ -49,7 +50,7 @@ class NavController extends Controller
         $is_like = (Auth::user()) ? (new Like())->getId($id, Auth::user()->id) : null;
         $is_favorite = (Auth::user()) ? (new Favorite())->getId($id, Auth::user()->id) : null;
 
-        return view('goodItem', ['item' => Good::find($id), 'is_like'=>$is_like, 'is_favorite'=>$is_favorite]);
+        return view('goodItem', ['item' => Good::find($id), 'is_like'=>$is_like, 'is_favorite'=>$is_favorite, 'imgs'=>Good::getImgs($id)]);
     }
 
     public function showAdminPanel(){

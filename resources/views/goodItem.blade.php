@@ -13,17 +13,14 @@
         <div class="container">
             <div class="goodItem-card row gy-3">
                 <div class="col-lg-8">
+                    @if(count($imgs) > 1)
                     <div class="portfolio-details-slider swiper-container" data-aos="fade-up">
                         <div class="swiper-wrapper align-items-center">
-                            <div class="swiper-slide">
-                                <img src="{{ $item->img }}" onError="this.src='/storage/img/good/temp.jpg'" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{ $item->img1 }}" onError="this.src='/storage/img/good/temp.jpg'" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{ $item->img2 }}" onError="this.src='/storage/img/good/temp.jpg'" alt="">
-                            </div>
+                            @foreach($imgs as $img)
+                                <div class="swiper-slide">
+                                    <img src="{{ $img }}" onError="this.src='/storage/img/good/temp.jpg'" alt="">
+                                </div>
+                            @endforeach
                         </div>
                         <div class="swiper-pagination"></div>
                         <div class="swiper-button-prev"></div>
@@ -32,6 +29,9 @@
 {{--                                                <div class="swiper-scrollbar"></div>--}}
 
                     </div>
+                    @else
+                        <img src="{{ $imgs ? $imgs[0] : '/storage/img/good/temp.jpg' }}" alt="">
+                    @endif
                 </div>
 
                 <div class="col-lg-4">

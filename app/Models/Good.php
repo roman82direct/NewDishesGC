@@ -97,7 +97,6 @@ class Good extends Model
                 'category_id' => Category::where('name', $line['category2'])->value('id'),
                 'group_id' => Group::whereName($line['group'])->value('id'),
                 'arrival' => $line['arrival'],
-//                'img' => '/storage/img/good/'.$line['art'].'.jpg',
                 'img' => file_exists(public_path().'/storage/img/good/'.$line['art'].'.jpg') ? '/storage/img/good/'.$line['art'].'.jpg' : null,
                 'img1' => file_exists(public_path().'/storage/img/good/'.$line['art'].'_1.jpg') ? '/storage/img/good/'.$line['art'].'_1.jpg' : null,
                 'img2' => file_exists(public_path().'/storage/img/good/'.$line['art'].'_2.jpg') ? '/storage/img/good/'.$line['art'].'_2.jpg' : null,
@@ -118,4 +117,20 @@ class Good extends Model
             ->get();
     }
 
+    /**
+     * создаем массив ссылок на "живые" фото на страницу товара
+     * @param $id
+     * @return array
+     */
+    public static function getImgs($id)
+    {
+        $imgs = Good::where('id', $id)->select(['img', 'img1', 'img2', 'img3', 'img4'])->get()->toArray();
+        $true_imgs = [];
+        foreach ($imgs[0] as $item) {
+            if ($item) {
+                $true_imgs[] = $item;
+            }
+        }
+        return $true_imgs;
+    }
 }
