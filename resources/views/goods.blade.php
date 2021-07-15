@@ -16,7 +16,7 @@
                 <div class="col-lg-12 d-flex justify-content-center">
                     <ul id="portfolio-flters" style="border: none">
                         @if(count($collections) > 1)
-                        <li data-filter="*" class="filter-active">Показать всё</li>
+                            <li data-filter="*" class="filter-active">Показать всё</li>
                         @endif
                         @foreach($collections as $item)
                             <li data-filter=".filter-{{ $item->id }}">{{ $item->name }}</li>
@@ -58,6 +58,5 @@
                 </div>
             </div>
         </div>
-
 
 </x-app-layout>
