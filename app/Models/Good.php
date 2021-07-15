@@ -133,4 +133,13 @@ class Good extends Model
         }
         return $true_imgs;
     }
+
+    public static function getCollections($goods){
+        $collections = collect([]);
+        foreach ($goods as $item){
+            $collections->push(Collection::whereId($item->collection_id)->select(['id', 'name'])->get());
+        }
+
+        return $collections->flatten()->unique();
+    }
 }

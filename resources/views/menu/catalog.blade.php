@@ -33,7 +33,7 @@
                             </div>
                             @auth()
                                 @if(Auth::user()->hasRole('admin'))
-                                    <div class="md:inline-flex justify-center mypd">
+                                    <div style="z-index: 10000" class="md:inline-flex justify-center mypd">
                                         <a class="btn btn-outline-secondary mymrgleft" href="{{route('admin::category::update', ['id' => $item->id])}}">{{ __('buttons.update') }}</a>
                                         <a class="btn btn-outline-danger mymrgleft" href="{{route('admin::category::delete', ['id' => $item->id])}}">{{ __('buttons.delete') }}</a>
                                     </div>

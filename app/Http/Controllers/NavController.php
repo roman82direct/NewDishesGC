@@ -31,19 +31,14 @@ class NavController extends Controller
         return view('menu.catalog');
     }
 
-//    public function catalogbylist(){
-//        return view('layouts.catalogbylist');
-//    }
-
     public function contact(){
         return view('menu.contacts');
     }
 
     public function showGoods($id){
-//        dump(\Storage::files('app/public'));
         $goods = Good::where('category_id', $id)->get();
 
-        return view('goods', ['goods' => $goods, 'id' => $id]);
+        return view('goods', ['goods' => $goods, 'collections' => Good::getCollections($goods), 'id' => $id]);
     }
 
     public function showGoodItem($id){
