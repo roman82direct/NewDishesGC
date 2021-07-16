@@ -3,15 +3,32 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <nav class="py-2" aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item text-sm"><a href="{{ route('nav::catalog') }}">{{__('menu.catalog') }}</a></li>
+{{--                        <li class="breadcrumb-item text-sm"><a href="{{ route('nav::catalog') }}">{{__('menu.catalog') }}</a></li>--}}
+                        <li class="breadcrumb-item text-sm"><a href="{{ route('nav::maincategory', ['id' => \App\Models\Category::find($id)->category1_id]) }}">{{\App\Models\Maincategory::find(\App\Models\Category::find($id)->category1_id)->name }}</a></li>
                         <li class="breadcrumb-item text-sm">{{\App\Models\Category::find($id)->name }}</li>
                     </ol>
                 </nav>
             </div>
+            <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+                <h2>Коллекции</h2>
+            </div>
+
+            <div class="row" data-aos="fade-in">
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <ul id="portfolio-flters" style="border: none">
+                        @if(count($collections) > 1)
+                            <li data-filter="*" class="filter-active">Показать всё</li>
+                        @endif
+                        @foreach($collections->sortBy('name') as $item)
+                            <li data-filter=".filter-{{ $item->id }}">{{ $item->name }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
             <div class="sm:rounded-lg p-3" data-aos="fade-up">
-                <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 g-4">
+                <div class="row portfolio-container row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 g-4">
                     @foreach($goods as $item)
-                        <div class="col">
+                        <div class="col portfolio-item filter-{{ $item->collection_id }}">
                             <div class="portfolio-wrap cardhover card h-100" data-aos="fade-up">
                                 <h5 class="card-footer itemHeader text-sm border-0">{{ $item->art }}</h5>
                                 <img src="{{ $item->img }}" onError="this.src='/storage/img/good/temp.jpg'" class="" alt="...">
@@ -27,7 +44,7 @@
                                 </div>
                                 @auth()
                                     @if(Auth::user()->hasRole('admin'))
-                                        <div class="md:inline-flex justify-center mypd">
+                                        <div  style="z-index: 10000" class="md:inline-flex justify-center mypd">
                                             <a class="btn btn-outline-secondary mymrgleft" href="{{route('admin::good::update', ['id' => $item->id])}}">{{ __('buttons.update') }}</a>
                                             <a class="btn btn-outline-danger mymrgleft" href="{{route('admin::good::delete', ['id' => $item->id])}}">{{ __('buttons.delete') }}</a>
                                         </div>
@@ -42,6 +59,5 @@
                 </div>
             </div>
         </div>
-
 
 </x-app-layout>

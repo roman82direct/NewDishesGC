@@ -61,7 +61,4 @@ class RouteServiceProvider extends ServiceProvider
         });
     }
 
-//    public static function redirectTo(){
-//        return session('url.intended');
-//    }
 }

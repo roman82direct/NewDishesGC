@@ -8,6 +8,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -18,6 +19,8 @@ class AuthenticatedSessionController extends Controller
      */
     public function create()
     {
+        session()->put('_redirectPath', request()->headers->get('referer'));
+
         return view('auth.login');
     }
 
@@ -33,9 +36,8 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
-//        dd(RouteServiceProvider::redirectTo());
-//        return redirect()->intended(RouteServiceProvider::redirectTo());
+//        return redirect()->intended(RouteServiceProvider::HOME);
+        return redirect(session('_redirectPath'));
     }
 
     /**

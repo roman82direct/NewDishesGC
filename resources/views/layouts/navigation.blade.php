@@ -13,10 +13,10 @@
             <ul class="w-100">
                 <div class="d-flex justify-content-between">
                     <li><a class="nav-link" href="{{ route('nav::main') }}">{{ __('menu.main') }}</a></li>
-                    <li class="dropdown"><a href="{{ route('nav::catalog') }}"><span>{{ __('menu.catalog') }}</span> <i class="bi bi-chevron-down"></i></a>
+                    <li class="dropdown"><a onclick="event.preventDefault()" href=""><span>{{ __('menu.catalog') }}</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             @foreach(\App\Models\Maincategory::all() as $group)
-                                <li class="dropdown"><a href="#"><span>{{ $group->name }}</span> <i class="bi bi-chevron-right"></i></a>
+                                <li class="dropdown"><a href="{{ route('nav::maincategory', ['id' => $group->id]) }}"><span>{{ $group->name }}</span> <i class="bi bi-chevron-right"></i></a>
                                     <ul>
                                         @foreach(\App\Models\Category::where('category1_id', $group->id)->get() as $item)
                                             <li><a href="{{ route('nav::goods', ['id' => $item->id]) }}">{{ $item->name }}</a></li>
@@ -26,7 +26,6 @@
                             @endforeach
                         </ul>
                     </li>
-{{--                    <li><a class="nav-link" href="{{ route('nav::contacts') }}">{{ __('menu.contacts') }}</a></li>--}}
                 </div>
 
 {{--                Поиск--}}

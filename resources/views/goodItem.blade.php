@@ -2,7 +2,8 @@
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-50 py-2">
             <nav class="py-2" aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item text-sm"><a href="{{ route('nav::catalog') }}">{{__('menu.catalog') }}</a></li>
+{{--                    <li class="breadcrumb-item text-sm"><a href="{{ route('nav::catalog') }}">{{__('menu.catalog') }}</a></li>--}}
+                    <li class="breadcrumb-item text-sm"><a href="{{ route('nav::maincategory', ['id' => $item->maincategory_id]) }}">{{\App\Models\Maincategory::find($item->maincategory_id)->name }}</a></li>
                     <li class="breadcrumb-item text-sm"><a href="{{ route('nav::goods', ['id' => $item->category_id]) }}">
                             {{\App\Models\Category::find($item->category_id)->name }}</a></li>
                     <li class="breadcrumb-item active text-sm" aria-current="page">{{ $item->art }}</li>
@@ -13,25 +14,25 @@
         <div class="container">
             <div class="goodItem-card row gy-3">
                 <div class="col-lg-8">
+                    @if(count($imgs) > 1)
                     <div class="portfolio-details-slider swiper-container" data-aos="fade-up">
                         <div class="swiper-wrapper align-items-center">
-                            <div class="swiper-slide">
-                                <img src="{{ $item->img }}" onError="this.src='/storage/img/good/temp.jpg'" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{ $item->img1 }}" onError="this.src='/storage/img/good/temp.jpg'" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{ $item->img2 }}" onError="this.src='/storage/img/good/temp.jpg'" alt="">
-                            </div>
+                            @foreach($imgs as $img)
+                                <div class="swiper-slide">
+                                    <img src="{{ $img }}" onError="this.src='/storage/img/good/temp.jpg'" alt="">
+                                </div>
+                            @endforeach
                         </div>
                         <div class="swiper-pagination"></div>
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
                         <!-- If we need scrollbar -->
-                        {{--                        <div class="swiper-scrollbar"></div>--}}
+{{--                                                <div class="swiper-scrollbar"></div>--}}
 
                     </div>
+                    @else
+                        <img src="{{ $imgs ? $imgs[0] : '/storage/img/good/temp.jpg' }}" alt="">
+                    @endif
                 </div>
 
                 <div class="col-lg-4">
@@ -42,9 +43,10 @@
                             <li><strong>Наименование</strong>: {{ $item->name }}</li>
                             <li><strong>Категория</strong>: {{ \App\Models\Category::find($item->category_id)->name}}</li>
                             <li><strong>Коллекция</strong>: {{ \App\Models\Collection::find($item->collection_id)->name}}</li>
-                            <li><strong>Прогноз цены</strong>: {{ $item->price }} руб.</li>
+{{--                            <li><strong>Прогноз цены</strong>: {{ $item->price }} руб.</li>--}}
                             <li><strong>Дата прихода</strong>: {{ date('d.m.Y', strtotime($item->arrival)) }}</li>
-                            <li><strong>Упаковка</strong>: <p>{{ $item->pack }}</p></li>
+                            <li><strong>Упаковка</strong>: <p>{{ $item->pack }}</p>
+                                <img style="height: 100px" src="{{ $item->img_pack }}" alt=""></li>
                         </ul>
                     </div>
                     <div class="portfolio-description">

@@ -226,7 +226,7 @@
             },
 
             1200: {
-                slidesPerView: 3,
+                slidesPerView: 4,
             },
 
             1540: {
@@ -264,16 +264,13 @@
                 slidesPerView: 2,
                 spaceBetween: 40
             },
-
             900: {
                 slidesPerView: 3,
                 spaceBetween: 40
             },
-
             1200: {
                 slidesPerView: 4,
             },
-
             1400: {
                 slidesPerView: 5,
             }
@@ -301,9 +298,13 @@
                 slidesPerView: 1,
                 spaceBetween: 40
             },
-
-            1200: {
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 40
+            },
+            1025: {
                 slidesPerView: 3,
+                spaceBetween: 40
             }
         }
     });

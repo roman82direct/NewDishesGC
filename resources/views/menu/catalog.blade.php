@@ -17,7 +17,7 @@
             </div>
 
             <div id="catalogContainer" class="row portfolio-container sm:rounded-lg pt-2 pb-2 mt-8" data-aos="fade-up">
-                @foreach(\App\Models\Category::all() as $item)
+                @foreach(\App\Models\Category::all()->sortBy('group_id') as $item)
                     <div class="col-lg-3 col-md-6 portfolio-item filter-{{ $item->category1_id }}">
                         <div class="portfolio-wrap cardhover card h-100 mb-3">
                             <img src="{{ $item->img }}" onError="this.src='/storage/img/good/temp.jpg'" alt="...">
@@ -28,12 +28,12 @@
                                     </svg>
                                 </a>
                             </div>
-                            <div class="card-body">
+                            <div style="height: 70px" class="card-body">
                                 <p class="card-text text-sm">{{ $item->name }}</p>
                             </div>
                             @auth()
                                 @if(Auth::user()->hasRole('admin'))
-                                    <div class="md:inline-flex justify-center mypd">
+                                    <div style="z-index: 10000" class="md:inline-flex justify-center mypd">
                                         <a class="btn btn-outline-secondary mymrgleft" href="{{route('admin::category::update', ['id' => $item->id])}}">{{ __('buttons.update') }}</a>
                                         <a class="btn btn-outline-danger mymrgleft" href="{{route('admin::category::delete', ['id' => $item->id])}}">{{ __('buttons.delete') }}</a>
                                     </div>

@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class LoadDataXLS {
     public function loadXLS(){
+        ini_set('max_execution_time', 180);
         $file = app()->make('file');            //извлекаем переданные из посредника в контейнер данные
         try {
             (new Maincategory)->fillFromXLS($file);

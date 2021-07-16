@@ -31921,8 +31921,7 @@ main {
 }
 
 .roundabout-in-focus:hover span		{
-  display:inline; position:absolute; bottom:5px; right:5px; padding:8px 20px; background:#f9f9f9; color:#000000; z-index:999; -webkit-border-top-left-radius: 5px; -moz-border-radius-topLeft: 5px; font-size : 12px;
-  border-left:1px solid #aaaaaa; border-top:1px solid #aaaaaa;
+  display:inline; opacity: 0.8; position:absolute; bottom:5px; right:5px; padding:8px 20px; background:#f9f9f9; color:#000000; z-index:999; font-size : 14px;
 }
 
 .roundabout a:active,
@@ -32548,6 +32547,11 @@ a img								{
 
 .portfolio-details .portfolio-details-slider .swiper-pagination {
   position: relative;
+  bottom: 50px;
+}
+
+.swiper-slide{
+  /*height: 80%;*/
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
@@ -32796,12 +32800,16 @@ a img								{
 @media screen and (max-width: 640px){
   /* Common Scroller Styles */
 
+  .roundabout-holder 					{
+    width:60%; height:200px;
+  }
+
   .roundabout-moveable-item 			{
     height:133px; width:200px;
   }
 
-  .roundabout-holder 					{
-    width:60%; height:200px;
+  .roundabout-in-focus:hover span		{
+    display:inline; opacity: 0.8; position:absolute; bottom:5px; right:5px; padding:4px 6px; background:#f9f9f9; color:#000000; z-index:999; font-size : 8px;
   }
 
   .categoryCard{
@@ -32834,11 +32842,15 @@ a img								{
 
 @media screen and (min-width: 640px) and (max-width: 1200px){
   .roundabout-holder 					{
-    width:40%; height:360px; margin:0px auto;
+    width:40%; height:420px; margin:0px auto;
   }
 
   .roundabout-moveable-item 			{
-    height:266px; width:400px;
+    height:360px; width:540px;
+  }
+
+  .roundabout-in-focus:hover span		{
+    display:inline; opacity: 0.8; position:absolute; bottom:5px; right:5px; padding:8px 10px; background:#f9f9f9; color:#000000; z-index:999; font-size : 10px;
   }
 
   .categoryCard{
@@ -32881,7 +32893,7 @@ a img								{
 
   .item-card-links{
     position: absolute;
-    top: 48%;
+    top: 53%;
     left: 60%;
     z-index: 10;
   }
@@ -32889,7 +32901,7 @@ a img								{
 
 @media screen and (min-width: 1200px) and (max-width: 1400px) {
   .roundabout-holder 					{
-    width:50%; height:640px;
+    width:50%; height: 560px;
   }
 
   .roundabout-moveable-item 			{
@@ -32910,12 +32922,41 @@ a img								{
     line-height: 24px;
     margin-bottom: 30px;
   }
+
+  .portfolio-details .portfolio-details-slider {
+    width: 640px;
+  }
+
+  .portfolio-details .portfolio-details-slider .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+
+  .portfolio-details .portfolio-details-slider img {
+    height: 480px!important;
+    width: 480px!important;
+  }
+
+  .portfolio-info {
+    height: 480px;
+  }
+
+  .portfolio-description {
+    display: none;
+  }
+
+  .item-card-links {
+    position: absolute!important;
+    top: 82% !important;
+    left: 36% !important;
+    z-index: 10!important;
+  }
 }
 
 @media screen and (min-width: 1024px){
   .item-card-links{
     position: absolute;
-    top: 94%;
+    top: 88%;
     left: 45%;
     z-index: 10;
   }
@@ -32930,7 +32971,7 @@ a img								{
 
 @media screen and (min-width: 1280px){
   .goodItem-card{
-    height: 80vh;
+    height: 100%;
   }
 }
 

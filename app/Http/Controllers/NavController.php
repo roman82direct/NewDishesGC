@@ -9,12 +9,12 @@ use App\Models\Favorite;
 use App\Models\Good;
 use App\Models\Like;
 use App\Models\Maincategory;
-use http\Url;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use function PHPUnit\Framework\isNull;
 
 class NavController extends Controller
 {
@@ -27,30 +27,30 @@ class NavController extends Controller
     }
 
     public function catalog(){
-//        session()->flash('url.intended', \url()->current());
+
         return view('menu.catalog');
     }
 
-//    public function catalogbylist(){
-//        return view('layouts.catalogbylist');
-//    }
+    public function showByMaincategory($id){
+        $categories = Category::whereCategory1Id($id)->get()->sortBy('group_id');
+        $goods = Good::whereMaincategoryId($id)->get();
+        $collections = Good::getCollections($goods);
+        $groups = Good::getGroups($goods);
 
-    public function contact(){
-        return view('menu.contacts');
+        return view('menu.category', ['goods'=>$goods, 'categories'=>$categories, 'collections'=>$collections, 'groups'=>$groups, 'id'=>$id]);
     }
 
     public function showGoods($id){
-//        dump(\Storage::files('app/public'));
         $goods = Good::where('category_id', $id)->get();
 
-        return view('goods', ['goods' => $goods, 'id' => $id]);
+        return view('goods', ['goods' => $goods, 'collections' => Good::getCollections($goods), 'id' => $id]);
     }
 
     public function showGoodItem($id){
         $is_like = (Auth::user()) ? (new Like())->getId($id, Auth::user()->id) : null;
         $is_favorite = (Auth::user()) ? (new Favorite())->getId($id, Auth::user()->id) : null;
 
-        return view('goodItem', ['item' => Good::find($id), 'is_like'=>$is_like, 'is_favorite'=>$is_favorite]);
+        return view('goodItem', ['item' => Good::find($id), 'is_like'=>$is_like, 'is_favorite'=>$is_favorite, 'imgs'=>Good::getImgs($id)]);
     }
 
     public function showAdminPanel(){
