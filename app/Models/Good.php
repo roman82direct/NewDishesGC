@@ -59,6 +59,7 @@ class Good extends Model
         'price',
         'pack',
         'brand',
+        'maincategory_id',
         'collection_id',
         'category_id',
         'group_id',
@@ -68,6 +69,7 @@ class Good extends Model
         'img2',
         'img3',
         'img4',
+        'img5',
         'img_pack',
         'likes',
         'dislikes',
@@ -95,6 +97,7 @@ class Good extends Model
                 'brand' => $line['brand'],
                 'collection_id' => Collection::whereName($line['collection'])->value('id'),
                 'category_id' => Category::where('name', $line['category2'])->value('id'),
+                'maincategory_id' => Maincategory::where('name', $line['category1'])->value('id'),
                 'group_id' => Group::whereName($line['group'])->value('id'),
                 'arrival' => $line['arrival'],
                 'img' => file_exists(public_path().'/storage/img/good/'.$line['art'].'.jpg') ? '/storage/img/good/'.$line['art'].'.jpg' : null,
@@ -102,6 +105,7 @@ class Good extends Model
                 'img2' => file_exists(public_path().'/storage/img/good/'.$line['art'].'_2.jpg') ? '/storage/img/good/'.$line['art'].'_2.jpg' : null,
                 'img3' => file_exists(public_path().'/storage/img/good/'.$line['art'].'_3.jpg') ? '/storage/img/good/'.$line['art'].'_3.jpg' : null,
                 'img4' => file_exists(public_path().'/storage/img/good/'.$line['art'].'_4.jpg') ? '/storage/img/good/'.$line['art'].'_4.jpg' : null,
+                'img5' => file_exists(public_path().'/storage/img/good/'.$line['art'].'_5.jpg') ? '/storage/img/good/'.$line['art'].'_5.jpg' : null,
                 'img_pack' => file_exists(public_path().'/storage/img/good/'.$line['art'].'_pack.jpg') ? '/storage/img/good/'.$line['art'].'_pack.jpg' : null,
             ]);
         });
@@ -124,7 +128,7 @@ class Good extends Model
      */
     public static function getImgs($id)
     {
-        $imgs = Good::where('id', $id)->select(['img', 'img1', 'img2', 'img3', 'img4'])->get()->toArray();
+        $imgs = Good::where('id', $id)->select(['img', 'img1', 'img2', 'img3', 'img4', 'img5'])->get()->toArray();
         $true_imgs = [];
         foreach ($imgs[0] as $item) {
             if ($item) {

@@ -27,12 +27,16 @@ class NavController extends Controller
     }
 
     public function catalog(){
-//        session()->flash('url.intended', \url()->current());
+
         return view('menu.catalog');
     }
 
-    public function contact(){
-        return view('menu.contacts');
+    public function showByMaincategory($id){
+        $categories = Category::whereCategory1Id($id)->get();
+//        $goods = Good::where
+//        $collections = C
+
+        return $id = 1 ? view('menu.textile', ['categories'=>$categories]) : view('menu.cookware', ['categories'=>$categories]);
     }
 
     public function showGoods($id){

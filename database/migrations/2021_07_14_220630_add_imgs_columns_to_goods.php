@@ -19,7 +19,9 @@ class AddImgsColumnsToGoods extends Migration
             $table->string('img2')->nullable()->change();
             $table->string('img3')->nullable()->after('img2');
             $table->string('img4')->nullable()->after('img3');
-            $table->string('img_pack')->nullable()->after('img4');
+            $table->string('img5')->nullable()->after('img4');
+            $table->string('img_pack')->nullable()->after('img5');
+            $table->unsignedBigInteger('maincategory_id')->after('brand');
         });
     }
 
@@ -36,7 +38,9 @@ class AddImgsColumnsToGoods extends Migration
             $table->string('img2')->default('empty')->change();
             $table->dropColumn('img3');
             $table->dropColumn('img4');
+            $table->dropColumn('img5');
             $table->dropColumn('img_pack');
+            $table->dropColumn('maincategory_id');
         });
     }
 }
