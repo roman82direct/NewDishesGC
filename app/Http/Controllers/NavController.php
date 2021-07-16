@@ -32,11 +32,12 @@ class NavController extends Controller
     }
 
     public function showByMaincategory($id){
-        $categories = Category::whereCategory1Id($id)->get();
-//        $goods = Good::where
-//        $collections = C
+        $categories = Category::whereCategory1Id($id)->get()->sortBy('group_id');
+        $goods = Good::whereMaincategoryId($id)->get();
+        $collections = Good::getCollections($goods);
+        $groups = Good::getGroups($goods);
 
-        return $id = 1 ? view('menu.textile', ['categories'=>$categories]) : view('menu.cookware', ['categories'=>$categories]);
+        return view('menu.category', ['goods'=>$goods, 'categories'=>$categories, 'collections'=>$collections, 'groups'=>$groups, 'id'=>$id]);
     }
 
     public function showGoods($id){

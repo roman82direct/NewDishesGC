@@ -47,6 +47,20 @@ use Rap2hpoutre\FastExcel\FastExcel;
  * @property int $collection_id
  * @method static \Illuminate\Database\Eloquent\Builder|Good whereCollectionId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Good wherePrice($value)
+ * @property string $pack
+ * @property int $maincategory_id
+ * @property int $group_id
+ * @property string|null $img3
+ * @property string|null $img4
+ * @property string|null $img5
+ * @property string|null $img_pack
+ * @method static \Illuminate\Database\Eloquent\Builder|Good whereGroupId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Good whereImg3($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Good whereImg4($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Good whereImg5($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Good whereImgPack($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Good whereMaincategoryId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Good wherePack($value)
  */
 class Good extends Model
 {
@@ -138,6 +152,11 @@ class Good extends Model
         return $true_imgs;
     }
 
+    /**
+     * ToDo переделать без foreach через DB::join
+     * @param $goods
+     * @return \Illuminate\Support\Collection
+     */
     public static function getCollections($goods){
         $collections = collect([]);
         foreach ($goods as $item){
@@ -145,5 +164,14 @@ class Good extends Model
         }
 
         return $collections->flatten()->unique();
+    }
+
+    public static function getGroups($goods){
+        $groups = collect([]);
+        foreach ($goods as $item){
+            $groups->push(Group::whereId($item->group_id)->select(['id', 'name'])->get());
+        }
+
+        return $groups->flatten()->unique();
     }
 }

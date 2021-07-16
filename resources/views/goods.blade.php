@@ -3,7 +3,8 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <nav class="py-2" aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item text-sm"><a href="{{ route('nav::catalog') }}">{{__('menu.catalog') }}</a></li>
+{{--                        <li class="breadcrumb-item text-sm"><a href="{{ route('nav::catalog') }}">{{__('menu.catalog') }}</a></li>--}}
+                        <li class="breadcrumb-item text-sm"><a href="{{ route('nav::maincategory', ['id' => \App\Models\Category::find($id)->category1_id]) }}">{{\App\Models\Maincategory::find(\App\Models\Category::find($id)->category1_id)->name }}</a></li>
                         <li class="breadcrumb-item text-sm">{{\App\Models\Category::find($id)->name }}</li>
                     </ol>
                 </nav>
@@ -18,7 +19,7 @@
                         @if(count($collections) > 1)
                             <li data-filter="*" class="filter-active">Показать всё</li>
                         @endif
-                        @foreach($collections as $item)
+                        @foreach($collections->sortBy('name') as $item)
                             <li data-filter=".filter-{{ $item->id }}">{{ $item->name }}</li>
                         @endforeach
                     </ul>

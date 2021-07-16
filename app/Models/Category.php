@@ -31,6 +31,8 @@ use Rap2hpoutre\FastExcel\FastExcel;
  * @mixin \Eloquent
  * @property int $category1_id
  * @method static \Illuminate\Database\Eloquent\Builder|Category whereCategory1Id($value)
+ * @property int $group_id
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereGroupId($value)
  */
 class Category extends Model
 {

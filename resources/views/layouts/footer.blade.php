@@ -13,7 +13,7 @@
                             119021, Россия  <br>
                             г. Москва, ул. Тимура Фрунзе 11, с.49<br><br>
                             <strong>Тел:</strong> +7 (495) 663 39 62<br>
-                            <strong>Email:</strong> cookware@lblmsk.ru<br>
+{{--                            <strong>Email:</strong> cookware@lblmsk.ru<br>--}}
                         </p>
                         <div class="social-links mt-3">
                             <a href="https://www.facebook.com/galacentre.ru/" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
@@ -26,9 +26,9 @@
                 <div class="col-lg-2 col-md-6 footer-links">
                     <h4>Навигация</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('nav::catalog') }}">{{ __('menu.catalog') }}</a></li>
+{{--                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('nav::catalog') }}">{{ __('menu.catalog') }}</a></li>--}}
                         @foreach(\App\Models\Maincategory::all() as $item)
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">{{$item->name}}</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{ route('nav::maincategory', ['id' => $item->id]) }}">{{$item->name}}</a></li>
                         @endforeach
                     </ul>
                 </div>
@@ -42,15 +42,15 @@
                     </ul>
                 </div>
 
-                <div class="col-lg-4 col-md-6 footer-newsletter">
-                    <h4>Наши новости</h4>
-                    <p>Подпишитесь, чтобы быть в курсе...</p>
-                    <form action="" method="post">
-                        <input type="email" name="email">
-                        <input type="submit" value="Подписаться">
-                    </form>
+{{--                <div class="col-lg-4 col-md-6 footer-newsletter">--}}
+{{--                    <h4>Наши новости</h4>--}}
+{{--                    <p>Подпишитесь, чтобы быть в курсе...</p>--}}
+{{--                    <form action="" method="post">--}}
+{{--                        <input type="email" name="email">--}}
+{{--                        <input type="submit" value="Подписаться">--}}
+{{--                    </form>--}}
 
-                </div>
+{{--                </div>--}}
 
             </div>
         </div>
@@ -58,10 +58,11 @@
 
     <div class="container">
         <div class="copyright">
-            &copy; Copyright <strong><span>{{ config('app.name', 'Laravel') }}</span></strong>. All Rights Reserved
+            &copy; Copyright <strong><span>{{ config('app.name', 'Laravel') }}</span></strong>.
+{{--            All Rights Reserved--}}
         </div>
         <div class="credits">
-            Developed by <a href="#">PaRom</a>
+{{--            Developed by <a href="#">PaRom</a>--}}
         </div>
     </div>
 </footer><!-- End Footer -->
