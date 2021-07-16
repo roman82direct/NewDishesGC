@@ -19,6 +19,8 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
+        dump(session()->all());
+
         return view('auth.register');
     }
 
@@ -46,6 +48,7 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect(session('_redirectPath'));
+//        return redirect(RouteServiceProvider::HOME);
     }
 }

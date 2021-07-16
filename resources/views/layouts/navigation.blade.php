@@ -26,7 +26,6 @@
                             @endforeach
                         </ul>
                     </li>
-{{--                    <li><a class="nav-link" href="{{ route('nav::contacts') }}">{{ __('menu.contacts') }}</a></li>--}}
                 </div>
 
 {{--                Поиск--}}
