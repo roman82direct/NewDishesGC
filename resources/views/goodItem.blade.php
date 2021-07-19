@@ -73,31 +73,27 @@
 
         @if(\Illuminate\Support\Facades\Auth::user())
             <div class="item-card-links flex justify-between items-center p-1">
-                <a id="toLike" data-id="{{ $item->id }}" class="item-card-link ml-4" href="#"
-                   title="{{ Auth::user() ? 'Нравится' : 'Войдите, чтобы лайкнуть...' }}"
+                <a id="toLike" data-id="{{ $item->id }}" class="item-card-link ml-4" href="#" title="Нравится"
                 >@include('components.mysvg.like')
                 </a>
-                <a id="toFavorites" data-id="{{ $item->id }}" class="item-card-link ml-4" href="#"
-                   title="{{ Auth::user() ? 'В избранные' : 'Войдите, чтобы добавить в избранные...' }}"
+                <a id="toFavorites" data-id="{{ $item->id }}" class="item-card-link ml-4" href="#" title="Добавить в избранные"
                 >@include('components.mysvg.favorites')
                 </a>
                 <a data-bs-toggle="offcanvas" href="#offcanvas"
-                   role="button" aria-controls="offcanvasExample" id="toCommentLink"
-                   class="item-card-link  ml-4" href="#"
-                   title="Комментировать"
+                   role="button" aria-controls="offcanvasExample" id="toCommentLink" class="item-card-link  ml-4" href="#" title="Комментировать"
                 >@include('components.mysvg.comment')
                 </a>
-                <a id="toShare" data-id="{{ $item->id }}" class="item-card-link ml-3" href="#"
-                   title="Поделиться"
-                >@include('components.mysvg.share')
-                </a>
+{{--                <a id="toShare" data-id="{{ $item->id }}" class="item-card-link ml-3" href="#"--}}
+{{--                   title="Поделиться"--}}
+{{--                >@include('components.mysvg.share')--}}
+{{--                </a>--}}
             </div>
         @else
             <div class="item-card-links flex justify-between items-center p-1">
-                <a id="toastLike" class="item-card-link ml-4">@include('components.mysvg.like')</a>
-                <a id="toastFavorites" class="item-card-link ml-4">@include('components.mysvg.favorites')</a>
-                <a id="toastComment" class="item-card-link ml-4">@include('components.mysvg.comment')</a>
-                <a id="toastShare" class="item-card-link ml-3">@include('components.mysvg.share')</a>
+                <a id="toastLike" class="item-card-link ml-4" title="Авторизуйтесь, чтобы поставить лайк">@include('components.mysvg.like')</a>
+                <a id="toastFavorites" class="item-card-link ml-4" title="Авторизуйтесь, чтобы добавить в избранные">@include('components.mysvg.favorites')</a>
+                <a id="toastComment" class="item-card-link ml-4" title="Авторизуйтесь, чтобы оставить комментарий">@include('components.mysvg.comment')</a>
+{{--                <a id="toastShare" class="item-card-link ml-3">@include('components.mysvg.share')</a>--}}
             </div>
         @endif()
     </section>
