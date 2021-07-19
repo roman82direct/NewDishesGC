@@ -53,7 +53,8 @@
                                 </a>
 
                                 <ul>
-                                    <li><a href="{{ route('user::profile') }}">{{ __('menu.profile') }}</a></li>
+{{--                                    <li><a href="{{ route('user::profile') }}">{{ __('menu.profile') }}</a></li>--}}
+                                    <li><a href="{{ route('user::downloadall') }}">Сохранить все новинки в эксель</a></li>
                                     @if(\Illuminate\Support\Facades\Auth::user()->hasRole('admin'))
                                         <li><a href="{{ route('admin::panel') }}">{{ __('menu.admin') }}</a></li>
                                     @endif
@@ -66,7 +67,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <a class="relative" href="#">
+                            <a class="relative" href="{{ route('user::myfavorites') }}" title="Избранные товары">
                                 @php($favorites_count = \App\Models\Favorite::whereUserId(\Illuminate\Support\Facades\Auth::user()->id)->count())
                                 @if(!$favorites_count)
                                     <i id="navFavorites" style="font-size: 1.5rem" class="bi bi-bookmarks text-gray-500"></i>
@@ -77,6 +78,18 @@
                                     </div>
                                 @endif
                             </a>
+                            @if($favorites_count > 0)
+                                <li class="dropdown">
+                                    <a class="favoritesDropdown sm:flex sm:items-center" href="#">
+                                        <i class="bi bi-chevron-down"></i>
+                                    </a>
+
+                                    <ul>
+                                        <li><a href="{{ route('user::deleteallfavorites') }}">Очистить Избранные</a></li>
+                                        <li><a href="{{ route('user::downloadfavorites') }}">Сохранить Избранные в эксель</a></li>
+                                    </ul>
+                                </li>
+                            @endif
                         </div>
                     @endauth
                 </div>

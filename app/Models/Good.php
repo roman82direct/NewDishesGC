@@ -174,4 +174,12 @@ class Good extends Model
 
         return $groups->flatten()->unique();
     }
+
+    static function getFavorites($user_id)
+    {
+        return Good::leftJoin('favorites', 'goods.id', '=', 'favorites.good_id')
+            ->where('favorites.user_id', $user_id)
+            ->orderBy('goods.collection_id')
+            ->get();
+    }
 }

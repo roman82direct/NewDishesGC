@@ -54,9 +54,25 @@ Route::group([
         ->middleware('auth')
         ->name('profile');
 
-    Route::get('/download', [UserController::class, 'downloadExcel'])
+    Route::get('/myfavorites', [UserController::class, 'showFavorites'])
         ->middleware('auth')
-        ->name('download');
+        ->name('myfavorites');
+
+    Route::get('/delfromvavorites{id}', [UserController::class, 'delFromFavorites'])
+        ->middleware('auth')
+        ->name('delfromfavorites');
+
+    Route::get('/delfavorites', [UserController::class, 'delAllFavorites'])
+        ->middleware('auth')
+        ->name('deleteallfavorites');
+
+    Route::get('/downloadall', [UserController::class, 'downloadAll'])
+        ->middleware('auth')
+        ->name('downloadall');
+
+    Route::get('/downloadfavorites', [UserController::class, 'downloadFavorites'])
+        ->middleware('auth')
+        ->name('downloadfavorites');
 
     Route::get('/like', [UserController::class, 'createLike'])
         ->middleware(['auth', 'checklikes'])
