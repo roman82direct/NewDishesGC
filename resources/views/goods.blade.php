@@ -39,8 +39,8 @@
                                         </svg>
                                     </a>
                                 </div>
-                                <div class="card-body">
-                                    <p class="card-text text-sm">{{ $item->name }}</p>
+                                <div style="height: 80px" class="card-body">
+                                    <p style="font-size: 12px" class="card-text text-sm">{{ $item->name }}</p>
                                 </div>
                                 @auth()
                                     @if(Auth::user()->hasRole('admin'))
@@ -51,7 +51,11 @@
                                     @endif
                                 @endauth
                                 <div class="card-footer card-text border-0">
-                                    <small class="text-muted">Дата прихода: {{ date('d.m.Y', strtotime($item->arrival)) }}</small>
+                                    @if(date($item->arrival) < now())
+                                        <strong style="color: darkblue">В наличии</strong>
+                                    @else
+                                        <small class="text-muted">Дата прихода: {{ date('d.m.Y', strtotime($item->arrival)) }}</small>
+                                    @endif
                                 </div>
                             </div>
                         </div>

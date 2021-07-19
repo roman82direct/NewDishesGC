@@ -31,7 +31,7 @@
 
                     </div>
                     @else
-                        <img src="{{ $imgs ? $imgs[0] : '/storage/img/good/temp.jpg' }}" alt="">
+                        <img class="altImgItem" src="{{ $imgs ? $imgs[0] : '/storage/img/good/temp.jpg' }}" alt="">
                     @endif
                 </div>
 
@@ -44,8 +44,13 @@
                             <li><strong>Категория</strong>: {{ \App\Models\Category::find($item->category_id)->name}}</li>
                             <li><strong>Коллекция</strong>: {{ \App\Models\Collection::find($item->collection_id)->name}}</li>
 {{--                            <li><strong>Прогноз цены</strong>: {{ $item->price }} руб.</li>--}}
-                            <li><strong>Дата прихода</strong>: {{ date('d.m.Y', strtotime($item->arrival)) }}</li>
-                            <li><strong>Упаковка</strong>: <p>{{ $item->pack }}</p>
+                            <li><strong>Дата прихода</strong>:
+                            @if(date($item->arrival) < now())
+                                <strong style="color: darkblue">В наличии</strong>
+                            @else
+                                {{ date('d.m.Y', strtotime($item->arrival)) }}
+                            @endif
+                            <li><strong>Упаковка</strong>: {{ $item->pack }}
                                 <img style="height: 100px" src="{{ $item->img_pack }}" alt=""></li>
                         </ul>
                     </div>
@@ -55,44 +60,40 @@
                     </div>
                 </div>
 
-                @auth()
-                    @if(Auth::user()->hasRole('admin'))
-                        <div class="md:inline-flex mypd">
-                            <a class="btn btn-outline-secondary mymrgleft" href="{{route('admin::good::update', ['id' => $item->id])}}">{{ __('buttons.update') }}</a>
-                            <a class="btn btn-outline-danger mymrgleft" href="{{route('admin::good::delete', ['id' => $item->id])}}">{{ __('buttons.delete') }}</a>
-                        </div>
-                    @endif
-                @endauth
             </div>
+            @auth()
+                @if(Auth::user()->hasRole('admin'))
+                    <div class="md:inline-flex mypd">
+                        <a class="btn btn-outline-secondary mymrgleft" href="{{route('admin::good::update', ['id' => $item->id])}}">{{ __('buttons.update') }}</a>
+                        <a class="btn btn-outline-danger mymrgleft" href="{{route('admin::good::delete', ['id' => $item->id])}}">{{ __('buttons.delete') }}</a>
+                    </div>
+                @endif
+            @endauth
         </div>
 
         @if(\Illuminate\Support\Facades\Auth::user())
             <div class="item-card-links flex justify-between items-center p-1">
-                <a id="toLike" data-id="{{ $item->id }}" class="item-card-link ml-4" href="#"
-                   title="{{ Auth::user() ? 'Нравится' : 'Войдите, чтобы лайкнуть...' }}"
+                <a id="toLike" data-id="{{ $item->id }}" class="item-card-link ml-4" href="#" title="Нравится"
                 >@include('components.mysvg.like')
                 </a>
-                <a id="toFavorites" data-id="{{ $item->id }}" class="item-card-link ml-4" href="#"
-                   title="{{ Auth::user() ? 'В избранные' : 'Войдите, чтобы добавить в избранные...' }}"
+                <a id="toFavorites" data-id="{{ $item->id }}" class="item-card-link ml-4" href="#" title="Добавить в избранные"
                 >@include('components.mysvg.favorites')
                 </a>
                 <a data-bs-toggle="offcanvas" href="#offcanvas"
-                   role="button" aria-controls="offcanvasExample" id="toCommentLink"
-                   class="item-card-link  ml-4" href="#"
-                   title="Комментировать"
+                   role="button" aria-controls="offcanvasExample" id="toCommentLink" class="item-card-link  ml-4" href="#" title="Комментировать"
                 >@include('components.mysvg.comment')
                 </a>
-                <a id="toShare" data-id="{{ $item->id }}" class="item-card-link ml-3" href="#"
-                   title="Поделиться"
-                >@include('components.mysvg.share')
-                </a>
+{{--                <a id="toShare" data-id="{{ $item->id }}" class="item-card-link ml-3" href="#"--}}
+{{--                   title="Поделиться"--}}
+{{--                >@include('components.mysvg.share')--}}
+{{--                </a>--}}
             </div>
         @else
             <div class="item-card-links flex justify-between items-center p-1">
-                <a id="toastLike" class="item-card-link ml-4">@include('components.mysvg.like')</a>
-                <a id="toastFavorites" class="item-card-link ml-4">@include('components.mysvg.favorites')</a>
-                <a id="toastComment" class="item-card-link ml-4">@include('components.mysvg.comment')</a>
-                <a id="toastShare" class="item-card-link ml-3">@include('components.mysvg.share')</a>
+                <a id="toastLike" class="item-card-link ml-4" title="Авторизуйтесь, чтобы поставить лайк">@include('components.mysvg.like')</a>
+                <a id="toastFavorites" class="item-card-link ml-4" title="Авторизуйтесь, чтобы добавить в избранные">@include('components.mysvg.favorites')</a>
+                <a id="toastComment" class="item-card-link ml-4" title="Авторизуйтесь, чтобы оставить комментарий">@include('components.mysvg.comment')</a>
+{{--                <a id="toastShare" class="item-card-link ml-3">@include('components.mysvg.share')</a>--}}
             </div>
         @endif()
     </section>

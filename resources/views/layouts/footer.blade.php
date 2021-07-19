@@ -38,7 +38,7 @@
                     <ul>
                         <li><a href="https://www.galacentre.ru/" target="_blank" class="gc-link">@include('components.mysvg.galacentre')</a></li>
                         <li><a href="https://www.galamart.ru/" target="_blank" class="gc-link">@include('components.mysvg.galamart')</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="https://by-shop.ru/" target="_blank">by-shop.ru</a></li>
+{{--                        <li><i class="bx bx-chevron-right"></i> <a href="https://by-shop.ru/" target="_blank">by-shop.ru</a></li>--}}
                     </ul>
                 </div>
 
@@ -58,7 +58,8 @@
 
     <div class="container">
         <div class="copyright">
-            &copy; Copyright <strong><span>{{ config('app.name', 'Laravel') }}</span></strong>.
+{{--            &copy; Copyright--}}
+            <strong><span>{{ config('app.name', 'Laravel') }}</span></strong>.
 {{--            All Rights Reserved--}}
         </div>
         <div class="credits">

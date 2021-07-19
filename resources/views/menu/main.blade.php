@@ -52,7 +52,7 @@
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                                 <i class="bi bi-book"></i>
                                 <h4>Каталог новинок</h4>
-                                <p>В нашем каталоге собраны все товары в категориях "Посуда" и "Домашний текстиль", которые поступят на склад в преддверии нового сезона 2021-2022.</p>
+                                <p>В каталоге собраны все товары в категориях "Посуда" и "Домашний текстиль", которые поступят на склад в преддверии нового сезона 2021-2022.</p>
                             </div>
 {{--                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">--}}
 {{--                                <i class="bi bi-info-circle"></i>--}}
@@ -67,7 +67,7 @@
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
                                 <i class="bi bi-clock-history"></i>
                                 <h4>Оперативность и своевременность</h4>
-                                <p>Актуальная информация по нашим новинкам из "первых рук"</p>
+                                <p>Актуальная информация по новинкам из "первых рук"</p>
                             </div>
                         </div>
                     </div><!-- End .content-->
@@ -156,17 +156,6 @@
         </div>
     </section><!-- End goodsByLikes Section -->
 
-    <!-- ======= Cta Section ======= -->
-{{--    <section id="cta" class="cta">--}}
-{{--        <div class="container" data-aos="zoom-in">--}}
-{{--            <div class="text-center">--}}
-{{--                <h3>Call To Action</h3>--}}
-{{--                --}}{{--                    <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>--}}
-{{--                <a class="cta-btn" href="#">Call To Action</a>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </section><!-- End Cta Section -->--}}
-
     <!-- Brands Section -->
     <section id="brands" class="brands section-bg">
         <div class="container">
@@ -212,9 +201,6 @@
                         <div class="modal-body">
                             <i>{{$item->description}}</i>
                         </div>
-{{--                        <div class="modal-footer">--}}
-{{--                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>--}}
-{{--                        </div>--}}
                     </div>
                 </div>
             </div>
@@ -225,15 +211,17 @@
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials section-bg">
         <div class="container">
-
             <div class="section-title" data-aos="fade-in" data-aos-delay="100">
                 <h2>Отзывы</h2>
             </div>
 
+            @if($comments->count() == 0)
+                <p>Отзывов пока нет.</p>
+            @else()
             <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
                 <div class="swiper-wrapper">
                     @foreach($comments as $item)
-                        <div class="swiper-slide">
+                    <div class="swiper-slide">
                             <div class="testimonial-item">
                                 <p style="min-height: 280px">
                                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -245,11 +233,12 @@
                                 <h4>арт.: {{ \App\Models\Good::whereId($item->good_id)->value('art') }}</h4>
                                 <i style="font-size: 12px">{{ $item->created_at->format('d.m.Y H:i') }}</i>
                             </div>
-                        </div><!-- End testimonial item -->
+                    </div><!-- End testimonial item -->
                     @endforeach
                 </div>
-                <div class="swiper-pagination"></div>
+{{--                <div class="swiper-pagination"></div>--}}
             </div>
+            @endif
 
         </div>
     </section><!-- End Testimonials Section -->

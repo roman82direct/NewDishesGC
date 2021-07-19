@@ -32653,7 +32653,7 @@ a img								{
   width: 80px;
   justify-content: space-between;
   position: absolute;
-  left: 47%;
+  left: 45%;
   top: 40%;
   z-index: 3;
   display: none;
@@ -32935,6 +32935,11 @@ a img								{
   .portfolio-details .portfolio-details-slider img {
     height: 480px!important;
     width: 480px!important;
+  }
+
+  .altImgItem {
+    height: 480px;
+    width: 480px;
   }
 
   .portfolio-info {
