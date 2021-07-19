@@ -1146,7 +1146,7 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
     width: 80px;
     justify-content: space-between;
     position: absolute;
-    left: 47%;
+    left: 45%;
     top: 40%;
     z-index: 3;
     display: none;
@@ -1371,6 +1371,11 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
     .portfolio-details .portfolio-details-slider img {
         height: 480px!important;
         width: 480px!important;
+    }
+
+    .altImgItem {
+        height: 480px;
+        width: 480px;
     }
 
     .portfolio-info {

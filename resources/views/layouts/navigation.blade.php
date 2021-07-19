@@ -18,7 +18,7 @@
                             @foreach(\App\Models\Maincategory::all() as $group)
                                 <li class="dropdown"><a href="{{ route('nav::maincategory', ['id' => $group->id]) }}"><span>{{ $group->name }}</span> <i class="bi bi-chevron-right"></i></a>
                                     <ul>
-                                        @foreach(\App\Models\Category::where('category1_id', $group->id)->get() as $item)
+                                        @foreach(\App\Models\Category::where('category1_id', $group->id)->get()->sortBy('group_id') as $item)
                                             <li><a href="{{ route('nav::goods', ['id' => $item->id]) }}">{{ $item->name }}</a></li>
                                         @endforeach
                                     </ul>

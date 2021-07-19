@@ -31,7 +31,7 @@
 
                     </div>
                     @else
-                        <img src="{{ $imgs ? $imgs[0] : '/storage/img/good/temp.jpg' }}" alt="">
+                        <img class="altImgItem" src="{{ $imgs ? $imgs[0] : '/storage/img/good/temp.jpg' }}" alt="">
                     @endif
                 </div>
 
@@ -44,8 +44,13 @@
                             <li><strong>Категория</strong>: {{ \App\Models\Category::find($item->category_id)->name}}</li>
                             <li><strong>Коллекция</strong>: {{ \App\Models\Collection::find($item->collection_id)->name}}</li>
 {{--                            <li><strong>Прогноз цены</strong>: {{ $item->price }} руб.</li>--}}
-                            <li><strong>Дата прихода</strong>: {{ date('d.m.Y', strtotime($item->arrival)) }}</li>
-                            <li><strong>Упаковка</strong>: <p>{{ $item->pack }}</p>
+                            <li><strong>Дата прихода</strong>:
+                            @if(date($item->arrival) < now())
+                                <strong style="color: darkblue">В наличии</strong>
+                            @else
+                                {{ date('d.m.Y', strtotime($item->arrival)) }}
+                            @endif
+                            <li><strong>Упаковка</strong>: {{ $item->pack }}
                                 <img style="height: 100px" src="{{ $item->img_pack }}" alt=""></li>
                         </ul>
                     </div>
@@ -55,15 +60,15 @@
                     </div>
                 </div>
 
-                @auth()
-                    @if(Auth::user()->hasRole('admin'))
-                        <div class="md:inline-flex mypd">
-                            <a class="btn btn-outline-secondary mymrgleft" href="{{route('admin::good::update', ['id' => $item->id])}}">{{ __('buttons.update') }}</a>
-                            <a class="btn btn-outline-danger mymrgleft" href="{{route('admin::good::delete', ['id' => $item->id])}}">{{ __('buttons.delete') }}</a>
-                        </div>
-                    @endif
-                @endauth
             </div>
+            @auth()
+                @if(Auth::user()->hasRole('admin'))
+                    <div class="md:inline-flex mypd">
+                        <a class="btn btn-outline-secondary mymrgleft" href="{{route('admin::good::update', ['id' => $item->id])}}">{{ __('buttons.update') }}</a>
+                        <a class="btn btn-outline-danger mymrgleft" href="{{route('admin::good::delete', ['id' => $item->id])}}">{{ __('buttons.delete') }}</a>
+                    </div>
+                @endif
+            @endauth
         </div>
 
         @if(\Illuminate\Support\Facades\Auth::user())
