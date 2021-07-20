@@ -1109,6 +1109,11 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
     padding: 0;
 }
 
+.pack-link img:hover {
+    opacity: 0.6;
+    outline: 1px solid deepskyblue;
+}
+
 /*Change Bootstrap Styles*/
 .breadcrumb{
     margin-bottom: 0!important;

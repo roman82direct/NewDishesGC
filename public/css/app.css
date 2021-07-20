@@ -32614,6 +32614,11 @@ a img								{
   padding: 0;
 }
 
+.pack-link img:hover {
+  opacity: 0.6;
+  outline: 1px solid deepskyblue;
+}
+
 /*Change Bootstrap Styles*/
 
 .breadcrumb{
