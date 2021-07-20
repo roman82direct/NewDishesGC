@@ -51,7 +51,12 @@
                                 {{ date('d.m.Y', strtotime($item->arrival)) }}
                             @endif
                             <li><strong>Упаковка</strong>: {{ $item->pack }}
-                                <img style="height: 100px" src="{{ $item->img_pack }}" alt=""></li>
+                                @if($item->img_pack)
+                                    <a href="" data-bs-toggle="modal" data-bs-target="#packImgModal">
+                                        <img style="height: 100px" src="{{ $item->img_pack }}" alt="">
+                                    </a>
+                                @endif
+                            </li>
                         </ul>
                     </div>
                     <div class="portfolio-description">
@@ -161,4 +166,5 @@
             @endauth
         </div>
     </div>
+    @include('components.modals.showGoodPackImg')
 </x-app-layout>
