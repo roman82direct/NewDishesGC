@@ -22,7 +22,7 @@ class SaveDataXLS {
                 'Коллекция' => Collection::whereId($item->collection_id)->value('name'),
                 'Упаковка' => $item->pack,
                 'Дата прихода' => date('d.m.Y', strtotime($item->arrival)),
-                'Ссылка на товар' => 'https://cookwaregc.ru/good'.$item->good_id
+                'Ссылка на товар' => $item->good_id ? 'https://cookwaregc.ru/good'.$item->good_id : 'https://cookwaregc.ru/good'.$item->id
             ]);
         }
         return $list;
