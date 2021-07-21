@@ -10,7 +10,7 @@
             </div>
 
             @if(count($favorites) == 0)
-                <p>У вас пока нет избранных товаров...</p>
+                <p>У Вас пока нет избранных товаров...</p>
             @endif
 
             <div class="row" data-aos="fade-in">

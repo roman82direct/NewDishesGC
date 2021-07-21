@@ -19,7 +19,7 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        dump(session()->all());
+//        dump(session()->all());
 
         return view('auth.register');
     }

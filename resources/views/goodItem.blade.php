@@ -88,17 +88,17 @@
                    role="button" aria-controls="offcanvasExample" id="toCommentLink" class="item-card-link  ml-4" href="#" title="Комментировать"
                 >@include('components.mysvg.comment')
                 </a>
-{{--                <a id="toShare" data-id="{{ $item->id }}" class="item-card-link ml-3" href="#"--}}
-{{--                   title="Поделиться"--}}
-{{--                >@include('components.mysvg.share')--}}
-{{--                </a>--}}
+                <a id="toShare" data-id="{{ $item->id }}" class="item-card-link ml-3" href="#" data-bs-toggle="modal" data-bs-target="#shareMailModal"
+                   title="Отправить по электронной почте"
+                >@include('components.mysvg.share')
+                </a>
             </div>
         @else
             <div class="item-card-links flex justify-between items-center p-1">
                 <a id="toastLike" class="item-card-link ml-4" title="Авторизуйтесь, чтобы поставить лайк">@include('components.mysvg.like')</a>
                 <a id="toastFavorites" class="item-card-link ml-4" title="Авторизуйтесь, чтобы добавить в избранные">@include('components.mysvg.favorites')</a>
                 <a id="toastComment" class="item-card-link ml-4" title="Авторизуйтесь, чтобы оставить комментарий">@include('components.mysvg.comment')</a>
-{{--                <a id="toastShare" class="item-card-link ml-3">@include('components.mysvg.share')</a>--}}
+                <a id="toastShare" class="item-card-link ml-3">@include('components.mysvg.share')</a>
             </div>
         @endif()
     </section>
@@ -142,4 +142,5 @@
 
     @include('components.offcanvas.comment-good')
     @include('components.modals.showGoodPackImg')
+    @include('components.modals.shareGoodForm')
 </x-app-layout>
