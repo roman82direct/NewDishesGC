@@ -1,11 +1,25 @@
 // require('./bootstrap');
 require('./squad');
+require('./jquery.roundabout-1.0.min');
+require('./jquery.roundabout-shapes-1.1');
+require('./jquery.easing.1.3');
 
 // require('alpinejs');
 // require('aos');
 // require('glightbox');
 
 $(document).ready(function(){
+
+//Start up our Featured Project Carosuel
+    $('#featured ul').roundabout({
+        easing: 'easeOutInCirc',
+        autoplay: true,
+        autoplayDuration: 5000,
+        autoplayPauseOnHover: true,
+        duration: 700
+    });
+
+
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

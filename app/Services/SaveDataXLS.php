@@ -20,8 +20,9 @@ class SaveDataXLS {
                 'Группа 2-го уровня' => Category::whereId($item->category_id)->value('name'),
                 'Бренд' => $item->brand,
                 'Коллекция' => Collection::whereId($item->collection_id)->value('name'),
-//                'Упаковка' => $item->pack,
+                'Упаковка' => $item->pack,
                 'Дата прихода' => date('d.m.Y', strtotime($item->arrival)),
+                'Ссылка на товар' => 'https://cookwaregc.ru/good'.$item->id
             ]);
         }
         return $list;

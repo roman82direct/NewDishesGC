@@ -56,16 +56,7 @@
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-        <script type="text/javascript" src="{{ asset('js/jquery.roundabout-1.0.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
-        <script type="text/javascript">
-            $(document).ready(function() { //Start up our Featured Project Carosuel
-                $('#featured ul').roundabout({
-                    easing: 'easeOutInCirc',
-                    duration: 600
-                });
-            });
-        </script>
+
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
