@@ -123,7 +123,7 @@
         <div class="container">
 
             <div class="section-title" data-aos="fade-in" data-aos-delay="100">
-                <h2>ТОП лайков</h2>
+                <h2>Хиты</h2>
             </div>
 
             <div class="goodsByLikes-slider swiper-container" data-aos="fade-up" data-aos-delay="100">

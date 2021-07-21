@@ -458,8 +458,8 @@ main {
 .roundabout-moveable-item img 		{height:100%; width:100%; background-color:#FFFFFF; margin:0;}
 .roundabout-in-focus 				{cursor:auto;}
 .roundabout-in-focus:hover			{-webkit-box-shadow:0px 0px 20px #787878; -moz-box-shadow:0px 0px 20px #787878; background:#f9f9f9;}
-.roundabout-holder span				{display:none; font-size:12px;}
-.roundabout-in-focus:hover span		{display:inline; opacity: 0.8; position:absolute; bottom:5px; right:5px; padding:8px 20px; background:#f9f9f9; color:#000000; z-index:999; font-size : 14px; }
+.roundabout-holder span				{display:inline; opacity: 0.8; position:absolute; bottom:5px; right:5px; padding:8px 20px; background:#f9f9f9; color:#000000; z-index:999;  font-size : 12px;}
+.roundabout-in-focus:hover span		{opacity: 0.9; color:#67b0d1; letter-spacing: 1px;}
 .roundabout a:active,
 .roundabout a:focus,
 .roundabout a:visited				{outline:none; text-decoration:none;}
@@ -1107,6 +1107,11 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
 
 .portfolio-details .portfolio-description p {
     padding: 0;
+}
+
+.pack-link img:hover {
+    opacity: 0.6;
+    outline: 1px solid deepskyblue;
 }
 
 /*Change Bootstrap Styles*/
