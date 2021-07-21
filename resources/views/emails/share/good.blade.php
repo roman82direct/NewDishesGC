@@ -20,7 +20,7 @@
     </div>
 </div>
 
-@component('vendor.mail.html.button', ['url' => env('APP_URL').'good'.$good->id])
+@component('vendor.mail.html.button', ['url' => env('APP_URL').'/good'.$good->id])
 Перейти к товару
 @endcomponent
 <hr>
