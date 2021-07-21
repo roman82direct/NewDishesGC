@@ -31928,11 +31928,11 @@ main {
 }
 
 .roundabout-holder span				{
-  display:none; font-size:12px;
+  display:inline; opacity: 0.8; position:absolute; bottom:5px; right:5px; padding:8px 20px; background:#f9f9f9; color:#000000; z-index:999;  font-size : 12px;
 }
 
 .roundabout-in-focus:hover span		{
-  display:inline; opacity: 0.8; position:absolute; bottom:5px; right:5px; padding:8px 20px; background:#f9f9f9; color:#000000; z-index:999; font-size : 14px;
+  opacity: 0.9; color:#67b0d1; letter-spacing: 1px;
 }
 
 .roundabout a:active,
