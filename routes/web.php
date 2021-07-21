@@ -86,6 +86,10 @@ Route::group([
         ->middleware('auth')
         ->name('comment');
 
+    Route::post('/sharegood', [UserController::class, 'sendGoodMail'])
+        ->middleware('auth')
+        ->name('sharegood');
+
     Route::get('/search', [UserController::class, 'search'])
         ->name('search');
 });
