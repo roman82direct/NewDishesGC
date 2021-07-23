@@ -114,7 +114,7 @@ $(document).ready(function(){
             url: '/user/sharegood',
             data: formData,
             dataType: 'json',
-            success: function (responce) {
+            success: function (data) {
                 $('#toShareSvg').css('fill', 'red');
                 $("#shareMailModal .btn-close").click();
                 $('.toast-body').html('Сообщение успешно отправлено');

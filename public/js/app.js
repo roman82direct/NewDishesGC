@@ -120,7 +120,7 @@ $(document).ready(function () {
       url: '/user/sharegood',
       data: formData,
       dataType: 'json',
-      success: function success(responce) {
+      success: function success(data) {
         $('#toShareSvg').css('fill', 'red');
         $("#shareMailModal .btn-close").click();
         $('.toast-body').html('Сообщение успешно отправлено');
