@@ -192,10 +192,6 @@
     margin-left: 0px!important;
 }
 
-.searchblock {
-    margin-left: 30%;
-}
-
 .favoritesCount {
     height: 1.25rem;
     width: 1.25rem;
@@ -216,6 +212,10 @@
 /*}*/
 .relative:hover #navFavorites{
     color: #ee8181 !important;
+}
+
+.searchblock {
+    margin-left: 30%;
 }
 
 @media (max-width: 1366px) {
@@ -245,23 +245,40 @@
     transition: 0.5s;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1024px) {
     .mobile-nav-toggle {
         display: block;
+        position: absolute;
+        left: 90%;
+        font-size: 2rem;
     }
     .navbar ul {
         width: 90% !important;
         display: none;
     }
 
-    .navbar div {
+    .navbar .main-menu {
         flex-direction: column;
     }
     .authblock {
         margin-left: 0;
     }
     .searchblock {
-        display: none;
+        margin: 0;
+    }
+    #searchForm {
+        width: 100%;
+        padding: 3px 20px;
+    }
+    #searchForm #search {
+        width: 90%;
+        height: 2rem;
+    }
+    #searchResult {
+        top: 15rem;
+        left: 0;
+        height: 60vh;
+        width: 80vw;
     }
 }
 
@@ -1283,6 +1300,7 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
     /* Common Scroller Styles */
     .roundabout-holder 					{width:60%; height:200px;}
     .roundabout-moveable-item 			{height:133px; width:200px;}
+    .roundabout-holder span				{display:inline; opacity: 0.8; position:absolute; bottom:5px; right:5px; padding:4px 6px; font-size : 8px;}
     .roundabout-in-focus:hover span		{display:inline; opacity: 0.8; position:absolute; bottom:5px; right:5px; padding:4px 6px; background:#f9f9f9; color:#000000; z-index:999; font-size : 8px; }
 
 
@@ -1310,6 +1328,22 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
         height: 48px;
     }
 }
+
+@media screen and (min-width: 1024px){
+    .item-card-links{
+        position: absolute;
+        top: 88%;
+        left: 45%;
+        z-index: 10;
+    }
+    .item-card-link:hover .soc-svg {
+        fill: #000000;
+        transition: 200ms;
+        transition-timing-function: ease-in-out;
+        transform: scale(1.1);
+    }
+}
+
 @media screen and (min-width: 640px) and (max-width: 1200px){
     .roundabout-holder 					{width:40%; height:420px; margin:0px auto;}
     .roundabout-moveable-item 			{height:360px; width:540px;}
@@ -1407,20 +1441,6 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
     }
 }
 
-@media screen and (min-width: 1024px){
-    .item-card-links{
-        position: absolute;
-        top: 88%;
-        left: 45%;
-        z-index: 10;
-    }
-    .item-card-link:hover .soc-svg {
-        fill: #000000;
-        transition: 200ms;
-        transition-timing-function: ease-in-out;
-        transform: scale(1.1);
-    }
-}
 @media screen and (min-width: 1280px){
     .goodItem-card{
         height: 100%;

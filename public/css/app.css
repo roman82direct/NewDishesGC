@@ -31635,10 +31635,6 @@ select {
   margin-left: 0px!important;
 }
 
-.searchblock {
-  margin-left: 30%;
-}
-
 .favoritesCount {
   height: 1.25rem;
   width: 1.25rem;
@@ -31662,6 +31658,10 @@ select {
 
 .relative:hover #navFavorites{
   color: #ee8181 !important;
+}
+
+.searchblock {
+  margin-left: 30%;
 }
 
 @media (max-width: 1366px) {
@@ -31693,9 +31693,12 @@ select {
   transition: 0.5s;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1024px) {
   .mobile-nav-toggle {
     display: block;
+    position: absolute;
+    left: 90%;
+    font-size: 2rem;
   }
 
   .navbar ul {
@@ -31703,7 +31706,7 @@ select {
     display: none;
   }
 
-  .navbar div {
+  .navbar .main-menu {
     flex-direction: column;
   }
 
@@ -31712,7 +31715,24 @@ select {
   }
 
   .searchblock {
-    display: none;
+    margin: 0;
+  }
+
+  #searchForm {
+    width: 100%;
+    padding: 3px 20px;
+  }
+
+  #searchForm #search {
+    width: 90%;
+    height: 2rem;
+  }
+
+  #searchResult {
+    top: 15rem;
+    left: 0;
+    height: 60vh;
+    width: 80vw;
   }
 }
 
@@ -32824,6 +32844,10 @@ a img								{
     height:133px; width:200px;
   }
 
+  .roundabout-holder span				{
+    display:inline; opacity: 0.8; position:absolute; bottom:5px; right:5px; padding:4px 6px; font-size : 8px;
+  }
+
   .roundabout-in-focus:hover span		{
     display:inline; opacity: 0.8; position:absolute; bottom:5px; right:5px; padding:4px 6px; background:#f9f9f9; color:#000000; z-index:999; font-size : 8px;
   }
@@ -32853,6 +32877,22 @@ a img								{
   .btn-get-started {
     width: 48px;
     height: 48px;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .item-card-links{
+    position: absolute;
+    top: 88%;
+    left: 45%;
+    z-index: 10;
+  }
+
+  .item-card-link:hover .soc-svg {
+    fill: #000000;
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+    transform: scale(1.1);
   }
 }
 
@@ -32971,22 +33011,6 @@ a img								{
     top: 82% !important;
     left: 36% !important;
     z-index: 10!important;
-  }
-}
-
-@media screen and (min-width: 1024px){
-  .item-card-links{
-    position: absolute;
-    top: 88%;
-    left: 45%;
-    z-index: 10;
-  }
-
-  .item-card-link:hover .soc-svg {
-    fill: #000000;
-    transition: 200ms;
-    transition-timing-function: ease-in-out;
-    transform: scale(1.1);
   }
 }
 
