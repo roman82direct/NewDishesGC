@@ -97,6 +97,36 @@ $(document).ready(function(){
         });
     });
 
+    // Ajax GoodShareToEmail
+    $('#toShare').click(function () {
+        $('#shareMailForm').trigger("reset");
+    });
+
+    $("#toShareBtn").click(function (e) {
+        e.preventDefault();
+        var formData = {
+            good_id: $('#goodId').val(),
+            email: $('#email').val(),
+            _token: $('meta[name="csrf-token"]').attr('content'),
+        };
+        $.ajax({
+            type: 'POST',
+            url: '/user/sharegood',
+            data: formData,
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                $('#toShareSvg').css('fill', 'red');
+                $("#shareMailModal .btn-close").click();
+            },
+            error: function (e) {
+                console.log(e)
+                $('#toShareSvg').css('fill', 'blue');
+                $("#shareMailModal .btn-close").click();
+            }
+        });
+    });
+
 // show alert Auth toast on goodItem page
     $('#toastLike').click(function(){
         $(".toast-message").show('slow');
@@ -127,15 +157,6 @@ $(document).ready(function(){
     $('.btn-close').click(function (){
         $('.toast-message').hide('slow');
     });
-
-    // show catalog by list
-    // $('#showList').click(function(e){
-    //     e.preventDefault();
-    //     $.get("/catalogbylist", function(data){
-    //         $('#catalogContainer').empty().html(data);
-    //     })
-    // });
-
 });
 
 
