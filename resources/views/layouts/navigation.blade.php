@@ -72,7 +72,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <a class="favorites-link" href="{{ route('user::myfavorites') }}" title="Избранные товары">
+                            <a class="relative favorites-link" href="{{ route('user::myfavorites') }}" title="Избранные товары">
                                 @php($favorites_count = \App\Models\Favorite::whereUserId(\Illuminate\Support\Facades\Auth::user()->id)->count())
                                 @if(!$favorites_count)
                                     <i id="navFavorites" style="font-size: 1.5rem" class="bi bi-bookmarks text-gray-500"></i>
