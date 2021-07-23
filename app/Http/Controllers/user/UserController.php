@@ -77,7 +77,7 @@ class UserController extends Controller
         $good = Good::findOrFail($request->input('good_id'));
         Mail::to($request->input('email'))->send(new ShareGood($good));
 
-        return response()->json(Mail::failures(), 201);
+        return response()->json(true, 200);
     }
 
     public function search(Request $request){

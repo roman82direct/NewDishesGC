@@ -114,15 +114,23 @@ $(document).ready(function(){
             url: '/user/sharegood',
             data: formData,
             dataType: 'json',
-            success: function (data) {
-                console.log(data);
+            success: function (responce) {
                 $('#toShareSvg').css('fill', 'red');
                 $("#shareMailModal .btn-close").click();
+                $('.toast-body').html('Сообщение успешно отправлено');
+                $(".toast-message").show('slow');
+                setTimeout(function(){
+                    $(".toast-message").hide('slow');
+                }, 8000);
             },
             error: function (e) {
-                console.log(e)
                 $('#toShareSvg').css('fill', 'blue');
                 $("#shareMailModal .btn-close").click();
+                $('.toast-body').html('Ошибка! Введите корректный Email адрес.');
+                $(".toast-message").show('slow');
+                setTimeout(function(){
+                    $(".toast-message").hide('slow');
+                }, 8000);
             }
         });
     });

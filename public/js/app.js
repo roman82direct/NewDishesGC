@@ -120,15 +120,23 @@ $(document).ready(function () {
       url: '/user/sharegood',
       data: formData,
       dataType: 'json',
-      success: function success(data) {
-        console.log(data);
+      success: function success(responce) {
         $('#toShareSvg').css('fill', 'red');
         $("#shareMailModal .btn-close").click();
+        $('.toast-body').html('Сообщение успешно отправлено');
+        $(".toast-message").show('slow');
+        setTimeout(function () {
+          $(".toast-message").hide('slow');
+        }, 8000);
       },
       error: function error(e) {
-        console.log(e);
         $('#toShareSvg').css('fill', 'blue');
         $("#shareMailModal .btn-close").click();
+        $('.toast-body').html('Ошибка! Введите корректный Email адрес.');
+        $(".toast-message").show('slow');
+        setTimeout(function () {
+          $(".toast-message").hide('slow');
+        }, 8000);
       }
     });
   }); // show alert Auth toast on goodItem page
