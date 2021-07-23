@@ -16,7 +16,7 @@
             {{ date('d.m.Y', strtotime($good->arrival)) }}
             @endif
 </ul>
-<img style="height: 300px" src="{{ asset($image) }}" alt="{{ asset($image) }}">
+<img style="height: 250px" src="{{ asset($image) }}" alt="{{ asset($image) }}">
 </div>
 </div>
 
