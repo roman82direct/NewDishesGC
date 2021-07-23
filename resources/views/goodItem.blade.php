@@ -104,7 +104,7 @@
     </section>
 
 {{--    Alert toast for auth--}}
-@include('components.authtoast')
+@include('components.toasts.authtoast')
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials section-bg">

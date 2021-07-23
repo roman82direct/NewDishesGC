@@ -11,7 +11,7 @@
 
         <nav id="navbar" class="navbar d-flex justify-content-between w-100">
             <ul class="w-100">
-                <div class="d-flex justify-content-between">
+                <div class="main-menu d-flex justify-content-between">
                     <li><a class="nav-link" href="{{ route('nav::main') }}">{{ __('menu.main') }}</a></li>
                     <li class="dropdown"><a onclick="event.preventDefault()" href=""><span>{{ __('menu.catalog') }}</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
@@ -30,6 +30,11 @@
 
 {{--                Поиск--}}
                 @include('layouts.search')
+                {{--Search result element--}}
+                <div id="searchResult" class="searchresult hidden absolute top-14 right-28 bg-gray-50 opacity-95">
+                    <ul class="flex-column align-items-start bg-white" id="searchList">
+                    </ul>
+                </div>
 
 {{--                Auth--}}
                 <div class="authblock d-flex justify-content-between">
@@ -67,7 +72,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <a class="relative" href="{{ route('user::myfavorites') }}" title="Избранные товары">
+                            <a class="favorites-link" href="{{ route('user::myfavorites') }}" title="Избранные товары">
                                 @php($favorites_count = \App\Models\Favorite::whereUserId(\Illuminate\Support\Facades\Auth::user()->id)->count())
                                 @if(!$favorites_count)
                                     <i id="navFavorites" style="font-size: 1.5rem" class="bi bi-bookmarks text-gray-500"></i>
@@ -96,13 +101,6 @@
             </ul>
 
             <i style="color: #5c636a" class="bi bi-list mobile-nav-toggle"></i>
-
-            {{--Search result element--}}
-            <div id="searchResult" class="searchresult hidden absolute top-14 right-16 bg-gray-50 opacity-95">
-                <ul class="flex-column align-items-start bg-white" id="searchList">
-                </ul>
-            </div>
-
         </nav><!-- .navbar -->
     </div>
 </header><!-- End Header -->

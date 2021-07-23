@@ -4,6 +4,7 @@ namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CommentsRequest;
+use App\Http\Requests\ShareGoodMailRequest;
 use App\Mail\ShareGood;
 use App\Models\Brand;
 use App\Models\Collection;
@@ -71,12 +72,12 @@ class UserController extends Controller
         return response()->json($comment, 201);
     }
 
-    public function sendGoodMail(Request $request)
+    public function sendGoodMail(ShareGoodMailRequest $request)
     {
-        $good = Good::findOrFail($request->get('goodId'));
-        Mail::to($request->get('email'))->send(new ShareGood($good));
+        $good = Good::findOrFail($request->input('good_id'));
+        Mail::to($request->input('email'))->send(new ShareGood($good));
 
-        return redirect()->back();
+        return response()->json(true, 200);
     }
 
     public function search(Request $request){

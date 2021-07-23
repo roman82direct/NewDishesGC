@@ -1,7 +1,7 @@
 <div class="searchblock flex justify-content-center align-items-center">
     <form id="searchForm" class="flex justify-content-center align-items-center" action="{{ route('user::search') }}" method="GET">
         @csrf
-        <div style="width: 210px" class="input-group">
+        <div class="input-group search-text">
             <input type="search" id="search" name="search"
                    class="h-7 border-none border-bottom bg-transparent text- text-sm focus:border-indigo-300 focus:ring focus:ring-indigo-50 focus:ring-opacity-0"
                    placeholder="Поиск..."/>

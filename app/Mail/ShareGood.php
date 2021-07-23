@@ -35,6 +35,6 @@ class ShareGood extends Mailable
     {
         return $this->from(env('MAIL_FROM_ADDRESS'))
                     ->subject("Новинка от Гала-Центра")
-                    ->markdown('emails.share.good', ['sender_email'=>Auth::user()->email, 'sender_name'=>Auth::user()->name]);
+                    ->markdown('emails.share.good', ['sender_email'=>Auth::user()->email, 'sender_name'=>Auth::user()->name, 'image'=>$this->good->img]);
     }
 }

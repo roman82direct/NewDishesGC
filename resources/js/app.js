@@ -97,6 +97,44 @@ $(document).ready(function(){
         });
     });
 
+    // Ajax GoodShareToEmail
+    $('#toShare').click(function () {
+        $('#shareMailForm').trigger("reset");
+    });
+
+    $("#toShareBtn").click(function (e) {
+        e.preventDefault();
+        var formData = {
+            good_id: $('#goodId').val(),
+            email: $('#email').val(),
+            _token: $('meta[name="csrf-token"]').attr('content'),
+        };
+        $.ajax({
+            type: 'POST',
+            url: '/user/sharegood',
+            data: formData,
+            dataType: 'json',
+            success: function (data) {
+                $('#toShareSvg').css('fill', 'red');
+                $("#shareMailModal .btn-close").click();
+                $('.toast-body').html('Сообщение успешно отправлено');
+                $(".toast-message").show('slow');
+                setTimeout(function(){
+                    $(".toast-message").hide('slow');
+                }, 8000);
+            },
+            error: function (e) {
+                $('#toShareSvg').css('fill', 'blue');
+                $("#shareMailModal .btn-close").click();
+                $('.toast-body').html('Ошибка! Введите корректный Email адрес.');
+                $(".toast-message").show('slow');
+                setTimeout(function(){
+                    $(".toast-message").hide('slow');
+                }, 8000);
+            }
+        });
+    });
+
 // show alert Auth toast on goodItem page
     $('#toastLike').click(function(){
         $(".toast-message").show('slow');
@@ -127,15 +165,6 @@ $(document).ready(function(){
     $('.btn-close').click(function (){
         $('.toast-message').hide('slow');
     });
-
-    // show catalog by list
-    // $('#showList').click(function(e){
-    //     e.preventDefault();
-    //     $.get("/catalogbylist", function(data){
-    //         $('#catalogContainer').empty().html(data);
-    //     })
-    // });
-
 });
 
 
