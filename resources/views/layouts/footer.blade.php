@@ -36,7 +36,10 @@
                     <ul>
                         <li><a href="https://www.galacentre.ru/" target="_blank" class="gc-link">@include('components.mysvg.galacentre')</a></li>
                         <li><a href="https://www.galamart.ru/" target="_blank" class="gc-link">@include('components.mysvg.galamart')</a></li>
-                        <li><i class="bx bx-chevron-right"></i><a style="font-size: 24px; font-weight: 800" href="https://by-shop.ru/" target="_blank">by-shop.ru</a></li>
+                        <li>
+                            <a style="font-size: 22px; font-weight: 700" href="https://by-shop.ru/" target="_blank">by-shop.ru</a>
+                            <i class="bx bx-chevron-right"></i>
+                        </li>
                     </ul>
                 </div>
 
@@ -56,12 +59,13 @@
 
     <div class="container">
         <div class="copyright">
-{{--            &copy; Copyright--}}
+            &copy; {{ date('Y') }}
+{{--            Copyright--}}
             <strong><span>{{ config('app.name', 'Laravel') }}</span></strong>
 {{--            All Rights Reserved--}}
         </div>
         <div class="credits">
-            Разработано: <a data-bs-toggle="modal" data-bs-target="#paromModal" href="#">PaRom</a>
+            Разработано: <a data-bs-toggle="modal" data-bs-target="#paromModal" href="#"><strong>PaRom</strong></a>
         </div>
         @include('components.modals.parom')
     </div>
