@@ -32344,6 +32344,34 @@ a img								{
   transform: scale(1.00) rotate(0deg);
 }
 
+.by-link:hover p{
+  color: #1a202c;
+  transition: 200ms;
+  transition-timing-function: ease-in-out;
+  transform: scale(1.02);
+}
+
+.by-link:active p{
+  color: black;
+  transition: 200ms;
+  transition-timing-function: ease-in-out;
+  transform: scale(1.00) rotate(0deg);
+}
+
+.by-link:hover svg{
+  fill: #1a202c;
+  transition: 200ms;
+  transition-timing-function: ease-in-out;
+  transform: scale(1.02) /*rotate(2deg)*/;
+}
+
+.by-link:active svg{
+  fill: black;
+  transition: 200ms;
+  transition-timing-function: ease-in-out;
+  transform: scale(1.00) rotate(0deg);
+}
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
