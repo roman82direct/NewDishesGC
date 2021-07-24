@@ -36,18 +36,24 @@
 
             <div class="row no-gutters">
                 <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
-                    <div class="content px-4">
+                    <div class="content px-4 pt-0">
                         <h3>Online-портал товарного направления "Посуда и Домашний текстиль"</h3>
-                        <h4>Торговой платформы "ГАЛА-ЦЕНТР"</h4>
+                        <h4>Торговой Платформы "ГАЛА-ЦЕНТР"</h4>
                         <p>
                             Актуальные новинки Посуды и Текстиля на предстоящий сезон 2021 - 2022 года. Товары к Новому году и весенним праздникам.
-                            Последние обновления регулярного ассортимента...<br>
+                            Последние обновления регулярного ассортимента...
                         </p>
                     </div>
                 </div>
                 <div class="col-xl-7 d-flex align-items-stretch">
-                    <div class="icon-boxes d-flex flex-column justify-content-center">
+                    <div class="icon-boxes d-flex flex-column justify-content-start align-items-center">
                         <div class="row">
+                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                                <i class="bi bi-globe2"></i>
+                                <h4>Наша аудитория</h4>
+                                <p>Сотрудники и партнеры Торговой Платформы "ГАЛА-ЦЕНТР"</p>
+{{--                                <small>Авторизовавшись в системе, Вы сможете оценивать, комментировать товары, формировать свои списки товаров, делиться списками с другими пользователями.</small>--}}
+                            </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                                 <i class="bi bi-book"></i>
                                 <h4>Каталог новинок</h4>
@@ -58,15 +64,10 @@
 {{--                                <h4>Информативность</h4>--}}
 {{--                                <p>Качественные фото. Описание каждого товара. Даты поступления на склад...</p>--}}
 {{--                            </div>--}}
-{{--                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">--}}
-{{--                                <i class="bi bi-chat-text"></i>--}}
-{{--                                <h4>Пользовательский опыт</h4>--}}
-{{--                                <p>Авторизовавшись в системе, Вы сможете оценивать, комментировать товары, формировать свои списки товаров, делиться списками с другими пользователями.</p>--}}
-{{--                            </div>--}}
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
                                 <i class="bi bi-clock-history"></i>
                                 <h4>Оперативность и своевременность</h4>
-                                <p>Актуальная информация по новинкам из "первых рук"</p>
+                                <p>Актуальная информация по новинкам Посуды и Домашнего Текстиля из "первых рук"</p>
                             </div>
                         </div>
                     </div><!-- End .content-->

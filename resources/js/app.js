@@ -88,11 +88,21 @@ $(document).ready(function(){
             dataType: 'json',
             success: function (data) {
                 console.log(data);
-                $('#toCommentSvg').css('fill', 'red')
+                $('#toCommentSvg').css('fill', 'red');
+                $('.toast-body').html('Спасибо за комментарий.');
+                $(".toast-message").show('slow');
+                setTimeout(function(){
+                    $(".toast-message").hide('slow');
+                }, 8000);
             },
             error: function (e) {
                 console.log(e)
-                $('#toCommentSvg').css('fill', 'blue')
+                $('#toCommentSvg').css('fill', 'blue');
+                $('.toast-body').html('Что-то пошло не так! Скорее всего, введено менее 5 символов...');
+                $(".toast-message").show('slow');
+                setTimeout(function(){
+                    $(".toast-message").hide('slow');
+                }, 8000);
             }
         });
     });

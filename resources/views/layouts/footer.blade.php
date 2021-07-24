@@ -9,7 +9,7 @@
                             <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />{{ config('app.name', 'Laravel') }}
                         </a>
                         <p class="pb-2"><em>Товарное направление "Посуда и Домашний текстиль"</em></p>
-                        <p class="pb-4"><em>Торговой платформы "ГАЛА-ЦЕНТР"</em></p>
+                        <p class="pb-4"><em>Торговой Платформы "ГАЛА-ЦЕНТР"</em></p>
                         <p>
                             <p class="pb-2"><strong>Email:</strong> info@cookwaregc.ru</p><br>
                         </p>
@@ -36,7 +36,7 @@
                     <ul>
                         <li><a href="https://www.galacentre.ru/" target="_blank" class="gc-link">@include('components.mysvg.galacentre')</a></li>
                         <li><a href="https://www.galamart.ru/" target="_blank" class="gc-link">@include('components.mysvg.galamart')</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="https://by-shop.ru/" target="_blank">by-shop.ru</a></li>
+                        <li><i class="bx bx-chevron-right"></i><a style="font-size: 24px; font-weight: 800" href="https://by-shop.ru/" target="_blank">by-shop.ru</a></li>
                     </ul>
                 </div>
 
@@ -61,7 +61,8 @@
 {{--            All Rights Reserved--}}
         </div>
         <div class="credits">
-{{--            Developed by <a href="#">PaRom</a>--}}
+            Разработано: <a data-bs-toggle="modal" data-bs-target="#paromModal" href="#">PaRom</a>
         </div>
+        @include('components.modals.parom')
     </div>
 </footer><!-- End Footer -->
