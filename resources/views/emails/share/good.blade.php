@@ -1,6 +1,6 @@
 @component('vendor.mail.html.message')
 Добрый день.<br>
-Пользователь портала CookWareGC <strong>{{$sender_name}}</strong> отправил Вам сообщение о новинке:
+Пользователь портала CookWareGC <strong>{{$sender_name}}</strong> отправил Вам информацию о новинке Торговой Платформы Гала-Центр:
 
 <div class="col-lg-4">
 <div class="portfolio-info">
@@ -25,11 +25,11 @@
 @endcomponent
 <hr>
 
-<i style="font-size: 10px">Данное сообщение сформировано автоматически. Отвечать на него не следует.</i>
+<i style="font-size: 11px">Данное сообщение сформировано автоматически. Отвечать на него не следует.</i>
 
 Связаться с отправителем Вы можете по Email: {{$sender_email}}
 <hr>
 
-С уважением, команда
+С уважением,
 {{ config('app.name') }}
 @endcomponent()
