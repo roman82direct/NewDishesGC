@@ -530,6 +530,13 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
     margin-bottom: 30px;
 }
 
+.about .content h4 {
+    font-weight: 900;
+    font-size: 28px;
+    color: #46616f;
+    margin-bottom: 30px;
+}
+
 .about .content p {
     margin-bottom: 30px;
 }

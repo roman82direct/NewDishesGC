@@ -1,5 +1,5 @@
 <x-app-layout>
-        <!-- Featured Image Slider -->
+        <!-- Roundabout Image Slider -->
         <div id="featured">
             <ul data-aos="zoom-in" data-aos-delay="200">
                 @if($categories)
@@ -38,12 +38,11 @@
                 <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
                     <div class="content px-4">
                         <h3>Online-портал товарного направления "Посуда и Домашний текстиль"</h3>
+                        <h4>Торговой платформы "ГАЛА-ЦЕНТР"</h4>
                         <p>
                             Актуальные новинки Посуды и Текстиля на предстоящий сезон 2021 - 2022 года. Товары к Новому году и весенним праздникам.
                             Последние обновления регулярного ассортимента...<br>
-                            {{--                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit--}}
                         </p>
-                        {{--                        <a href="#" class="about-btn">About us <i class="bx bx-chevron-right"></i></a>--}}
                     </div>
                 </div>
                 <div class="col-xl-7 d-flex align-items-stretch">
@@ -52,7 +51,7 @@
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                                 <i class="bi bi-book"></i>
                                 <h4>Каталог новинок</h4>
-                                <p>В каталоге собраны все товары в категориях "Посуда" и "Домашний текстиль", которые поступят на склад в преддверии нового сезона 2021-2022.</p>
+                                <p>В каталоге собраны товары в категориях "Посуда" и "Домашний текстиль", которые поступят на склад в преддверии нового сезона 2021-2022.</p>
                             </div>
 {{--                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">--}}
 {{--                                <i class="bi bi-info-circle"></i>--}}

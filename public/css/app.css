@@ -32020,6 +32020,13 @@ a img								{
   margin-bottom: 30px;
 }
 
+.about .content h4 {
+  font-weight: 900;
+  font-size: 28px;
+  color: #46616f;
+  margin-bottom: 30px;
+}
+
 .about .content p {
   margin-bottom: 30px;
 }
