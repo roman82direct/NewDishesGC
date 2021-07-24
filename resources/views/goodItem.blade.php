@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-50 py-2">
-            <nav class="py-2" aria-label="breadcrumb">
+            <nav class="p-2" aria-label="breadcrumb">
                 <ol class="breadcrumb">
 {{--                    <li class="breadcrumb-item text-sm"><a href="{{ route('nav::catalog') }}">{{__('menu.catalog') }}</a></li>--}}
                     <li class="breadcrumb-item text-sm"><a href="{{ route('nav::maincategory', ['id' => $item->maincategory_id]) }}">{{\App\Models\Maincategory::find($item->maincategory_id)->name }}</a></li>

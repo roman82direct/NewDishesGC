@@ -97,10 +97,20 @@ $(document).ready(function () {
       success: function success(data) {
         console.log(data);
         $('#toCommentSvg').css('fill', 'red');
+        $('.toast-body').html('Спасибо за комментарий.');
+        $(".toast-message").show('slow');
+        setTimeout(function () {
+          $(".toast-message").hide('slow');
+        }, 8000);
       },
       error: function error(e) {
         console.log(e);
         $('#toCommentSvg').css('fill', 'blue');
+        $('.toast-body').html('Что-то пошло не так! Скорее всего, введено менее 5 символов...');
+        $(".toast-message").show('slow');
+        setTimeout(function () {
+          $(".toast-message").hide('slow');
+        }, 8000);
       }
     });
   }); // Ajax GoodShareToEmail

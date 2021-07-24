@@ -32020,8 +32020,15 @@ a img								{
   margin-bottom: 30px;
 }
 
+.about .content h4 {
+  font-weight: 900;
+  font-size: 28px;
+  color: #46616f;
+  margin-bottom: 70px;
+}
+
 .about .content p {
-  margin-bottom: 30px;
+  /*margin-bottom: 30px;*/
 }
 
 .about .content .about-btn {

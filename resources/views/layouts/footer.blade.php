@@ -8,12 +8,10 @@
                         <a class="navbar-brand flex justify-center" href="{{ url('/') }}">
                             <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />{{ config('app.name', 'Laravel') }}
                         </a>
-                        <p class="pb-3"><em>Товарное направление "Посуда и Домашний текстиль"</em></p>
+                        <p class="pb-2"><em>Товарное направление "Посуда и Домашний текстиль"</em></p>
+                        <p class="pb-4"><em>Торговой Платформы "ГАЛА-ЦЕНТР"</em></p>
                         <p>
-                            119021, Россия  <br>
-                            г. Москва, ул. Тимура Фрунзе 11, с.49<br><br>
-                            <strong>Тел:</strong> +7 (495) 663 39 62<br>
-{{--                            <strong>Email:</strong> cookware@lblmsk.ru<br>--}}
+                            <p class="pb-2"><strong>Email:</strong> info@cookwaregc.ru</p><br>
                         </p>
                         <div class="social-links mt-3">
                             <a href="https://www.facebook.com/galacentre.ru/" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
@@ -38,7 +36,7 @@
                     <ul>
                         <li><a href="https://www.galacentre.ru/" target="_blank" class="gc-link">@include('components.mysvg.galacentre')</a></li>
                         <li><a href="https://www.galamart.ru/" target="_blank" class="gc-link">@include('components.mysvg.galamart')</a></li>
-{{--                        <li><i class="bx bx-chevron-right"></i> <a href="https://by-shop.ru/" target="_blank">by-shop.ru</a></li>--}}
+                        <li><i class="bx bx-chevron-right"></i><a style="font-size: 24px; font-weight: 800" href="https://by-shop.ru/" target="_blank">by-shop.ru</a></li>
                     </ul>
                 </div>
 
@@ -63,7 +61,8 @@
 {{--            All Rights Reserved--}}
         </div>
         <div class="credits">
-{{--            Developed by <a href="#">PaRom</a>--}}
+            Разработано: <a data-bs-toggle="modal" data-bs-target="#paromModal" href="#">PaRom</a>
         </div>
+        @include('components.modals.parom')
     </div>
 </footer><!-- End Footer -->
