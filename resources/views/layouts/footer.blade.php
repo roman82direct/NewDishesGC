@@ -60,9 +60,9 @@
             &copy; {{ date('Y') }}
             <strong><span>{{ config('app.name', 'Laravel') }}</span></strong>
         </div>
-        <div class="credits">
-            Разработано: <a data-bs-toggle="modal" data-bs-target="#paromModal" href="#"><strong>PaRom</strong></a>
-        </div>
-        @include('components.modals.parom')
+{{--        <div class="credits">--}}
+{{--            Разработано: <a data-bs-toggle="modal" data-bs-target="#paromModal" href="#"><strong>PaRom</strong></a>--}}
+{{--        </div>--}}
+{{--        @include('components.modals.parom')--}}
     </div>
 </footer><!-- End Footer -->
