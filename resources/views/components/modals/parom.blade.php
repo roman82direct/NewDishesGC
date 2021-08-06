@@ -8,8 +8,8 @@
             </div>
             <div class="modal-body">
                 <p class="pb-2 fs-5 text-black">По вопросам работы сайта:</p><br>
-                <p class="pb-1 fs-6 text-black">Роман Папенов</p><br>
-                <p class="fs-6 text-black-50"><strong>Email: </strong>roman.papenov@lblmsk.ru</p><br>
+{{--                <p class="pb-1 fs-6 text-black">Роман Папенов</p><br>--}}
+                <p class="fs-6 text-black-50"><strong>Email: </strong>support@cookwaregc.ru</p><br>
 
             </div>
             <div class="modal-footer">
