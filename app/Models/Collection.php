@@ -37,9 +37,14 @@ class Collection extends Model
     protected $fillable = [
         'name',
         'description',
+        'render',
         'img',
         'img1',
         'img2',
+        'img3',
+        'img4',
+        'img5',
+        'img6'
     ];
 
     public function fillFromXLS($file)
@@ -53,9 +58,14 @@ class Collection extends Model
                 return Collection::create([
                     'name' => $line['collection'],
                     'description' => $line['collection_description'],
-                    'img' => '/storage/img/good/'.$line['art'].'_collection.jpg',
-                    'img1' => '/storage/img/good/main/'.$line['art'].'_1.jpg',
-                    'img2' => '/storage/img/good/main/'.$line['art'].'_2.jpg'
+                    'render' => $line['collection_render'],
+                    'img' => '/storage/img/good/collections/small/'.$line['art'].'.jpg',
+                    'img1' => '/storage/img/good/collections/big/'.$line['art'].'.jpg',
+                    'img2' => '/storage/img/good/collections/big/'.$line['art'].'_1.jpg',
+                    'img3' => '/storage/img/good/collections/big/'.$line['art'].'_2.jpg',
+                    'img4' => '/storage/img/good/collections/big/'.$line['art'].'_3.jpg',
+                    'img5' => '/storage/img/good/collections/big/'.$line['art'].'_4.jpg',
+                    'img6' => '/storage/img/good/collections/big/'.$line['art'].'_5.jpg',
                 ]);
             } else return null;
         });
