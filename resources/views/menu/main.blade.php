@@ -77,6 +77,36 @@
         </div>
     </section><!-- End About Section -->
 
+    <!-- ======= Collections Section ======= -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+                <h2>Коллекции в интерьере</h2>
+            </div>
+
+            <div class="collections-slider swiper-container" data-aos="fade-in" data-aos-delay="100">
+                <div class="swiper-wrapper">
+                    @if($collections)
+                        @foreach($collections as $item)
+                            <div class="swiper-slide p-4">
+                                <div class="hero-container" data-aos="fade-up">
+                                    <h2>{{ $item->name }}</h2>
+                                    <a href="{{ route('nav::showCollectionItem', ['id'=>$item->id]) }}" class="btn-get-started">
+                                        <i style="color: white" class="bx bx-chevrons-down"></i>
+                                    </a>
+                                </div>
+                                <img style="margin: 0 auto" src="{{ $item->img1 }}" alt="">
+                            </div>
+                        @endforeach
+                    @endif
+                </div>
+                {{--                <div class="swiper-pagination"></div>--}}
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </section><!-- End Collections Section -->
+
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
         <div class="container">
@@ -121,7 +151,6 @@
     <!-- ======= goodsByLikes Section ======= -->
     <section id="services" class="services">
         <div class="container">
-
             <div class="section-title" data-aos="fade-in" data-aos-delay="100">
                 <h2>Хиты</h2>
             </div>

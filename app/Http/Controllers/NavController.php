@@ -21,6 +21,7 @@ class NavController extends Controller
     public function main(){
         return view('menu.main',
             ['categories' => (Category::count() > 0) ? Category::get()->random(6) : null,
+             'collections' => (Collection::count() > 0) ? Collection::whereRender('1')->get() : null,
              'goodsByLikes' => Good::getByLikes(20),
              'comments' => Comment::whereIsModerate(true)->orderByDesc('created_at')->get(),
              ]);
@@ -46,11 +47,21 @@ class NavController extends Controller
         return view('goods', ['goods' => $goods, 'collections' => Good::getCollections($goods), 'id' => $id]);
     }
 
+    public function showCollections(){
+
+        return view('collections', ['collections' => Collection::whereRender(1)->get()]);
+    }
+
     public function showGoodItem($id){
         $is_like = (Auth::user()) ? (new Like())->getId($id, Auth::user()->id) : null;
         $is_favorite = (Auth::user()) ? (new Favorite())->getId($id, Auth::user()->id) : null;
 
         return view('goodItem', ['item' => Good::find($id), 'is_like'=>$is_like, 'is_favorite'=>$is_favorite, 'imgs'=>Good::getImgs($id)]);
+    }
+
+    public function showCollectionItem($id){
+
+        return view('collectionItem', ['item' => Collection::find($id), 'imgs'=>Collection::getImgs($id), 'goods'=>Good::whereCollectionId($id)->get()]);
     }
 
     public function showAdminPanel(){

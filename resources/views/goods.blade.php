@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="sm:rounded-lg p-3" data-aos="fade-up">
-                <div class="row portfolio-container row-cols-1 row-cols-lg-4 row-cols-xl-6 row-cols-md-3 row-cols-sm-2 g-4">
+                <div class="row portfolio-container row-cols-1 row-cols-lg-4 row-cols-xl-5 row-cols-md-3 row-cols-sm-2 g-4">
                     @foreach($goods->sortBy('name') as $item)
                         <div class="col portfolio-item filter-{{ $item->collection_id }}">
                             <div class="portfolio-wrap cardhover card h-100" data-aos="fade-up">

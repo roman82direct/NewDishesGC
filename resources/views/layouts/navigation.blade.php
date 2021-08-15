@@ -24,6 +24,8 @@
                                     </ul>
                                 </li>
                             @endforeach
+                                <hr>
+                                <li><a href="{{ route('nav::collections') }}">Коллекции в интерьере</a></li>
                         </ul>
                     </li>
                 </div>

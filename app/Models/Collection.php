@@ -29,6 +29,16 @@ use Rap2hpoutre\FastExcel\FastExcel;
  * @method static \Illuminate\Database\Eloquent\Builder|Collection whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Collection whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string|null $render
+ * @property string|null $img3
+ * @property string|null $img4
+ * @property string|null $img5
+ * @property string|null $img6
+ * @method static \Illuminate\Database\Eloquent\Builder|Collection whereImg3($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Collection whereImg4($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Collection whereImg5($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Collection whereImg6($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Collection whereRender($value)
  */
 class Collection extends Model
 {
@@ -37,9 +47,14 @@ class Collection extends Model
     protected $fillable = [
         'name',
         'description',
+        'render',
         'img',
         'img1',
         'img2',
+        'img3',
+        'img4',
+        'img5',
+        'img6'
     ];
 
     public function fillFromXLS($file)
@@ -53,11 +68,33 @@ class Collection extends Model
                 return Collection::create([
                     'name' => $line['collection'],
                     'description' => $line['collection_description'],
-                    'img' => '/storage/img/good/'.$line['art'].'_collection.jpg',
-                    'img1' => '/storage/img/good/main/'.$line['art'].'_1.jpg',
-                    'img2' => '/storage/img/good/main/'.$line['art'].'_2.jpg'
+                    'render' => $line['collection_render'],
+                    'img' => file_exists(public_path().'/storage/img/good/collections/small/'.$line['art'].'.jpg') ? '/storage/img/good/collections/small/'.$line['art'].'.jpg' : null,
+                    'img1' => file_exists(public_path().'/storage/img/good/collections/big/'.$line['art'].'.jpg') ? '/storage/img/good/collections/big/'.$line['art'].'.jpg' : null,
+                    'img2' => file_exists(public_path().'/storage/img/good/collections/big/'.$line['art'].'_1.jpg') ? '/storage/img/good/collections/big/'.$line['art'].'_1.jpg' : null,
+                    'img3' => file_exists(public_path().'/storage/img/good/collections/big/'.$line['art'].'_2.jpg') ? '/storage/img/good/collections/big/'.$line['art'].'_2.jpg' : null,
+                    'img4' => file_exists(public_path().'/storage/img/good/collections/big/'.$line['art'].'_3.jpg') ? '/storage/img/good/collections/big/'.$line['art'].'_3.jpg' : null,
+                    'img5' => file_exists(public_path().'/storage/img/good/collections/big/'.$line['art'].'_4.jpg') ? '/storage/img/good/collections/big/'.$line['art'].'_4.jpg' : null,
+                    'img6' => file_exists(public_path().'/storage/img/good/collections/big/'.$line['art'].'_5.jpg') ? '/storage/img/good/collections/big/'.$line['art'].'_5.jpg' : null,
                 ]);
             } else return null;
         });
+    }
+
+    /**
+     * создаем массив ссылок на "живые" фото на страницу коллекции
+     * @param $id
+     * @return array
+     */
+    public static function getImgs($id)
+    {
+        $imgs = Collection::where('id', $id)->select(['img1', 'img2', 'img3', 'img4', 'img5', 'img6'])->get()->toArray();
+        $true_imgs = [];
+        foreach ($imgs[0] as $item) {
+            if ($item) {
+                $true_imgs[] = $item;
+            }
+        }
+        return $true_imgs;
     }
 }
