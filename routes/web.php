@@ -34,6 +34,9 @@ Route::group([
     Route::get('/maincategory{id}', 'NavController@showByMaincategory')
         ->name('maincategory');
 
+    Route::get('/collections', 'NavController@showCollections')
+        ->name('collections');
+
     Route::get('/goods{id}',[NavController::class, 'showGoods'])
         ->name('goods');
 

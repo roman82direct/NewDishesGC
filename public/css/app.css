@@ -32781,12 +32781,16 @@ a img								{
 .saveCollectionButton {
   border: 1px solid gray;
   border-radius: 3px;
+  transition: 200ms;
+  transition-timing-function: ease-in-out;
 }
 
 .saveCollectionButton:hover {
   cursor: pointer!important;
   border: 1px solid #67b0d1;
   color: #67b0d1;
+  transition: 200ms;
+  transition-timing-function: ease-in-out;
 }
 
 /*toast style*/

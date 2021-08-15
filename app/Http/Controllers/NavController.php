@@ -47,6 +47,11 @@ class NavController extends Controller
         return view('goods', ['goods' => $goods, 'collections' => Good::getCollections($goods), 'id' => $id]);
     }
 
+    public function showCollections(){
+
+        return view('collections', ['collections' => Collection::whereRender(1)->get()]);
+    }
+
     public function showGoodItem($id){
         $is_like = (Auth::user()) ? (new Like())->getId($id, Auth::user()->id) : null;
         $is_favorite = (Auth::user()) ? (new Favorite())->getId($id, Auth::user()->id) : null;
