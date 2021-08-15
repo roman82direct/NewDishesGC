@@ -59,13 +59,13 @@ class Collection extends Model
                     'name' => $line['collection'],
                     'description' => $line['collection_description'],
                     'render' => $line['collection_render'],
-                    'img' => '/storage/img/good/collections/small/'.$line['art'].'.jpg',
-                    'img1' => '/storage/img/good/collections/big/'.$line['art'].'.jpg',
-                    'img2' => '/storage/img/good/collections/big/'.$line['art'].'_1.jpg',
-                    'img3' => '/storage/img/good/collections/big/'.$line['art'].'_2.jpg',
-                    'img4' => '/storage/img/good/collections/big/'.$line['art'].'_3.jpg',
-                    'img5' => '/storage/img/good/collections/big/'.$line['art'].'_4.jpg',
-                    'img6' => '/storage/img/good/collections/big/'.$line['art'].'_5.jpg',
+                    'img' => file_exists(public_path().'/storage/img/good/collections/small/'.$line['art'].'.jpg') ? '/storage/img/good/collections/small/'.$line['art'].'.jpg' : null,
+                    'img1' => file_exists(public_path().'/storage/img/good/collections/big/'.$line['art'].'.jpg') ? '/storage/img/good/collections/big/'.$line['art'].'.jpg' : null,
+                    'img2' => file_exists(public_path().'/storage/img/good/collections/big/'.$line['art'].'_1.jpg') ? '/storage/img/good/collections/big/'.$line['art'].'_1.jpg' : null,
+                    'img3' => file_exists(public_path().'/storage/img/good/collections/big/'.$line['art'].'_2.jpg') ? '/storage/img/good/collections/big/'.$line['art'].'_2.jpg' : null,
+                    'img4' => file_exists(public_path().'/storage/img/good/collections/big/'.$line['art'].'_3.jpg') ? '/storage/img/good/collections/big/'.$line['art'].'_3.jpg' : null,
+                    'img5' => file_exists(public_path().'/storage/img/good/collections/big/'.$line['art'].'_4.jpg') ? '/storage/img/good/collections/big/'.$line['art'].'_4.jpg' : null,
+                    'img6' => file_exists(public_path().'/storage/img/good/collections/big/'.$line['art'].'_5.jpg') ? '/storage/img/good/collections/big/'.$line['art'].'_5.jpg' : null,
                 ]);
             } else return null;
         });
