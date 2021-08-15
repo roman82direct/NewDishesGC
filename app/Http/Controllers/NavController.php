@@ -54,6 +54,11 @@ class NavController extends Controller
         return view('goodItem', ['item' => Good::find($id), 'is_like'=>$is_like, 'is_favorite'=>$is_favorite, 'imgs'=>Good::getImgs($id)]);
     }
 
+    public function showCollectionItem($id){
+
+        return view('collectionItem', ['item' => Collection::find($id), 'imgs'=>Collection::getImgs($id), 'goods'=>Good::whereCollectionId($id)->get()]);
+    }
+
     public function showAdminPanel(){
         return view('admin.panel', ['count' => Good::count()]);
     }

@@ -90,7 +90,7 @@
                         <div class="swiper-slide p-4">
                             <div class="hero-container" data-aos="fade-up">
                                 <h2>{{ $item->name }}</h2>
-                                <a href="{{ route('nav::catalog') }}" class="btn-get-started">
+                                <a href="{{ route('nav::showCollectionItem', ['id'=>$item->id]) }}" class="btn-get-started">
                                     <i style="color: white" class="bx bx-chevrons-down"></i>
                                 </a>
                             </div>

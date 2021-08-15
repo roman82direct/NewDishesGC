@@ -194,10 +194,10 @@
      * collection slider
      */
     new Swiper('.collections-slider', {
-        speed: 400,
+        speed: 800,
         loop: true,
         autoplay: {
-            delay: 5000,
+            delay: 6000,
             disableOnInteraction: false
         },
         slidesPerView: 'auto',
@@ -213,22 +213,7 @@
         breakpoints: {
             320: {
                 slidesPerView: 1,
-                spaceBetween: 40
             },
-            // 640: {
-            //     slidesPerView: 2,
-            //     spaceBetween: 40
-            // },
-            //
-            // 1025: {
-            //     slidesPerView: 3,
-            //     spaceBetween: 40
-            // },
-            //
-            // 1200: {
-            //     slidesPerView: 4,
-            // },
-
             1540: {
                 slidesPerView: 1,
             }

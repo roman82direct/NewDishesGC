@@ -32778,6 +32778,17 @@ a img								{
   transform: scale(1.1);
 }
 
+.saveCollectionButton {
+  border: 1px solid gray;
+  border-radius: 3px;
+}
+
+.saveCollectionButton:hover {
+  cursor: pointer!important;
+  border: 1px solid #67b0d1;
+  color: #67b0d1;
+}
+
 /*toast style*/
 
 .toast-message{

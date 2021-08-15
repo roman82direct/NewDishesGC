@@ -80,4 +80,21 @@ class Collection extends Model
             } else return null;
         });
     }
+
+    /**
+     * создаем массив ссылок на "живые" фото на страницу коллекции
+     * @param $id
+     * @return array
+     */
+    public static function getImgs($id)
+    {
+        $imgs = Collection::where('id', $id)->select(['img1', 'img2', 'img3', 'img4', 'img5', 'img6'])->get()->toArray();
+        $true_imgs = [];
+        foreach ($imgs[0] as $item) {
+            if ($item) {
+                $true_imgs[] = $item;
+            }
+        }
+        return $true_imgs;
+    }
 }

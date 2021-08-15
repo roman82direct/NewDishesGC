@@ -40,6 +40,9 @@ Route::group([
     Route::get('/good{id}', [NavController::class, 'showGoodItem'])
         ->name('showGoodItem');
 
+    Route::get('/collection{id}', [NavController::class, 'showCollectionItem'])
+        ->name('showCollectionItem');
+
 //    Route::get('/catalogbylist', 'NavController@catalogbylist')
 //        ->name('bylist');
 });
@@ -73,6 +76,10 @@ Route::group([
     Route::get('/downloadfavorites', [UserController::class, 'downloadFavorites'])
         ->middleware('auth')
         ->name('downloadfavorites');
+
+    Route::get('/downloadcollection{id}', [UserController::class, 'downloadCollection'])
+        ->middleware('auth')
+        ->name('downloadcollection');
 
     Route::get('/like', [UserController::class, 'createLike'])
         ->middleware(['auth', 'checklikes'])
