@@ -21,6 +21,7 @@ class NavController extends Controller
     public function main(){
         return view('menu.main',
             ['categories' => (Category::count() > 0) ? Category::get()->random(6) : null,
+             'collections' => (Collection::count() > 0) ? Collection::whereRender('1')->get() : null,
              'goodsByLikes' => Good::getByLikes(20),
              'comments' => Comment::whereIsModerate(true)->orderByDesc('created_at')->get(),
              ]);

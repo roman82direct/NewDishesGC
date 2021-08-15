@@ -29,6 +29,16 @@ use Rap2hpoutre\FastExcel\FastExcel;
  * @method static \Illuminate\Database\Eloquent\Builder|Collection whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Collection whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string|null $render
+ * @property string|null $img3
+ * @property string|null $img4
+ * @property string|null $img5
+ * @property string|null $img6
+ * @method static \Illuminate\Database\Eloquent\Builder|Collection whereImg3($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Collection whereImg4($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Collection whereImg5($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Collection whereImg6($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Collection whereRender($value)
  */
 class Collection extends Model
 {
