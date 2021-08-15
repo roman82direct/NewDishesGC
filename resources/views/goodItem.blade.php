@@ -31,7 +31,9 @@
 
                     </div>
                     @else
-                        <img class="altImgItem" src="{{ $imgs ? $imgs[0] : '/storage/img/good/temp.jpg' }}" alt="">
+                        <div class="flex justify-content-center">
+                            <img class="altImgItem" src="{{ $imgs ? $imgs[0] : '/storage/img/good/temp.jpg' }}" alt="">
+                        </div>
                     @endif
                 </div>
 
