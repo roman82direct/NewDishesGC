@@ -86,17 +86,19 @@
 
             <div class="collections-slider swiper-container" data-aos="fade-in" data-aos-delay="100">
                 <div class="swiper-wrapper">
-                    @foreach($collections as $item)
-                        <div class="swiper-slide p-4">
-                            <div class="hero-container" data-aos="fade-up">
-                                <h2>{{ $item->name }}</h2>
-                                <a href="{{ route('nav::showCollectionItem', ['id'=>$item->id]) }}" class="btn-get-started">
-                                    <i style="color: white" class="bx bx-chevrons-down"></i>
-                                </a>
-                            </div>
+                    @if($collections)
+                        @foreach($collections as $item)
+                            <div class="swiper-slide p-4">
+                                <div class="hero-container" data-aos="fade-up">
+                                    <h2>{{ $item->name }}</h2>
+                                    <a href="{{ route('nav::showCollectionItem', ['id'=>$item->id]) }}" class="btn-get-started">
+                                        <i style="color: white" class="bx bx-chevrons-down"></i>
+                                    </a>
+                                </div>
                                 <img style="margin: 0 auto" src="{{ $item->img1 }}" alt="">
-                        </div>
-                    @endforeach
+                            </div>
+                        @endforeach
+                    @endif
                 </div>
                 {{--                <div class="swiper-pagination"></div>--}}
                 <div class="swiper-button-prev"></div>
