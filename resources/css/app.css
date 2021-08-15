@@ -280,6 +280,11 @@
         height: 60vh;
         width: 80vw;
     }
+    .userblock {
+        flex-direction: column;
+        justify-content: flex-start!important;
+        align-items: center;
+    }
 }
 
 .navbar-mobile {
@@ -1453,18 +1458,14 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
         margin-bottom: 30px;
     }
 
-    .portfolio-details .portfolio-details-slider {
-        width: 640px;
-    }
-
     .portfolio-details .portfolio-details-slider .swiper-slide {
         display: flex;
         justify-content: center;
     }
 
     .portfolio-details .portfolio-details-slider img {
-        height: 480px!important;
-        width: 480px!important;
+        /*height: 480px!important;*/
+        width: 600px!important;
     }
 
     .altImgItem {

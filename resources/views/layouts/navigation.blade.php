@@ -74,29 +74,31 @@
                                     </li>
                                 </ul>
                             </li>
-                            <a class="relative favorites-link" href="{{ route('user::myfavorites') }}" title="Избранные товары">
-                                @php($favorites_count = \App\Models\Favorite::whereUserId(\Illuminate\Support\Facades\Auth::user()->id)->count())
-                                @if(!$favorites_count)
-                                    <i id="navFavorites" style="font-size: 1.5rem" class="bi bi-bookmarks text-gray-500"></i>
-                                @else
-                                    <i id="navFavorites" style="font-size: 1.6rem; color: #faa3a3" class="bi bi-bookmarks-fill"></i>
-                                    <div id="favoritesCount" class="favoritesCount">
-                                        {{ $favorites_count }}
-                                    </div>
-                                @endif
-                            </a>
-                            @if($favorites_count > 0)
-                                <li class="dropdown">
-                                    <a class="favoritesDropdown sm:flex sm:items-center" href="#">
-                                        <i class="bi bi-chevron-down"></i>
-                                    </a>
+                            <div class="flex justify-content-center align-items-center">
+                                <a class="relative favorites-link" href="{{ route('user::myfavorites') }}" title="Избранные товары">
+                                    @php($favorites_count = \App\Models\Favorite::whereUserId(\Illuminate\Support\Facades\Auth::user()->id)->count())
+                                    @if(!$favorites_count)
+                                        <i id="navFavorites" style="font-size: 1.5rem" class="bi bi-bookmarks text-gray-500"></i>
+                                    @else
+                                        <i id="navFavorites" style="font-size: 1.6rem; color: #faa3a3" class="bi bi-bookmarks-fill"></i>
+                                        <div id="favoritesCount" class="favoritesCount">
+                                            {{ $favorites_count }}
+                                        </div>
+                                    @endif
+                                </a>
+                                @if($favorites_count > 0)
+                                    <li class="dropdown">
+                                        <a class="favoritesDropdown sm:flex sm:items-center" href="#">
+                                            <i class="bi bi-chevron-down"></i>
+                                        </a>
 
-                                    <ul>
-                                        <li><a href="{{ route('user::deleteallfavorites') }}">Очистить Избранные</a></li>
-                                        <li><a href="{{ route('user::downloadfavorites') }}">Сохранить Избранные в эксель</a></li>
-                                    </ul>
-                                </li>
-                            @endif
+                                        <ul style="left: -100px">
+                                            <li><a href="{{ route('user::deleteallfavorites') }}">Очистить Избранные</a></li>
+                                            <li><a href="{{ route('user::downloadfavorites') }}">Сохранить Избранные в эксель</a></li>
+                                        </ul>
+                                    </li>
+                                @endif
+                            </div>
                         </div>
                     @endauth
                 </div>

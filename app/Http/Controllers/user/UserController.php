@@ -48,21 +48,21 @@ class UserController extends Controller
         $goods = Good::all();
         $list = SaveDataXLS::downloadXLS($goods);
 
-        return (new \Rap2hpoutre\FastExcel\FastExcel($list))->download('Все новинки посуды и текстиля Гала-Центра.xlsx');
+        return (new \Rap2hpoutre\FastExcel\FastExcel($list))->download('все новинки посуды и текстиля Гала-Центра.xlsx');
     }
 
     public function downloadFavorites(){
         $favorites = Good::getFavorites(Auth::id());
         $list = SaveDataXLS::downloadXLS($favorites);
 
-        return (new \Rap2hpoutre\FastExcel\FastExcel($list))->download('Мои избранные новинки Гала-Центра.xlsx');
+        return (new \Rap2hpoutre\FastExcel\FastExcel($list))->download('мои избранные новинки Гала-Центра.xlsx');
     }
 
     public function downloadCollection($id){
         $goods = Good::whereCollectionId($id)->get();
         $list = SaveDataXLS::downloadXLS($goods);
 
-        return (new \Rap2hpoutre\FastExcel\FastExcel($list))->download('Товары из коллекции '.Collection::find($id)->name.'.xlsx');
+        return (new \Rap2hpoutre\FastExcel\FastExcel($list))->download('товары из коллекции '.Collection::find($id)->name.'.xlsx');
     }
 
     public function createLike(){
