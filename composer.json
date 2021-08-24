@@ -15,7 +15,8 @@
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
         "orchestra/parser": "^6.1",
-        "rap2hpoutre/fast-excel": "^2.4"
+        "rap2hpoutre/fast-excel": "^2.4",
+        "ext-simplexml": "*"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.9",
