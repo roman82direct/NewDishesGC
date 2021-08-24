@@ -171,8 +171,6 @@ Route::group([
     ->name('upload')
     ->middleware(\App\Http\Middleware\FileUpload::class);
 
-    Route::get('/parse', 'AdminController@parseGC')
-        ->name('parse');
 });
 
 /*

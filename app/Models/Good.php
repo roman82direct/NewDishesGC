@@ -85,6 +85,7 @@ class Good extends Model
         'img4',
         'img5',
         'img_pack',
+        'url_gc',
         'likes',
         'dislikes',
     ];

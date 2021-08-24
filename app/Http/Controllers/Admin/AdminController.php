@@ -10,6 +10,7 @@ use App\Models\Maincategory;
 use App\Models\Good;
 use App\Models\User;
 use App\Services\LoadDataXLS;
+use App\Services\ParseGalaCentre;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -111,22 +112,5 @@ class AdminController extends Controller
         Comment::destroy($id);
 
         return redirect()->back()->with('success', 'Комментарий удален');
-    }
-
-    public function parseGC(){
-        $items = collect([]);
-        try {
-            $xml = simplexml_load_file('https://www.galacentre.ru/download/yml/posuda.xml');
-            foreach ($xml->shop->offers->offer as $offer) {
-                $items->push([
-                    'art' => $offer->xpath('param[@name="Артикул"]')[0]->__toString(),
-                    'url' => $offer->url->__toString()
-                ]);
-            }
-        } catch (\Exception $e) {
-            dd($e);
-        }
-        dd($items);
-        return $items;
     }
 }
