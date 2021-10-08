@@ -161,7 +161,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Orchestra\Parser\XmlServiceProvider::class,
+//        Orchestra\Parser\XmlServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -228,7 +228,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'FastExcel' => Rap2hpoutre\FastExcel\Facades\FastExcel::class, //excel import/export package
-        'XmlParser' => Orchestra\Parser\Xml\Facade::class,
+//        'XmlParser' => Orchestra\Parser\Xml\Facade::class,
     ],
 
 ];
