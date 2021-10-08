@@ -1209,18 +1209,6 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
     text-align: center;
 }
 
-.card-links {
-    width: 80px;
-    justify-content: space-between;
-    position: absolute;
-    left: 45%;
-    top: 40%;
-    z-index: 3;
-    display: none;
-    transition: 200ms;
-    transition-timing-function: ease-in-out;
-}
-
 .card-text {
     text-align: center;
 }
@@ -1236,9 +1224,38 @@ background: linear-gradient(90deg, rgba(224,242,250,0.8) 0%, rgba(255,255,255,0.
     transition: 200ms;
     transition-timing-function: ease-in-out;
 }
-.card:hover .card-links {
-    display: block;
+
+.card-links {
+    position: absolute;
+    left: 45%;
+    top: 40%;
+    z-index: 3;
+    display: none;
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
 }
+.card-links-double {
+    position: absolute;
+    left: 35%;
+    top: 40%;
+    z-index: 3;
+    display: none;
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+}
+
+.card:hover .card-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card:hover .card-links-double {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .card-link:hover .card-svg {
     fill: #67b0d1;
     transition: 200ms;

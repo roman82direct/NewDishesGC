@@ -32726,18 +32726,6 @@ a img								{
   text-align: center;
 }
 
-.card-links {
-  width: 80px;
-  justify-content: space-between;
-  position: absolute;
-  left: 45%;
-  top: 40%;
-  z-index: 3;
-  display: none;
-  transition: 200ms;
-  transition-timing-function: ease-in-out;
-}
-
 .card-text {
   text-align: center;
 }
@@ -32754,8 +32742,36 @@ a img								{
   transition-timing-function: ease-in-out;
 }
 
+.card-links {
+  position: absolute;
+  left: 45%;
+  top: 40%;
+  z-index: 3;
+  display: none;
+  transition: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
+.card-links-double {
+  position: absolute;
+  left: 35%;
+  top: 40%;
+  z-index: 3;
+  display: none;
+  transition: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
 .card:hover .card-links {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card:hover .card-links-double {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .card-link:hover .card-svg {

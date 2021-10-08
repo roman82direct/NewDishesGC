@@ -10,10 +10,12 @@ use App\Models\Maincategory;
 use App\Models\Good;
 use App\Models\User;
 use App\Services\LoadDataXLS;
+use App\Services\ParseGalaCentre;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Rap2hpoutre\FastExcel\FastExcel;
+use Orchestra\Parser\Xml\Facade as XmlParser;
 
 class AdminController extends Controller
 {

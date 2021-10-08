@@ -170,6 +170,7 @@ Route::group([
     Route::match(['POST', 'GET'], '/upload', [AdminController::class, 'uploadGoodsFromExcel'])
     ->name('upload')
     ->middleware(\App\Http\Middleware\FileUpload::class);
+
 });
 
 /*
